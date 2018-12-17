@@ -64,21 +64,21 @@ function launch () {
               if (moduleExists) {
                 throw new Error(`${answers.TplProjectName}项目下的已经存在${answers.TplModuleName}模块，请重新命名模块名称`)
               }
-              copyTem(answers)
+              writeRouteConfig(answers)
                 .then(() => {
-                  compiler(answers)
+                  copyTem(answers)
                     .then(() => {
-                      writeRouteConfig(answers)
+                      compiler(answers)
                         .then(() => {
                           spinner.succeed(`${answers.TplProjectName}项目下的${answers.TplModuleName}模块构建完成`);
                         })
+                        .catch((error) => {
+                          spinner.fail(error);
+                        })
                     })
-                    .catch((error) => {
+                    .catch(error => {
                       spinner.fail(error);
                     })
-                })
-                .catch(error => {
-                  spinner.fail(error);
                 })
             })
             .catch(error => {
