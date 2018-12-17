@@ -1,5 +1,7 @@
 import { isFunction } from 'components/tools/utils.js'
 import store from '../store/index.js'
+//! Vue模块钩子
+import { entryBefore as VueEntryBefore } from '../modules/Vue/routes/routerHooks.js'
 /* @init<%
 //! ${TplModuleName}模块钩子
 import { entryBefore as ${TplModuleName}EntryBefore } from '../modules/${TplModuleName}/routes/routerHooks.js'%> */
@@ -8,6 +10,7 @@ import { entryBefore as ${TplModuleName}EntryBefore } from '../modules/${TplModu
 /* eslint-disable */
 const hooksModel = {
   'test': '',
+  VueEntryBefore,
   /* @init<%
   ${TplModuleName}EntryBefore,%>*/
 }

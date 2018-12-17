@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import createStorePlugin from 'components/tools/storePlugin.js'
 import whiteList from './cacheWhiteList.js'
+//! Vue知识点总结
+import VueStore from '../modules/Vue/store/store.js'
 /* @init<%
 //! ${TplModuleIntroduction}
 import ${TplModuleName}Store from '../modules/${TplModuleName}/store/store.js'%> */
@@ -41,6 +43,11 @@ export const store = new Vuex.Store({
   state,
   mutations,
   modules: {
+    //! Vue知识点总结
+    Vue: {
+      namespaced: true,
+      ...VueStore
+    },
     /* @init<%
     //! ${TplModuleIntroduction}
     ${TplModuleName}: {
