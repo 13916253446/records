@@ -121,6 +121,7 @@ async function writeRouteConfig (answers) {
   }
   json.push({
     module: answers.TplModuleName,
+    introduction: answers.TplModuleIntroduction,
     pages: []
   })
   await jsonfile.writeFile(configDir, json)

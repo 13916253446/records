@@ -9,6 +9,7 @@ const ora = require('ora');
 const spinner = ora(`模块初始化中`);
 const utils = require('./utils.js');
 const bluebird = require('bluebird').promisifyAll(fs);
+const jsonfile = require('jsonfile');
 
 //? path
 let getRoutesPath = (answers) => path.resolve(CWD, `./website/${answers.TplProjectName}/modules/${answers.TplModuleName}/routes/routes.js`);
@@ -67,18 +68,21 @@ function launch () {
       let TplModulePageUpper = answers.TplModulePage.replace(/^([a-z])/, (result, match) => (match && match.toUpperCase() || ''));
       answers = Object.assign(answers, projectAnswers, { TplAnnotationStart: '/*', TplAnnotationEnd: '*/' }, { TplModuleNameUpper,  TplModulePageUpper })
       spinner.start();
-      copyTem(answers)
+      writePageMd(answers)
         .then(() => {
-          compiler(answers)
+          copyTem(answers)
             .then(() => {
-              spinner.succeed(`${answers.TplProjectName}项目下的${answers.TplModuleName}模块构建完成`);
+              compiler(answers)
+                .then(() => {
+                  spinner.succeed(`${answers.TplProjectName}项目下的${answers.TplModuleName}模块构建完成`);
+                })
+                .catch((error) => {
+                  spinner.fail(error);
+                })
             })
-            .catch((error) => {
+            .catch(error => {
               spinner.fail(error);
             })
-        })
-        .catch(error => {
-          spinner.fail(error);
         })
     })
     .catch(error => {
@@ -100,6 +104,33 @@ function copyTem (answers) {
     data: answers,
     template: require('jstransformer-handlebars')
   })
+}
+
+//? 写md文件
+async function writePageMd (answers) {
+  let configDir = path.resolve(CWD, `./website/${answers.TplProjectName}/config/routes.json`)
+  const json = await jsonfile.readFile(configDir)
+  const result = json.map(item => {
+    let { module, pages = [] } = item
+    if (module === answers.TplModuleName) {
+      const pageIsExits = pages.find(page => {
+        let { name } = page
+        return name && name === answers.TplModulePage
+      })
+      if (pageIsExits) {
+        console.log(chalk.red(`\n${answers.TplModuleName}模块下${answers.TplModulePage}页面已经存在`))
+        process.exit()
+      }
+      item.pages.push({
+        name: answers.TplModulePage,
+        title: answers.TplModulePageTitle
+      })
+      return item
+    }
+    return item
+  })
+  await jsonfile.writeFile(configDir, result)
+  return answers
 }
 
 //? 往主文件里面写东西

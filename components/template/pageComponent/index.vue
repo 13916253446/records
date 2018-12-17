@@ -1,10 +1,16 @@
 <template>
-  <div></div>
+  <div>
+    <md></md>
+  </div>
 </template>
 
 <script>
+import md from './index.md'
 export default {
-  name: '{{TplModuleNameUpper}}{{TplModulePageUpper}}'
+  name: '{{TplModuleNameUpper}}{{TplModulePageUpper}}',
+  components: {
+    md
+  }
 }
 </script>
 
