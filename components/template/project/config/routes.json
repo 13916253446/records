@@ -1,0 +1,11 @@
+[
+  {
+    "module": "test",
+    "pages": [
+      {
+        "path": "/test",
+        "md": "test.md"
+      }
+    ]
+  }
+]

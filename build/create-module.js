@@ -8,6 +8,7 @@ const path = require('path');
 const ora = require('ora');
 const spinner = ora(`模块初始化中`);
 const bluebird = require('bluebird').promisifyAll(fs);
+const jsonfile = require('jsonfile');
 
 const utils = require('./utils.js');
 
@@ -67,7 +68,10 @@ function launch () {
                 .then(() => {
                   compiler(answers)
                     .then(() => {
-                      spinner.succeed(`${answers.TplProjectName}项目下的${answers.TplModuleName}模块构建完成`);
+                      writeRouteConfig(answers)
+                        .then(() => {
+                          spinner.succeed(`${answers.TplProjectName}项目下的${answers.TplModuleName}模块构建完成`);
+                        })
                     })
                     .catch((error) => {
                       spinner.fail(error);
@@ -100,6 +104,27 @@ function copyTem (answers) {
     data: answers,
     template: require('jstransformer-handlebars')
   })
+}
+
+//? 往配置文件里面写数据
+async function writeRouteConfig (answers) {
+  let configDir = path.resolve(CWD, `./website/${answers.TplProjectName}/config/routes.json`)
+  const json = await jsonfile.readFile(configDir)
+  //! 判断模块是否已经存在
+  let obj = (json || []).find(item => {
+    let { module } = item
+    return module && module === answers.TplModuleName
+  })
+  if (obj) {
+    console.log(chalk.red(`${answers.TplModuleName}模块已经存在`))
+    process.exit()
+  }
+  json.push({
+    module: answers.TplModuleName,
+    pages: []
+  })
+  await jsonfile.writeFile(configDir, json)
+  return answers
 }
 
 //? 往主文件里面写东西
