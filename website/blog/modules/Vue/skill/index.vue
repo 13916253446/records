@@ -7,7 +7,7 @@
 <script>
 import md from './index.md'
 export default {
-  name: 'VueTest',
+  name: 'VUESkill',
   components: {
     md
   }

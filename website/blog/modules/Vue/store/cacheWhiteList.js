@@ -12,7 +12,7 @@ const whites = []
 export const config = whites.map(item => {
   return {
     ...item,
-    stateName: `Vue/${item.stateName}`
+    stateName: `VUE/${item.stateName}`
   }
 })
 

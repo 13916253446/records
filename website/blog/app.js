@@ -4,6 +4,7 @@ import store from './store/index.js'
 import App from './app.vue'
 //! 导入公共样式
 import 'components/styles/base.styl'
+import 'vue-material/dist/vue-material.min.css'
 
 //! 保存需要缓存的路由组件
 if (router && router.options && router.options.routes) {

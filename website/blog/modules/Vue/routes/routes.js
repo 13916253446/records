@@ -1,8 +1,8 @@
-//? Vue知识点总结模块路由
+//? vue知识总结模块路由
 
 //! TODO: 路由例子
-let loadPageExample = () => import(/* webpackChunkName: "Vue.pageTemplate" */'components/template/page/page.vue')
-let loadTest = () => import(/* webpackChunkName: "Vue.test" */'../test/index.vue')
+let loadPageExample = () => import(/* webpackChunkName: "VUE.pageTemplate" */'components/template/page/page.vue')
+let loadSkill = () => import(/* webpackChunkName: "VUE.skill" */'../skill/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -10,14 +10,14 @@ let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkN
 export const routes = [
   {
     //! 模块/组件名字
-    path: '/Vue/pageTemplate',
+    path: '/VUE/pageTemplate',
     //! 如果使用keepAlive这个name必须和组件内部的name相同，要不然页面缓存无效
-    name: 'pageVueTemplate',
+    name: 'pageVUETemplate',
     //! 路由懒加载
     component: loadPageExample,
     meta: {
       //? 模块标识 (必传，否则钩子进不来)
-      module: 'Vue',
+      module: 'VUE',
       //? TODO: 解决ios上面弹性滚动，不同的页面不同的底色问题
       //! 如果是默认配置的底色就不要添加这个项，值为空字符串表示不设置页面底色
       bgClass: '',
@@ -30,15 +30,15 @@ export const routes = [
     }
   },
   {
-    path: '/Vue/test',
-    name: 'VueTest',
-    component: loadTest,
+    path: '/VUE/skill',
+    name: 'VUESkill',
+    component: loadSkill,
     meta: {
-      module: 'Vue',
+      module: 'VUE',
       loginAuth: false,
       bgClass: '',
       keepAlive: true,
-      title: '测试',
+      title: 'vue使用技巧',
       preload () {}
     }
   },
