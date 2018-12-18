@@ -2,9 +2,13 @@ import Vue from 'vue'
 import router from './routes/index.js'
 import store from './store/index.js'
 import App from './app.vue'
+import VueMaterial from 'vue-material'
 //! 导入公共样式
 import 'components/styles/base.styl'
 import 'vue-material/dist/vue-material.min.css'
+import 'vue-material/dist/theme/default.css'
+
+Vue.use(VueMaterial)
 
 //! 保存需要缓存的路由组件
 if (router && router.options && router.options.routes) {
