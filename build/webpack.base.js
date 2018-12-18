@@ -3,6 +3,7 @@ const path = require('path');
 const config = require('./config.js');
 const utils = require('./utils.js');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin.js');
+const markdownConfig = require('./mardkown.config.js');
 
 let resolve = dir => path.resolve(__dirname, dir);
 let assetsArray = [resolve('../website'), resolve('../components')];
@@ -52,6 +53,15 @@ module.exports = {
             image: 'xlink:href'
           }
         }
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader:'vue-markdown-loader',
+            options: markdownConfig
+          }
+        ]
       },
       {
         test: /\.js$/,

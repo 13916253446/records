@@ -3,7 +3,6 @@
 
 let config = require('./config.js').dev;
 let styleLoaders = require('./utils.js').styleLoaders;
-const { VueLoaderPlugin } = require('vue-loader');
 const webpack = require('webpack');
 const WebpackBar = require('webpackbar');
 const webpackMerge = require('webpack-merge');
@@ -32,8 +31,10 @@ const devWebpackConfig = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
-    new VueLoaderPlugin(),
-    new WebpackBar()
+    new WebpackBar(),
+    new webpack.LoaderOptionsPlugin({
+      vue: {}
+    })
   ]
 };
 let htmlConfig = utils.setMultipagePlugin('./website', 'index.html')
