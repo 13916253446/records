@@ -14,7 +14,9 @@ const state = {
   //! 页面切换动画名称
   pageChangeAnimation: '',
   //! 需要缓存的组件名称
-  keepAliveComponents: []
+  keepAliveComponents: [],
+  //! 是否显示左边菜单栏
+  menuVisible: false
 }
 
 const mutations = {
@@ -25,6 +27,10 @@ const mutations = {
   //! 设置缓存页面数据
   setKeepAliveComponents (state, aliveLists = []) {
     state.keepAliveComponents = aliveLists
+  },
+  //! 设置是否显示左边菜单栏
+  setMenuVisible (state, val) {
+    state.menuVisible = !!val
   }
 }
 

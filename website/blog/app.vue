@@ -1,6 +1,7 @@
 <template>
     <div class="page-container">
       <md-app>
+        <!-- header -->
         <md-app-toolbar class="md-primary" md-elevation="0">
           <md-button class="md-icon-button" @click="toggleMenu" v-if="!menuVisible">
             <md-icon>menu</md-icon>
@@ -20,24 +21,28 @@
           </md-toolbar>
 
           <md-list>
-            <md-list-item>
-              <md-icon>move_to_inbox</md-icon>
-              <span class="md-list-item-text">Inbox</span>
-            </md-list-item>
+            <md-list-item v-for="(module, index) in routes" :key="`module${index}`">
 
-            <md-list-item>
-              <md-icon>send</md-icon>
-              <span class="md-list-item-text">Sent Mail</span>
-            </md-list-item>
-
-            <md-list-item>
-              <md-icon>delete</md-icon>
-              <span class="md-list-item-text">Trash</span>
-            </md-list-item>
-
-            <md-list-item>
-              <md-icon>error</md-icon>
-              <span class="md-list-item-text">Spam</span>
+              <div class="md-layout md-gutter">
+                <div class="md-layout-item">
+                  <md-field>
+                    <label for="movie">
+                      <span class="md-list-item-text">{{module.module}}</span>
+                    </label>
+                    <md-select v-model="movie" name="movie" id="movie">
+                      <md-option value="fight-club">Fight Club</md-option>
+                      <md-option value="godfather">Godfather</md-option>
+                      <md-option value="godfather-ii">Godfather II</md-option>
+                      <md-option value="godfather-iii">Godfather III</md-option>
+                      <md-option value="godfellas">Godfellas</md-option>
+                      <md-option value="pulp-fiction">Pulp Fiction</md-option>
+                      <md-option value="scarface">Scarface</md-option>
+                    </md-select>
+                  </md-field>
+                </div>
+              </div>
+              <!-- <svgs class="menu-icon" :name="module.icon"></svgs>
+              <span class="md-list-item-text">{{module.module}}</span> -->
             </md-list-item>
           </md-list>
         </md-app-drawer>
@@ -52,10 +57,12 @@
 </template>
 
 <script>
+import routes from './config/routes.json'
 export default {
   name: 'App',
   data: () => ({
-    menuVisible: false
+    menuVisible: false,
+    routes
   }),
   methods: {
     toggleMenu () {
@@ -66,8 +73,13 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.menu-icon
+  width 30px
+  height 30px
+  margin-right 32px
+  min-width 30px
 .md-app {
-    min-height: 350px;
+    min-height: 100vh;
     border: 1px solid rgba(#000, .12);
   }
 
