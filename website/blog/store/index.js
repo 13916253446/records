@@ -16,7 +16,9 @@ const state = {
   //! 需要缓存的组件名称
   keepAliveComponents: [],
   //! 是否显示左边菜单栏
-  menuVisible: false
+  menuVisible: false,
+  //! 当前页面的选择项
+  currentPage: ''
 }
 
 const mutations = {
@@ -31,6 +33,10 @@ const mutations = {
   //! 设置是否显示左边菜单栏
   setMenuVisible (state, val) {
     state.menuVisible = !!val
+  },
+  //! 设置当前页面的菜单项
+  setCurrentPage (state, val) {
+    state.currentPage = val
   }
 }
 

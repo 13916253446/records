@@ -22,27 +22,19 @@
 
           <md-list>
             <md-list-item v-for="(module, index) in routes" :key="`module${index}`">
-
-              <div class="md-layout md-gutter">
+              <svgs class="menu-icon" :name="module.icon" v-show="!menuVisible"></svgs>
+              <div class="md-layout md-gutter" v-show="menuVisible">
                 <div class="md-layout-item">
                   <md-field>
                     <label for="movie">
                       <span class="md-list-item-text">{{module.module}}</span>
                     </label>
-                    <md-select v-model="movie" name="movie" id="movie">
-                      <md-option value="fight-club">Fight Club</md-option>
-                      <md-option value="godfather">Godfather</md-option>
-                      <md-option value="godfather-ii">Godfather II</md-option>
-                      <md-option value="godfather-iii">Godfather III</md-option>
-                      <md-option value="godfellas">Godfellas</md-option>
-                      <md-option value="pulp-fiction">Pulp Fiction</md-option>
-                      <md-option value="scarface">Scarface</md-option>
+                    <md-select @md-selected="selectPage" v-model="thePage">
+                      <md-option v-for="(page, indexs) in module.pages" :key="`page${indexs}`" :value="`/${module.module}/${page.name}`.toUpperCase()">{{page.title}}</md-option>
                     </md-select>
                   </md-field>
                 </div>
               </div>
-              <!-- <svgs class="menu-icon" :name="module.icon"></svgs>
-              <span class="md-list-item-text">{{module.module}}</span> -->
             </md-list-item>
           </md-list>
         </md-app-drawer>
@@ -62,11 +54,26 @@ export default {
   name: 'App',
   data: () => ({
     menuVisible: false,
-    routes
+    routes,
+    thePage: ''
   }),
+  watch: {
+    //? 监听当前路由变化，设置选中的菜单项
+    $route: {
+      handler ({ path }) {
+        this.thePage = path.toUpperCase()
+        console.log(this.thePage)
+      },
+      immediate: false
+    }
+  },
   methods: {
     toggleMenu () {
       this.menuVisible = !this.menuVisible
+    },
+    //? 选择页面
+    selectPage (path) {
+      this.$router.push({ path })
     }
   }
 }
