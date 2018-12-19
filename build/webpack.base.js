@@ -4,6 +4,7 @@ const config = require('./config.js');
 const utils = require('./utils.js');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin.js');
 const markdownConfig = require('./mardkown.config.js');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 let resolve = dir => path.resolve(__dirname, dir);
 let assetsArray = [resolve('../website'), resolve('../components')];
@@ -104,7 +105,13 @@ module.exports = {
     ]
   },
   plugins: [
-    new SpriteLoaderPlugin()
+    new SpriteLoaderPlugin(),
+    new WorkboxPlugin.GenerateSW({
+      // 这些选项帮助 ServiceWorkers 快速启用
+      // 不允许遗留任何“旧的” ServiceWorkers
+      clientsClaim: true,
+      skipWaiting: true
+    })
   ],
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
