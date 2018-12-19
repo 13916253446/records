@@ -90,7 +90,8 @@ const webpackConfig = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: 'static/css/[name].[hash:7].css'
+      filename: 'static/css/[name].[hash:7].css',
+      chunkFilename: "static/css/[name].[chunkhash:7].async.css"
     }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),

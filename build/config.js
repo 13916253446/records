@@ -24,7 +24,7 @@ const config = {
     //? 资源目录
     assetsRoot: path.resolve(__dirname, '../dist'),
     //? 静态资源路径
-    assetsPublicPath: process.env.uploadAlioss ? '//shadow.hfcui.com/assets/' : '/',
+    assetsPublicPath: process.env.uploadAlioss ? '//shadow.hfcui.com/assets/' : '',
     //? css映射
     cssSourceMap: true,
     //? 定义系统变量

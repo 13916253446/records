@@ -134,7 +134,7 @@ exports.setMultipagePlugin = function (pageDir, entryPath, htmlOptions) {
     const opt = Object.assign({}, {
       filename: 'index.html',
       template: pages[pathname],
-      chunks: [pathname],
+      chunksSortMode: 'none',
       inject: true,
       favicon: path.resolve(__dirname, '../favicon.ico')
     }, htmlOptions);
