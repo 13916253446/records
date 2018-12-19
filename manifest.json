@@ -1,10 +1,12 @@
 {
-  "CSS.pageTemplate.js": "static/asyncjs/CSS.pageTemplate.3c048d0.js",
-  "VUE.skill.js": "static/asyncjs/VUE.skill.2523ab0.js",
-  "blog.js": "static/js/blog.8795c08.js",
-  "styles.css": "static/css/styles.3eea03c.css",
-  "styles.js": "static/asyncjs/styles.b4963ef.js",
+  "CSS.pageTemplate.js": "static/asyncjs/CSS.pageTemplate.2466740.js",
+  "VUE.plugin.js": "static/asyncjs/VUE.plugin.4ba554b.js",
+  "VUE.skill.js": "static/asyncjs/VUE.skill.717131a.js",
+  "blog.js": "static/js/blog.2d7b8b7.js",
+  "styles.css": "static/css/styles.1f189b4.async.css",
+  "styles.js": "static/asyncjs/styles.1f189b4.js",
   "sprite.51f2843.svg": "sprite.51f2843.svg",
   "favicon.ico": "favicon.ico",
-  "index.html": "index.html"
+  "index.html": "index.html",
+  "static/css/styles.1f189b4.async.css.map": "static/css/styles.1f189b4.async.css.map"
 }
