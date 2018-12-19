@@ -6,7 +6,7 @@
           <md-button class="md-icon-button" @click="toggleMenu" v-if="!menuVisible">
             <md-icon>menu</md-icon>
           </md-button>
-          <span class="md-title">My Title</span>
+          <span class="md-title">HF C</span>
         </md-app-toolbar>
 
         <md-app-drawer :md-active.sync="menuVisible" md-persistent="mini">
@@ -21,15 +21,15 @@
           </md-toolbar>
 
           <md-list>
-            <md-list-item v-for="(module, index) in routes" :key="`module${index}`">
+            <md-list-item v-for="(module, index) in routes" :key="`module${index}`" :class="`menu-${module.module}`">
               <svgs class="menu-icon" :name="module.icon" v-show="!menuVisible"></svgs>
               <div class="md-layout md-gutter" v-show="menuVisible">
                 <div class="md-layout-item">
                   <md-field>
-                    <label for="movie">
+                    <label :for="module.module">
                       <span class="md-list-item-text">{{module.module}}</span>
                     </label>
-                    <md-select @md-selected="selectPage" v-model="thePage">
+                    <md-select @md-closed="removeMdHasValue" @md-selected="selectPage" v-model="thePage" :name="module.module" :id="module.module">
                       <md-option v-for="(page, indexs) in module.pages" :key="`page${indexs}`" :value="`/${module.module}/${page.name}`.toUpperCase()">{{page.title}}</md-option>
                     </md-select>
                   </md-field>
@@ -62,7 +62,7 @@ export default {
     $route: {
       handler ({ path }) {
         this.thePage = path.toUpperCase()
-        console.log(this.thePage)
+        this.$nextTick(this.removeMdHasValue)
       },
       immediate: false
     }
@@ -75,6 +75,18 @@ export default {
     selectPage (path) {
       if (!path) return false
       this.$router.push({ path })
+    },
+    //? 移除md-has-value
+    async removeMdHasValue () {
+      await this.$nextTick()
+      routes.forEach(item => {
+        if (this.thePage.indexOf(item.module.toUpperCase()) !== 1) {
+          let className = `.menu-${item.module}`
+          let dom = document.querySelector(className)
+          let childDOM = dom.querySelector('.md-has-value')
+          childDOM && childDOM.classList && childDOM.classList.remove('md-has-value')
+        }
+      })
     }
   }
 }
@@ -82,10 +94,10 @@ export default {
 
 <style lang="stylus" scoped>
 .menu-icon
-  width 30px
-  height 30px
+  width 25px
+  height 25px
   margin-right 32px
-  min-width 30px
+  min-width 25px
 .md-app {
     min-height: 100vh;
     border: 1px solid rgba(#000, .12);

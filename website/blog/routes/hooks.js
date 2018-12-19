@@ -3,6 +3,8 @@ import store from '../store/index.js'
 import NProgress from 'nprogress'
 //! VUE模块钩子
 import { entryBefore as VUEEntryBefore } from '../modules/VUE/routes/routerHooks.js'
+//! CSS模块钩子
+import { entryBefore as CSSEntryBefore } from '../modules/CSS/routes/routerHooks.js'
 /* @init<%
 //! ${TplModuleName}模块钩子
 import { entryBefore as ${TplModuleName}EntryBefore } from '../modules/${TplModuleName}/routes/routerHooks.js'%> */
@@ -12,6 +14,7 @@ import { entryBefore as ${TplModuleName}EntryBefore } from '../modules/${TplModu
 const hooksModel = {
   'test': '',
   VUEEntryBefore,
+  CSSEntryBefore,
   /* @init<%
   ${TplModuleName}EntryBefore,%>*/
 }
@@ -44,7 +47,11 @@ export function routerHooks (router) {
   //! 页面进来之前
   router.beforeEach((to, from, next) => {
     NProgress.start()
-    let { meta: { module } = {} } = to || {}
+    let { meta: { module, title = '我的博客' } = {} } = to || {}
+    let setTitleTimer = setTimeout(() => {
+      document.title = title
+      clearTimeout(setTitleTimer)
+    }, 100)
     //? 进入模块级导航钩子
     let entryBefore = hooksModel[`${module}EntryBefore`]
     if (entryBefore && isFunction(entryBefore)) {
