@@ -43,6 +43,14 @@ function launch () {
         },
         {
           type: 'input',
+          name: 'TplModuleIconName',
+          message: '请输入要创建的模块图标名称:',
+          validate: function (str) {
+            return str && str.length > 0
+          }
+        },
+        {
+          type: 'input',
           name: 'TplModuleIntroduction',
           message: '请简单的介绍下要创建的模块（Introduction）:',
           validate: function (str) {
@@ -51,38 +59,46 @@ function launch () {
         }
       ])
         .then(answers => {
-          let TplModuleNameUpper = answers.TplModuleName.replace(/^([a-z])/, (result, match) => (match && match.toUpperCase() || ''));
-          answers = Object.assign(answers, projectAnswers, { TplModuleNameUpper });
-          spinner.start();
-          Promise.all([fileDirectoryExists(answers.TplProjectName), fileDirectoryExists(`${answers.TplProjectName}/modules/${answers.TplModuleName}`)])
-            .then(values => {
-              let projectExists = values[0];
-              let moduleExists = values[1]
-              if (!projectExists) {
-                throw new Error(`请确定${answers.TplProjectName}项目是否存在`)
+          //! 判断图标是否存在
+          pathExists(path.join(`./components/assets/left-menu-svg/${answers.TplModuleIconName}.svg`))
+            .then(exists => {
+              if (!exists) {
+                console.log(chalk.red('\n模块图标不存在请先添加'))
+                process.exit()
               }
-              if (moduleExists) {
-                throw new Error(`${answers.TplProjectName}项目下的已经存在${answers.TplModuleName}模块，请重新命名模块名称`)
-              }
-              writeRouteConfig(answers)
-                .then(() => {
-                  copyTem(answers)
+              let TplModuleNameUpper = answers.TplModuleName.replace(/^([a-z])/, (result, match) => (match && match.toUpperCase() || ''));
+              answers = Object.assign(answers, projectAnswers, { TplModuleNameUpper });
+              spinner.start();
+              Promise.all([fileDirectoryExists(answers.TplProjectName), fileDirectoryExists(`${answers.TplProjectName}/modules/${answers.TplModuleName}`)])
+                .then(values => {
+                  let projectExists = values[0];
+                  let moduleExists = values[1]
+                  if (!projectExists) {
+                    throw new Error(`请确定${answers.TplProjectName}项目是否存在`)
+                  }
+                  if (moduleExists) {
+                    throw new Error(`${answers.TplProjectName}项目下的已经存在${answers.TplModuleName}模块，请重新命名模块名称`)
+                  }
+                  writeRouteConfig(answers)
                     .then(() => {
-                      compiler(answers)
+                      copyTem(answers)
                         .then(() => {
-                          spinner.succeed(`${answers.TplProjectName}项目下的${answers.TplModuleName}模块构建完成`);
+                          compiler(answers)
+                            .then(() => {
+                              spinner.succeed(`${answers.TplProjectName}项目下的${answers.TplModuleName}模块构建完成`);
+                            })
+                            .catch((error) => {
+                              spinner.fail(error);
+                            })
                         })
-                        .catch((error) => {
+                        .catch(error => {
                           spinner.fail(error);
                         })
                     })
-                    .catch(error => {
-                      spinner.fail(error);
-                    })
                 })
-            })
-            .catch(error => {
-              spinner.fail(error);
+                .catch(error => {
+                  spinner.fail(error);
+                })
             })
         })
     })
@@ -122,6 +138,7 @@ async function writeRouteConfig (answers) {
   json.push({
     module: answers.TplModuleName,
     introduction: answers.TplModuleIntroduction,
+    icon: answers.TplModuleIconName,
     pages: []
   })
   await jsonfile.writeFile(configDir, json)

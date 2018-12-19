@@ -8,6 +8,7 @@ import svgs from 'components/layout/blog-icon.vue'
 import 'components/styles/base.styl'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
+import 'nprogress/nprogress.css'
 
 Vue.use(VueMaterial)
 

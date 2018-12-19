@@ -1,5 +1,6 @@
 import { isFunction } from 'components/tools/utils.js'
 import store from '../store/index.js'
+import NProgress from 'nprogress'
 //! VUE模块钩子
 import { entryBefore as VUEEntryBefore } from '../modules/VUE/routes/routerHooks.js'
 /* @init<%
@@ -42,6 +43,7 @@ export function routerHooks (router) {
 
   //! 页面进来之前
   router.beforeEach((to, from, next) => {
+    NProgress.start()
     let { meta: { module } = {} } = to || {}
     //? 进入模块级导航钩子
     let entryBefore = hooksModel[`${module}EntryBefore`]
@@ -66,6 +68,7 @@ export function routerHooks (router) {
 
   //! 页面进来之后
   router.afterEach((to, from) => {
+    NProgress.done()
     let { meta: { preload } = {} } = to || {}
     //? 预加载数据
     if (isFunction(preload)) {

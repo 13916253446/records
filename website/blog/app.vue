@@ -73,6 +73,7 @@ export default {
     },
     //? 选择页面
     selectPage (path) {
+      if (!path) return false
       this.$router.push({ path })
     }
   }
