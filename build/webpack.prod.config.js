@@ -11,7 +11,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const {VueLoaderPlugin} = require('vue-loader');
 
 var count = 0;
 
@@ -32,8 +31,8 @@ const webpackConfig = {
   output: {
     path: config.prod.assetsRoot,
     publicPath: config.prod.assetsPublicPath,
-    filename: '[name]/static/js/[name].[chunkhash].js',
-    chunkFilename: asyncBase + 'js/[name].[chunkhash].js',
+    filename: 'static/js/[name].[chunkhash:7].js',
+    chunkFilename: 'static/asyncjs/[name].[chunkhash:7].js',
     crossOriginLoading: 'anonymous'
   },
   optimization: {
@@ -59,6 +58,12 @@ const webpackConfig = {
           minChunks: 2,
           priority: -20,
           reuseExistingChunk: true
+        },
+        styles: {
+          name: 'styles',
+          test: /\.(css|styl|stylus|sass|scss|less)$/,
+          chunks: 'all',
+          enforce: true
         }
       }
     },
@@ -81,13 +86,11 @@ const webpackConfig = {
     new webpack.DefinePlugin({
       'process.env': config.prod.defineEnv
     }),
-    new VueLoaderPlugin(),
     // extract css into its own file
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: '[name]/static/css/[name].[hash].css',
-      chunkFilename: asyncBase + 'css/[id].[hash].css'
+      filename: 'static/css/[name].[hash:7].css'
     }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),

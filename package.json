@@ -7,7 +7,7 @@
     "/": "开发环境编译项目,可以跟具体的项目名称，默认是所有的项目",
     "dev": "node ./build/dev.js",
     "//": "生产环境发布代码，可以跟具体的项目名称，默认是所有的项目",
-    "build": "node ./build/build.js",
+    "build": "npm run clear:dist && node ./build/build.js",
     "///": "提交代码",
     "commit": "git-cz",
     "////": "验证commit信息",
@@ -17,7 +17,9 @@
     "//////": "创建路由页面",
     "create:page": "node ./build/create-page.js",
     "///////": "创建新项目",
-    "create:project": "node ./build/create-project.js"
+    "create:project": "node ./build/create-project.js",
+    "////////": "清除目录",
+    "clear:dist": "rimraf dist"
   },
   "repository": {
     "type": "git",

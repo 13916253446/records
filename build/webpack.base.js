@@ -76,14 +76,14 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 1000,
-          name: file => relative(file) + '/static/img/[name].[hash:7].[ext]'
+          name: file =>'static/img/[name].[hash:7].[ext]'
         }
       }, {
         test: /\.svg$/,
         loader: 'svg-sprite-loader',
         options: {
           extract: true,
-          spriteFilename: svgPath => `sprite${svgPath.substr(-4)}`
+          spriteFilename: svgPath => ('sprite.[hash:7]'+ svgPath.substr(-4))
         }
       },
       {
@@ -91,14 +91,14 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 1000,
-          name: file => relative(file) + '/static/media/[name].[hash:7].[ext]'
+          name: file => 'static/media/[name].[hash:7].[ext]'
         }
       }, {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 1000,
-          name: file => relative(file) + '/static/fonts/[name].[hash:7].[ext]'
+          name: file => 'static/fonts/[name].[hash:7].[ext]'
         }
       }
     ]

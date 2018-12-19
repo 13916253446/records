@@ -7,8 +7,9 @@ import svgs from 'components/layout/blog-icon.vue'
 //! 导入公共样式
 import 'components/styles/base.styl'
 import 'vue-material/dist/vue-material.min.css'
-import 'vue-material/dist/theme/default.css'
+import 'vue-material/dist/theme/black-green-light.css'
 import 'nprogress/nprogress.css'
+import 'highlight.js/styles/atom-one-dark.css'
 
 Vue.use(VueMaterial)
 

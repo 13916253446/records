@@ -132,7 +132,7 @@ exports.setMultipagePlugin = function (pageDir, entryPath, htmlOptions) {
   let webpackConfig = { plugins: [] }
   const getWebpackConfig = function (pathname) {
     const opt = Object.assign({}, {
-      filename: pathname + '/index.html',
+      filename: 'index.html',
       template: pages[pathname],
       chunks: [pathname],
       inject: true,
