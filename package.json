@@ -22,7 +22,7 @@
     "clear:dist": "rimraf dist",
     "/////////": "发布站点",
     "predeploy": "npm run build blog",
-    "deploy": "gh-pages -d dist"
+    "deploy": "node build/publish.js"
   },
   "repository": {
     "type": "git",
