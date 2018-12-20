@@ -109,7 +109,7 @@ module.exports = {
     new WorkboxPlugin.GenerateSW({
       // 这些选项帮助 ServiceWorkers 快速启用
       // 不允许遗留任何“旧的” ServiceWorkers
-      limportWorkboxFrom: 'local',
+      importWorkboxFrom: 'local',
       clientsClaim: true,
       skipWaiting: true
     })
