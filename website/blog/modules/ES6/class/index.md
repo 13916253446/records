@@ -50,3 +50,59 @@ class Test {
 实例化之后：
 
 ![](https://shadow.hfcui.com/blog/screely-1545397701529.png)
+
+# 静态属性和方法
+
+什么是静态属性静态方法：只能通过类本身来调用，不能通过类的实例来调用
+
+```javascript
+class Test {
+    static getWeight () {
+        return 160
+    }
+}
+// 类本身可以调用
+Test.getWeight() //160
+
+// 实例不能调用
+new Test().getWeight //undefined
+```
+
+这就说明几个问题：
+
+-   静态方法之间可以相互调用，非静态方法就不能调用静态方法
+    
+    ```javascript
+    class Test {
+        static getWeight () {
+            return 160
+        }
+        // 可以调用
+        static getPerson () {
+            return {
+                weight: this.getWeigth()
+            }
+        }
+        // 会抛出错误 Uncaught TypeError: this.getWeight is not a function
+        getMan () {
+            return {
+                weight: this.getWeight()
+            }
+        }
+    }
+    ```
+    
+-   非静态方法可以通过类名来调用静态方法
+    
+    ```javascript
+    class Test {
+      static getWeight () {
+        return 160
+      }
+      getMan () {
+        return {
+          weight: Test.getWeight()
+        }
+      }
+    }
+    ```
