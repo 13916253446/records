@@ -94,10 +94,9 @@ export default {
 
 <style lang="stylus" scoped>
 .menu-icon
-  width 25px
-  height 25px
-  margin-right 32px
-  min-width 25px
+  width 35px
+  height 35px
+  min-width 35px
 .md-app {
     min-height: 100vh;
     border: 1px solid rgba(#000, .12);
