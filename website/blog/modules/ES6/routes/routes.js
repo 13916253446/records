@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "ES6.pageTemplate" */'components/template/page/page.vue')
 let loadAsync = () => import(/* webpackChunkName: "ES6.async" */'../async/index.vue')
+let loadClass = () => import(/* webpackChunkName: "ES6.class" */'../class/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/ES6/class',
+    name: 'ES6Class',
+    component: loadClass,
+    meta: {
+      module: 'ES6',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'class用法总结',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
