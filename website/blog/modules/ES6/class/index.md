@@ -106,3 +106,20 @@ new Test().getWeight //undefined
       }
     }
     ```
+#### 通过`static`可以申明静态方法，那么怎么申明静态属性呢
+
+我们知道申明原型属性才用偏门的方法`get`的方式，那么通过`static`结合`get`的方式就可以申明一个静态属性
+
+```javascript
+class Test {
+    static get weight () {
+        return 160
+    }
+}
+
+// 类本身可以访问
+Test.weight // 160
+
+// 实例不可以访问
+new Test().weight // undefined
+```
