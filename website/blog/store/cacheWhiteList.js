@@ -2,15 +2,21 @@
 //! VUE模块白名单
 import VUEWhite from '../modules/VUE/store/cacheWhiteList.js'
 //! CSS模块白名单
-import CSSWhite from '../modules/CSS/store/cacheWhiteList.js'
+import CSSWhite from '../modules/CSS/store/cacheWhiteList.js'
+//! ES6模块白名单
+import ES6White from '../modules/ES6/store/cacheWhiteList.js'
+/* eslint-disable */
+
+
 /* @init<%
 //! ${TplModuleName}模块白名单
 import ${TplModuleName}White from '../modules/${TplModuleName}/store/cacheWhiteList.js'%> */
-
-/* eslint-disable */
 export const whiteList = [
   ...VUEWhite,
-  ...CSSWhite,
+  ...CSSWhite,
+  ...ES6White,
+
+
   /* @init<%
   ...${TplModuleName}White,%>*/
 ]

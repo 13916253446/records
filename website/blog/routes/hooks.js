@@ -5,6 +5,8 @@ import NProgress from 'nprogress'
 import { entryBefore as VUEEntryBefore } from '../modules/VUE/routes/routerHooks.js'
 //! CSS模块钩子
 import { entryBefore as CSSEntryBefore } from '../modules/CSS/routes/routerHooks.js'
+//! ES6模块钩子
+import { entryBefore as ES6EntryBefore } from '../modules/ES6/routes/routerHooks.js'
 /* @init<%
 //! ${TplModuleName}模块钩子
 import { entryBefore as ${TplModuleName}EntryBefore } from '../modules/${TplModuleName}/routes/routerHooks.js'%> */
@@ -15,6 +17,7 @@ const hooksModel = {
   'test': '',
   VUEEntryBefore,
   CSSEntryBefore,
+  ES6EntryBefore,
   /* @init<%
   ${TplModuleName}EntryBefore,%>*/
 }

@@ -6,6 +6,8 @@ import whiteList from './cacheWhiteList.js'
 import VUEStore from '../modules/VUE/store/store.js'
 //! css总结
 import CSSStore from '../modules/CSS/store/store.js'
+//! 常用ES6总结
+import ES6Store from '../modules/ES6/store/store.js'
 /* @init<%
 //! ${TplModuleIntroduction}
 import ${TplModuleName}Store from '../modules/${TplModuleName}/store/store.js'%> */
@@ -67,6 +69,11 @@ export const store = new Vuex.Store({
       namespaced: true,
       ...CSSStore
     },
+    //! 常用ES6总结
+    ES6: {
+      namespaced: true,
+      ...ES6Store
+    },
     /* @init<%
     //! ${TplModuleIntroduction}
     ${TplModuleName}: {

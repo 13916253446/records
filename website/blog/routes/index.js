@@ -5,6 +5,8 @@ import routerHooks from './hooks.js'
 import VUERoutes from '../modules/VUE/routes/routes.js'
 //! css总结
 import CSSRoutes from '../modules/CSS/routes/routes.js'
+//! 常用ES6总结
+import ES6Routes from '../modules/ES6/routes/routes.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -16,6 +18,8 @@ const routes = [
   ...VUERoutes,
   //! css总结
   ...CSSRoutes,
+  //! 常用ES6总结
+  ...ES6Routes,
   /* @init<%
   //! ${TplModuleIntroduction}
   ...${TplModuleName}Routes,%>*/

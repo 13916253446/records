@@ -16,7 +16,7 @@ const devWebpackConfig = {
   output: {
     path: config.assetsRoot,
     publicPath: config.assetsPublicPath,
-    filename: '[name]/static/js/[name].js',
+    filename: '[name]/static/js/[name][hash:6].js',
     chunkFilename: '[name][hash:6].js',
   },
   module: {
