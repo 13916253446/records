@@ -10,6 +10,8 @@ import ES6Routes from '../modules/ES6/routes/routes.js'
 //! chrome使用总结
 import chromeRoutes from '../modules/chrome/routes/routes.js'
 /* eslint-disable */
+//! 新的API
+import newAPIRoutes from '../modules/newAPI/routes/routes.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -24,6 +26,8 @@ const routes = [
   ...ES6Routes,
   //! chrome使用总结
   ...chromeRoutes,
+  //! 新的API
+  ...newAPIRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}

@@ -8,19 +8,25 @@ import { entryBefore as CSSEntryBefore } from '../modules/CSS/routes/routerHooks
 //! ES6模块钩子
 import { entryBefore as ES6EntryBefore } from '../modules/ES6/routes/routerHooks.js'
 //! chrome模块钩子
-import { entryBefore as chromeEntryBefore } from '../modules/chrome/routes/routerHooks.js'
+import { entryBefore as chromeEntryBefore } from '../modules/chrome/routes/routerHooks.js'
+//! newAPI模块钩子
+import { entryBefore as newAPIEntryBefore } from '../modules/newAPI/routes/routerHooks.js'
+/* eslint-disable */
+
 /* @init<%
 //! ${TplModuleName}模块钩子
 import { entryBefore as ${TplModuleName}EntryBefore } from '../modules/${TplModuleName}/routes/routerHooks.js'%> */
 
 //? 存放钩子模型
-/* eslint-disable */
 const hooksModel = {
   'test': '',
   VUEEntryBefore,
   CSSEntryBefore,
   ES6EntryBefore,
-  chromeEntryBefore,
+  chromeEntryBefore,
+  newAPIEntryBefore,
+
+
   /* @init<%
   ${TplModuleName}EntryBefore,%>*/
 }

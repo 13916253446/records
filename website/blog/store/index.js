@@ -11,6 +11,8 @@ import ES6Store from '../modules/ES6/store/store.js'
 //! chrome使用总结
 import chromeStore from '../modules/chrome/store/store.js'
 /* eslint-disable */
+//! 新的API
+import newAPIStore from '../modules/newAPI/store/store.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -81,6 +83,11 @@ export const store = new Vuex.Store({
     chrome: {
       namespaced: true,
       ...chromeStore
+    },
+    //! 新的API
+    newAPI: {
+      namespaced: true,
+      ...newAPIStore
     },
 
 
