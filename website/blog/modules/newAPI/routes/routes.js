@@ -2,6 +2,7 @@
 
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "newAPI.pageTemplate" */'components/template/page/page.vue')
+let loadLifecycleAPI = () => import(/* webpackChunkName: "newAPI.LifecycleAPI" */'../LifecycleAPI/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -25,6 +26,19 @@ export const routes = [
       //? 页面标题
       title: '例子',
       //? 预加载方法，可以预加载后续页面，这个方法会在页面进来之后，空闲的时间去执行，不干扰当前页面
+      preload () {}
+    }
+  },
+  {
+    path: '/newAPI/LifecycleAPI',
+    name: 'NewAPILifecycleAPI',
+    component: loadLifecycleAPI,
+    meta: {
+      module: 'newAPI',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'Lifecycle监听网页冻结,激活,卸载',
       preload () {}
     }
   },
