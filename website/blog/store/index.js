@@ -7,7 +7,11 @@ import VUEStore from '../modules/VUE/store/store.js'
 //! css总结
 import CSSStore from '../modules/CSS/store/store.js'
 //! 常用ES6总结
-import ES6Store from '../modules/ES6/store/store.js'
+import ES6Store from '../modules/ES6/store/store.js'
+//! chrome使用总结
+import chromeStore from '../modules/chrome/store/store.js'
+/* eslint-disable */
+
 /* @init<%
 //! ${TplModuleIntroduction}
 import ${TplModuleName}Store from '../modules/${TplModuleName}/store/store.js'%> */
@@ -52,7 +56,6 @@ for (let key in state) {
   }
 }
 
-/* eslint-disable */
 export const store = new Vuex.Store({
   //? TODO:开启严格模式会深度监测状态树来检测不合规的状态变更，开发环境约束好，生产环境关闭掉
   strict: process.env.NODE_ENV !== 'production',
@@ -73,7 +76,14 @@ export const store = new Vuex.Store({
     ES6: {
       namespaced: true,
       ...ES6Store
-    },
+    },
+    //! chrome使用总结
+    chrome: {
+      namespaced: true,
+      ...chromeStore
+    },
+
+
     /* @init<%
     //! ${TplModuleIntroduction}
     ${TplModuleName}: {

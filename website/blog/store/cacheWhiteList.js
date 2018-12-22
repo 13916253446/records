@@ -6,6 +6,8 @@ import CSSWhite from '../modules/CSS/store/cacheWhiteList.js'
 //! ES6模块白名单
 import ES6White from '../modules/ES6/store/cacheWhiteList.js'
 /* eslint-disable */
+//! chrome模块白名单
+import chromeWhite from '../modules/chrome/store/cacheWhiteList.js'
 
 
 /* @init<%
@@ -15,6 +17,7 @@ export const whiteList = [
   ...VUEWhite,
   ...CSSWhite,
   ...ES6White,
+  ...chromeWhite,
 
 
   /* @init<%

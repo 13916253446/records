@@ -7,6 +7,8 @@ import { entryBefore as VUEEntryBefore } from '../modules/VUE/routes/routerHooks
 import { entryBefore as CSSEntryBefore } from '../modules/CSS/routes/routerHooks.js'
 //! ES6模块钩子
 import { entryBefore as ES6EntryBefore } from '../modules/ES6/routes/routerHooks.js'
+//! chrome模块钩子
+import { entryBefore as chromeEntryBefore } from '../modules/chrome/routes/routerHooks.js'
 /* @init<%
 //! ${TplModuleName}模块钩子
 import { entryBefore as ${TplModuleName}EntryBefore } from '../modules/${TplModuleName}/routes/routerHooks.js'%> */
@@ -18,6 +20,7 @@ const hooksModel = {
   VUEEntryBefore,
   CSSEntryBefore,
   ES6EntryBefore,
+  chromeEntryBefore,
   /* @init<%
   ${TplModuleName}EntryBefore,%>*/
 }
