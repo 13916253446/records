@@ -12,6 +12,8 @@ import { entryBefore as chromeEntryBefore } from '../modules/chrome/routes/route
 //! newAPI模块钩子
 import { entryBefore as newAPIEntryBefore } from '../modules/newAPI/routes/routerHooks.js'
 /* eslint-disable */
+//! Tools模块钩子
+import { entryBefore as ToolsEntryBefore } from '../modules/Tools/routes/routerHooks.js'
 
 /* @init<%
 //! ${TplModuleName}模块钩子
@@ -25,6 +27,7 @@ const hooksModel = {
   ES6EntryBefore,
   chromeEntryBefore,
   newAPIEntryBefore,
+  ToolsEntryBefore,
 
 
   /* @init<%

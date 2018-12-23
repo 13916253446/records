@@ -13,6 +13,8 @@ import chromeStore from '../modules/chrome/store/store.js'
 /* eslint-disable */
 //! 新的API
 import newAPIStore from '../modules/newAPI/store/store.js'
+//! 项目管理工具
+import ToolsStore from '../modules/Tools/store/store.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -89,6 +91,11 @@ export const store = new Vuex.Store({
       namespaced: true,
       ...newAPIStore
     },
+    //! 项目管理工具
+    Tools: {
+      namespaced: true,
+      ...ToolsStore
+    },
 
 
     /* @init<%
