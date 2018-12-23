@@ -198,3 +198,63 @@ lerna version
     ```powershell
     lerna version --conventional-commits
     ```
+
+# lerna create
+
+创建一个新的项目
+
+```powershell
+lerna create  [loc]
+
+Create a new lerna-managed package
+
+Positionals:
+  name  项目的名字 [string] [required]
+  loc   项目的位置，默认是第一个项目创建的位置         [string]
+
+Command Options:
+  --access        When using a scope, set publishConfig.access value
+                             [choices: "public", "restricted"] [default: public]
+  --bin           Package has an executable. Customize with --bin
+                                               [default: ]
+  --description   Package description                                   [string]
+  --dependencies  A list of package dependencies                         [array]
+  --es-module     Initialize a transpiled ES Module
+  --homepage      The package homepage, defaulting to a subpath of the root
+                  pkg.homepage                                          [string]
+  --keywords      A list of package keywords                             [array]
+  --license       The desired package license (SPDX identifier)   [default: ISC]
+  --private       Make the new package private, never published
+  --registry      Configure the package's publishConfig.registry        [string]
+  --tag           Configure the package's publishConfig.tag             [string]
+  --yes           Skip all prompts, accepting default values
+```
+
+# 安装各种依赖
+
+在开发之前，肯定是需要先安装各种eslint、prettier、commit-lint等等规范化库的，我们为啥要把一堆package放到一个仓库？其中一个原因不就是为了直接复用一套规范文件么。
+
+所以各种lint文件肯定是安装到项目全局的，这时如果使用lerna的安装命令:
+
+```powershell
+lerna add eslint --dev
+```
+
+就会发现一个问题，每个package都被单独安装了eslint，这明显是不合适的，既然是同一个项目，安装多次同一个模块算个什么事？
+
+然后我们发现，lerna有提到如果你想只安装一次，那么可以把这些依赖写到每个package的package.json中，然后回到根目录运行:
+
+```powershell
+lerna bootstrap --hoist
+```
+
+bootstrap是learna一键为所有package安装依赖的命令，如果加上了--hoist参数，那么就是告诉lerna，把所有依赖全部安装到根目录中，然后分别在各自的文件夹中创建软连接指向对应的模块实际路径。
+
+从解决问题的眼光来看，确实解决了重复安装的问题，不过所有模块都装到根目录混杂在一起，这让强迫症心里很不舒服，我们希望的其实是只有lint这些公共库提取出来，其他的他们自己的依赖放到他们自己的文件夹中。
+ 在参考了[Babel](<https://github.com/babel/babel>)仓库的做法后，明白了。因为node自身在查找模块的时候有向父级目录查询的操作，所以其实软连接什么的并不需要，甚至都不需要lerna，我们直接
+
+```powershell
+yarn add -D eslint
+```
+
+这样便直接将eslint安装到了根目录中，由于层级高，所以子目录都会受到lint规则的约束。同样，为此安装好husky等等基本库，完成仓库的初始化。
