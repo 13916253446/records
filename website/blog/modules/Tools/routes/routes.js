@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "Tools.pageTemplate" */'components/template/page/page.vue')
 let loadNpm = () => import(/* webpackChunkName: "Tools.npm" */'../npm/index.vue')
+let loadLerna = () => import(/* webpackChunkName: "Tools.lerna" */'../lerna/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/Tools/lerna',
+    name: 'ToolsLerna',
+    component: loadLerna,
+    meta: {
+      module: 'Tools',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'Lerna多项目管理',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
