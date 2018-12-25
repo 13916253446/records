@@ -13,7 +13,8 @@ import chromeRoutes from '../modules/chrome/routes/routes.js'
 //! 新的API
 import newAPIRoutes from '../modules/newAPI/routes/routes.js'
 //! 项目管理工具
-import ToolsRoutes from '../modules/Tools/routes/routes.js'
+import ToolsRoutes from '../modules/Tools/routes/routes.js'
+
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -31,7 +32,13 @@ const routes = [
   //! 新的API
   ...newAPIRoutes,
   //! 项目管理工具
-  ...ToolsRoutes,
+  ...ToolsRoutes,
+  //! 404页面
+  {
+    path: '*',
+    name: '404',
+    component: import(/* webpackChunkName: "404" */'../404.vue')
+  }
 
   /* @init<%
   //! ${TplModuleIntroduction}

@@ -1,13 +1,13 @@
 //? 常用ES6总结模块路由
-
+/* eslint-disable */
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "ES6.pageTemplate" */'components/template/page/page.vue')
 let loadAsync = () => import(/* webpackChunkName: "ES6.async" */'../async/index.vue')
-let loadClass = () => import(/* webpackChunkName: "ES6.class" */'../class/index.vue')
+let loadClass = () => import(/* webpackChunkName: "ES6.class" */'../class/index.vue')
+let loadPromiseTopic = () => import(/* webpackChunkName: "ES6.promiseTopic" */'../promiseTopic/index.vue')
+
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
-
-/* eslint-disable */
 export const routes = [
   {
     //! 模块/组件名字
@@ -55,7 +55,22 @@ export const routes = [
       title: 'class用法总结',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/ES6/promiseTopic',
+    name: 'ES6PromiseTopic',
+    component: loadPromiseTopic,
+    meta: {
+      module: 'ES6',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'Promise题目解析',
+      preload () {}
+    }
+  },
+
+
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
