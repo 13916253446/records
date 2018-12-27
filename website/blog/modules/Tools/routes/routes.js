@@ -3,9 +3,10 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "Tools.pageTemplate" */'components/template/page/page.vue')
 let loadNpm = () => import(/* webpackChunkName: "Tools.npm" */'../npm/index.vue')
-let loadLerna = () => import(/* webpackChunkName: "Tools.lerna" */'../lerna/index.vue')
-/* @init<%
-let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
+let loadLerna = () => import(/* webpackChunkName: "Tools.lerna" */'../lerna/index.vue')
+let loadMacSkitll = () => import(/* webpackChunkName: "Tools.MacSkitll" */'../MacSkitll/index.vue')
+/* @init<%let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')
+%> */
 
 /* eslint-disable */
 export const routes = [
@@ -55,7 +56,22 @@ export const routes = [
       title: 'Lerna多项目管理',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/Tools/MacSkitll',
+    name: 'ToolsMacSkitll',
+    component: loadMacSkitll,
+    meta: {
+      module: 'Tools',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'Mac使用技巧',
+      preload () {}
+    }
+  },
+
+
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
