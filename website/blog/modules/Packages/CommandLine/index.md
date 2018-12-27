@@ -21,3 +21,21 @@
       })
       .argv
     ```
+-   [commander for github](https://github.com/tj/commander.js) [commander fro 中文](https://github.com/tj/commander.js/blob/master/Readme_zh-CN.md)
+    
+    ```javascript
+    program
+      .version('0.1.0')
+      .option('-s --size ', 'Pizza size', /^(large|medium|small)$/i, 'medium')
+      .option('-d --drink [drink]', 'Drink', /^(coke|pepsi|izze)$/i)
+      .parse(process.argv);
+    
+    console.log(' size: %j', program.size);
+    console.log(' drink: %j', program.drink);
+    ```
+
+# 命令行提示输入，选择
+
+-   [Inquirer](https://github.com/SBoudrias/Inquirer.js)
+    
+    ![](http://mp1.oss-cn-beijing.aliyuncs.com/blog/screely-1545880290447.png)
