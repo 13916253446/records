@@ -11,7 +11,9 @@ import chromeWhite from '../modules/chrome/store/cacheWhiteList.js'
 //! newAPI模块白名单
 import newAPIWhite from '../modules/newAPI/store/cacheWhiteList.js'
 //! Tools模块白名单
-import ToolsWhite from '../modules/Tools/store/cacheWhiteList.js'
+import ToolsWhite from '../modules/Tools/store/cacheWhiteList.js'
+//! Packages模块白名单
+import PackagesWhite from '../modules/Packages/store/cacheWhiteList.js'
 
 
 /* @init<%
@@ -23,7 +25,8 @@ export const whiteList = [
   ...ES6White,
   ...chromeWhite,
   ...newAPIWhite,
-  ...ToolsWhite,
+  ...ToolsWhite,
+  ...PackagesWhite,
 
 
   /* @init<%

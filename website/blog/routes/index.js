@@ -14,6 +14,8 @@ import chromeRoutes from '../modules/chrome/routes/routes.js'
 import newAPIRoutes from '../modules/newAPI/routes/routes.js'
 //! 项目管理工具
 import ToolsRoutes from '../modules/Tools/routes/routes.js'
+//! 插件包
+import PackagesRoutes from '../modules/Packages/routes/routes.js'
 
 
 /* @init<%
@@ -38,7 +40,9 @@ const routes = [
     path: '*',
     name: '404',
     component: import(/* webpackChunkName: "404" */'../404.vue')
-  }
+  },
+  //! 插件包
+  ...PackagesRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}

@@ -319,3 +319,23 @@ $ npm config set foo:port 80
     "env": "env"
 }
 ```
+
+# 开发命令行工具的时候
+
+-   配置多个命令
+    
+    ```json
+    {
+        "name": "pro-cli",
+        "bin": {
+           "pro": "bin/pro.js",
+           "mini": "bin/mini.js"
+         }
+    }
+    ```
+    
+-   命令行入口一定加上：
+    
+    ```javascript
+    #!/usr/bin/env node
+    ```
