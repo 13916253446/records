@@ -5,7 +5,9 @@ let loadPageExample = () => import(/* webpackChunkName: "Tools.pageTemplate" */'
 let loadNpm = () => import(/* webpackChunkName: "Tools.npm" */'../npm/index.vue')
 let loadLerna = () => import(/* webpackChunkName: "Tools.lerna" */'../lerna/index.vue')
 let loadMacSkitll = () => import(/* webpackChunkName: "Tools.MacSkitll" */'../MacSkitll/index.vue')
-/* @init<%let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')
+let loadMarkdownTree = () => import(/* webpackChunkName: "Tools.markdownTree" */'../markdownTree/index.vue')
+/* @init<%
+let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')
 %> */
 
 /* eslint-disable */
@@ -67,6 +69,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: 'Mac使用技巧',
+      preload () {}
+    }
+  },
+  {
+    path: '/Tools/markdownTree',
+    name: 'ToolsMarkdownTree',
+    component: loadMarkdownTree,
+    meta: {
+      module: 'Tools',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'markdown文件编写树形目录',
       preload () {}
     }
   },
