@@ -94,3 +94,16 @@
   ```
 
 通过计算属性的`get`以及`set`方法，无论在什么情况都能初始化值以及提交子组件的值
+
+# 自定义插件里面的上下文
+
+默认自定义插件里面的函数是读取不到`this`的，`this`是`undefined`，但是可以通过虚拟`DOM`获取
+
+```javascript
+Vue.directive('report', {
+    bind (el, binding, vnode) {
+        this // undefined
+        vnode.context //当前使用这个指令的组件的上下文
+    }
+})
+```
