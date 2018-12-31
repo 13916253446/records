@@ -16,7 +16,9 @@ import newAPIStore from '../modules/newAPI/store/store.js'
 //! 项目管理工具
 import ToolsStore from '../modules/Tools/store/store.js'
 //! 插件包
-import PackagesStore from '../modules/Packages/store/store.js'
+import PackagesStore from '../modules/Packages/store/store.js'
+//! 原生js
+import javascriptStore from '../modules/javascript/store/store.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -102,7 +104,12 @@ export const store = new Vuex.Store({
     Packages: {
       namespaced: true,
       ...PackagesStore
-    },
+    },
+    //! 原生js
+    javascript: {
+      namespaced: true,
+      ...javascriptStore
+    },
 
 
     /* @init<%

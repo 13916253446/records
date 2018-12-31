@@ -16,6 +16,8 @@ import newAPIRoutes from '../modules/newAPI/routes/routes.js'
 import ToolsRoutes from '../modules/Tools/routes/routes.js'
 //! 插件包
 import PackagesRoutes from '../modules/Packages/routes/routes.js'
+//! 原生js
+import javascriptRoutes from '../modules/javascript/routes/routes.js'
 
 
 /* @init<%
@@ -43,6 +45,8 @@ const routes = [
   },
   //! 插件包
   ...PackagesRoutes,
+  //! 原生js
+  ...javascriptRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}
