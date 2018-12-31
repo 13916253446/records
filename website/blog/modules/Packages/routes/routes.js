@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "Packages.pageTemplate" */'components/template/page/page.vue')
 let loadCommandLine = () => import(/* webpackChunkName: "Packages.CommandLine" */'../CommandLine/index.vue')
+let loadVue = () => import(/* webpackChunkName: "Packages.vue" */'../vue/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/Packages/vue',
+    name: 'PackagesVue',
+    component: loadVue,
+    meta: {
+      module: 'Packages',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'Vue插件包',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
