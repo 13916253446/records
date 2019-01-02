@@ -84,3 +84,103 @@ let a = Object.create(null, {
 })
 Object.prototype.hasOwnProperty.call(a,'name')
 ```
+
+# 遍历对象
+
+-   `for...in`
+    
+    -   包括原型上的属性（所以一般配合hasOwnerProperty使用）
+        
+    -   只遍历可枚举的属性
+        
+    -   不包含`Symbol`属性
+        
+    
+    ```javascript
+    let obj = { name: '崔海峰' }
+    for (let item in obj) {
+        if (obj.hasOwnerProperty(item)) {
+            //TODO
+        }
+    }
+    ```
+    
+-   `Object.getOwnPropertyNames`
+    
+    -   返回自身的所有属性名称（**不包括原型上的属性**）
+        
+    -   包括不可枚举的属性
+        
+    -   不包含`Symbol`属性
+        
+    
+    ```javascript
+    let obj = Object.create({ age: 26 }, { name: {
+      writable: true,
+      value: '崔海峰',
+      enumerable: true
+    }})
+    
+    Object.getOwnPropertyNames(obj) //{ name: '崔海峰' }
+    ```
+    
+-   `Object.keys`
+    
+    -   返回自身的所有属性名称（**不包括原型上的属性**）
+        
+    -   不包括不可枚举的属性
+        
+    -   不包含`Symbol`属性
+        
+-   `Object.values`
+    
+    -   返回自身的所有属性值（**不包括原型上的属性**）
+        
+    -   不包括不可枚举的属性值
+        
+    -   不包含`Symbol`属性
+        
+-   `Object.entries`
+    
+    -   返回自身的所有属性名称和属性值的集合（**不包括原型上的属性**）
+        
+    -   不包括不可枚举的属性值
+        
+    -   不包含`Symbol`属性
+        
+    
+    ```javascript
+    let obj = Object.create({ name: '崔海峰' }, {
+        age: {
+            value: 26,
+           enumerable: true
+        }
+    })
+    
+    Object.entries(obj) //[[ age, 26 ]]
+    ```
+    
+-   `Object.getOwnPropertySymbols`
+    
+    -   返回自身的`Symbol`属性（**不包括原型上的属性**）
+        
+    -   包括不可枚举的属性
+        
+-   `Reflect.ownKeys`
+    
+    -   返回自身的所有属性名称和属性值的集合（**不包括原型上的属性**）
+        
+    -   包括不可枚举的属性值
+        
+    -   包含`Symbol`属性
+        
+    
+    **返回对象自身所有的属性名称不管是否可枚举，是否是`Symbol`**
+    
+-   `Reflect.enumerate`
+    
+    -   返回自身的所有属性名称和属性值的集合（**包括原型上的属性**）
+        
+    -   不包括不可枚举的属性值
+        
+    -   不包含`Symbol`属性
