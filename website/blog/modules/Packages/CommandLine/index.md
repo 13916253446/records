@@ -11,6 +11,7 @@
 
 -   [Inquirer](https://github.com/SBoudrias/Inquirer.js)
 - [prompts](https://github.com/terkelg/prompts)
+-   [enquirer](https://github.com/enquirer/enquirer)样式好看一点的prompt
 
 # 执行命令
 
