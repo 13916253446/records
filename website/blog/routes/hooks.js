@@ -17,7 +17,9 @@ import { entryBefore as ToolsEntryBefore } from '../modules/Tools/routes/routerH
 //! Packages模块钩子
 import { entryBefore as PackagesEntryBefore } from '../modules/Packages/routes/routerHooks.js'
 //! javascript模块钩子
-import { entryBefore as javascriptEntryBefore } from '../modules/javascript/routes/routerHooks.js'
+import { entryBefore as javascriptEntryBefore } from '../modules/javascript/routes/routerHooks.js'
+//! bug模块钩子
+import { entryBefore as bugEntryBefore } from '../modules/bug/routes/routerHooks.js'
 
 /* @init<%
 //! ${TplModuleName}模块钩子
@@ -33,7 +35,8 @@ const hooksModel = {
   newAPIEntryBefore,
   ToolsEntryBefore,
   PackagesEntryBefore,
-  javascriptEntryBefore,
+  javascriptEntryBefore,
+  bugEntryBefore,
 
 
   /* @init<%

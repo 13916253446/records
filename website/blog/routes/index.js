@@ -18,6 +18,8 @@ import ToolsRoutes from '../modules/Tools/routes/routes.js'
 import PackagesRoutes from '../modules/Packages/routes/routes.js'
 //! 原生js
 import javascriptRoutes from '../modules/javascript/routes/routes.js'
+//! 项目中遇到的坑
+import bugRoutes from '../modules/bug/routes/routes.js'
 
 
 /* @init<%
@@ -47,6 +49,8 @@ const routes = [
   ...PackagesRoutes,
   //! 原生js
   ...javascriptRoutes,
+  //! 项目中遇到的坑
+  ...bugRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}
