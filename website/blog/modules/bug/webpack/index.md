@@ -25,6 +25,20 @@
      mainFields: ['browser', 'module', 'main']
     }
     ```
+    
+-  设置`alias`
+    
+    ```javascript
+    let alias = {
+      'vue$': 'vue/dist/vue.esm.js',
+      'vuex$': 'vuex/dist/vuex.esm.js',
+      'vue-router$': 'vue-router/dist/vue-router.esm.js',
+      //? 站点根节点的别名
+      '@': path.resolve(__dirname, '../src'),
+      //? 整个项目公共目录
+      'common': path.resolve(__dirname, '../common')
+    }
+    ```
 
 # `vw`适配方案
 
