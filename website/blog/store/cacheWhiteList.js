@@ -17,7 +17,9 @@ import PackagesWhite from '../modules/Packages/store/cacheWhiteList.js'
 //! javascript模块白名单
 import javascriptWhite from '../modules/javascript/store/cacheWhiteList.js'
 //! bug模块白名单
-import bugWhite from '../modules/bug/store/cacheWhiteList.js'
+import bugWhite from '../modules/bug/store/cacheWhiteList.js'
+//! Foods模块白名单
+import FoodsWhite from '../modules/Foods/store/cacheWhiteList.js'
 
 
 /* @init<%
@@ -32,7 +34,8 @@ export const whiteList = [
   ...ToolsWhite,
   ...PackagesWhite,
   ...javascriptWhite,
-  ...bugWhite,
+  ...bugWhite,
+  ...FoodsWhite,
 
 
   /* @init<%

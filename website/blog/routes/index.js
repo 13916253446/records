@@ -19,7 +19,9 @@ import PackagesRoutes from '../modules/Packages/routes/routes.js'
 //! 原生js
 import javascriptRoutes from '../modules/javascript/routes/routes.js'
 //! 项目中遇到的坑
-import bugRoutes from '../modules/bug/routes/routes.js'
+import bugRoutes from '../modules/bug/routes/routes.js'
+//! 干货
+import FoodsRoutes from '../modules/Foods/routes/routes.js'
 
 
 /* @init<%
@@ -50,7 +52,9 @@ const routes = [
   //! 原生js
   ...javascriptRoutes,
   //! 项目中遇到的坑
-  ...bugRoutes,
+  ...bugRoutes,
+  //! 干货
+  ...FoodsRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}

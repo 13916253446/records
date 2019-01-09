@@ -20,7 +20,9 @@ import PackagesStore from '../modules/Packages/store/store.js'
 //! 原生js
 import javascriptStore from '../modules/javascript/store/store.js'
 //! 项目中遇到的坑
-import bugStore from '../modules/bug/store/store.js'
+import bugStore from '../modules/bug/store/store.js'
+//! 干货
+import FoodsStore from '../modules/Foods/store/store.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -116,7 +118,12 @@ export const store = new Vuex.Store({
     bug: {
       namespaced: true,
       ...bugStore
-    },
+    },
+    //! 干货
+    Foods: {
+      namespaced: true,
+      ...FoodsStore
+    },
 
 
     /* @init<%

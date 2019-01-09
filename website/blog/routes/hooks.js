@@ -19,7 +19,9 @@ import { entryBefore as PackagesEntryBefore } from '../modules/Packages/routes/r
 //! javascript模块钩子
 import { entryBefore as javascriptEntryBefore } from '../modules/javascript/routes/routerHooks.js'
 //! bug模块钩子
-import { entryBefore as bugEntryBefore } from '../modules/bug/routes/routerHooks.js'
+import { entryBefore as bugEntryBefore } from '../modules/bug/routes/routerHooks.js'
+//! Foods模块钩子
+import { entryBefore as FoodsEntryBefore } from '../modules/Foods/routes/routerHooks.js'
 
 /* @init<%
 //! ${TplModuleName}模块钩子
@@ -36,7 +38,8 @@ const hooksModel = {
   ToolsEntryBefore,
   PackagesEntryBefore,
   javascriptEntryBefore,
-  bugEntryBefore,
+  bugEntryBefore,
+  FoodsEntryBefore,
 
 
   /* @init<%
