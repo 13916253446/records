@@ -5,6 +5,7 @@ let loadPageExample = () => import(/* webpackChunkName: "VUE.pageTemplate" */'co
 let loadSkill = () => import(/* webpackChunkName: "VUE.skill" */'../skill/index.vue')
 let loadPlugin = () => import(/* webpackChunkName: "VUE.plugin" */'../plugin/index.vue')
 let loadRender = () => import(/* webpackChunkName: "VUE.render" */'../render/index.vue')
+let loadAbstract = () => import(/* webpackChunkName: "VUE.abstract" */'../abstract/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -67,6 +68,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: '深入render函数',
+      preload () {}
+    }
+  },
+  {
+    path: '/VUE/abstract',
+    name: 'VUEAbstract',
+    component: loadAbstract,
+    meta: {
+      module: 'VUE',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '抽象组件',
       preload () {}
     }
   },
