@@ -3,7 +3,8 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "VUE.pageTemplate" */'components/template/page/page.vue')
 let loadSkill = () => import(/* webpackChunkName: "VUE.skill" */'../skill/index.vue')
-let loadPlugin = () => import(/* webpackChunkName: "VUE.plugin" */'../plugin/index.vue')
+let loadPlugin = () => import(/* webpackChunkName: "VUE.plugin" */'../plugin/index.vue')
+let loadRender = () => import(/* webpackChunkName: "VUE.render" */'../render/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -55,7 +56,20 @@ export const routes = [
       title: '注册Vue插件',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/VUE/render',
+    name: 'VUERender',
+    component: loadRender,
+    meta: {
+      module: 'VUE',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '深入render函数',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',

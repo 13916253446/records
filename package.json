@@ -41,6 +41,7 @@
     }
   },
   "devDependencies": {
+    "@qtt/git-plugin": "^1.0.8",
     "alioss-webpack-plugin": "^1.0.0",
     "autoprefixer": "^9.3.1",
     "babel-core": "^6.26.3",
