@@ -151,3 +151,7 @@
 # 在终端试用npm包
 
 -   [trymodule](https://github.com/victorb/trymodule)
+
+# 文件处理
+
+-   [globby](https://github.com/sindresorhus/globby) 可以使用正则快速友好的查找文件
