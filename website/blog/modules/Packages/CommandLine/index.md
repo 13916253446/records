@@ -32,6 +32,7 @@
 # 命令行进度条
 
 -   [progress](https://github.com/visionmedia/node-progress)
+-   [super-progress](https://github.com/s73obrien/super-progress)实体进度
 
 # 设置终端字体样式
 
@@ -155,3 +156,23 @@
 # 文件处理
 
 -   [globby](https://github.com/sindresorhus/globby) 可以使用正则快速友好的查找文件
+
+# 名称转驼峰
+
+- [uppercamelcase](https://www.npmjs.com/package/uppercamelcase)
+
+# 兼容各种系统的换行运算符
+
+```javascript
+var endOfLine = require('os').EOL
+```
+
+一个字符串常量,定义操作系统相关的行末标志:
+
+ -  \n 在 POSIX 系统上
+ - \r\n 在 Windows系统上
+
+ #  模板引擎
+
+ -  [json-templater](https://www.npmjs.com/package/json-templater) 模板解析字符串或者json文件
+
