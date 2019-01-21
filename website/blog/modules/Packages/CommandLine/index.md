@@ -96,6 +96,7 @@
 # 格式化输出对象
 
 -   [columnify](https://github.com/timoxley/columnify)
+-   [fx](https://github.com/antonmedv/fx) 控制台查看json文件
 
 # 设置命令行字帖
 
