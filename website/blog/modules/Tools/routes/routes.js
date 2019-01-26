@@ -7,6 +7,8 @@ let loadLerna = () => import(/* webpackChunkName: "Tools.lerna" */'../lerna/inde
 let loadMacSkitll = () => import(/* webpackChunkName: "Tools.MacSkitll" */'../MacSkitll/index.vue')
 let loadMarkdownTree = () => import(/* webpackChunkName: "Tools.markdownTree" */'../markdownTree/index.vue')
 let loadWebpackErrors = () => import(/* webpackChunkName: "Tools.webpackErrors" */'../webpackErrors/index.vue')
+let loadCss = () => import(/* webpackChunkName: "Tools.css" */'../css/index.vue')
+
 
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')
@@ -100,6 +102,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/Tools/css',
+    name: 'ToolsCss',
+    component: loadCss,
+    meta: {
+      module: 'Tools',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '常用css代码片段',
+      preload () {}
+    }
+  },
 
 
   /* @init<%
