@@ -177,3 +177,6 @@ var endOfLine = require('os').EOL
 
  -  [json-templater](https://www.npmjs.com/package/json-templater) 模板解析字符串或者json文件
 
+# 命令行检测页面性能
+
+  - [lighthouse-ci](https://github.com/ebidel/lighthouse-ci)
