@@ -8,8 +8,6 @@ let loadMacSkitll = () => import(/* webpackChunkName: "Tools.MacSkitll" */'../Ma
 let loadMarkdownTree = () => import(/* webpackChunkName: "Tools.markdownTree" */'../markdownTree/index.vue')
 let loadWebpackErrors = () => import(/* webpackChunkName: "Tools.webpackErrors" */'../webpackErrors/index.vue')
 let loadCss = () => import(/* webpackChunkName: "Tools.css" */'../css/index.vue')
-
-
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')
 %> */
@@ -114,7 +112,8 @@ export const routes = [
       title: '常用css代码片段',
       preload () {}
     }
-  },
+  },
+
 
 
   /* @init<%
