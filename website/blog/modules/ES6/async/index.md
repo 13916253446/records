@@ -56,3 +56,49 @@
          consoleg.log(res) //将执行到这里，打印“继续执行”
      })
     ```
+
+
+# 针对多个异步，而且每个错误状态进行不同的处理
+
+初级版： 每个 await 都写这么长，写着也不方便也不优雅
+
+```javascript
+(async () => {
+    const fetchData = async () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('fetch data is me')
+            }, 1000)
+        })
+    }
+
+    const [err, data] = await fetchData().then(data => [null, data] ).catch(err => [err, null])
+    console.log('err', err)
+    console.log('data', data)
+})()
+```
+
+最终版
+
+```javascript
+(async () => {
+    const fetchData = async () => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('fetch data is me')
+            }, 1000)
+        })
+    }
+
+    // 抽离成公共方法
+    const awaitWrap = (promise) => {
+        return promise
+            .then(data => [null, data])
+            .catch(err => [err, null])
+    }
+
+    const [err, data] = await awaitWrap(fetchData())
+    console.log('err', err)
+    console.log('data', data)
+})()
+```
