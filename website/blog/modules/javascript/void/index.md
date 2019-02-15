@@ -13,7 +13,7 @@ void expression
 -   **Return undefined.**
     
 
-**重点在于：**无论`void`后的表达式是什么，`void`操作符都会返回`undefined`
+**重点在于**无论`void`后的表达式是什么，`void`操作符都会返回`undefined`
 
 # 为什么要用void
 
@@ -121,13 +121,13 @@ console.log(girl.happiness); //还是8
     
     当用户点击一个以`javascript:` URI 时，它会执行URI中的代码，然后用返回的值替换页面内容，除非返回的值是[`undefined`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined "undefined是全局对象的一个属性。也就是说，它是全局作用域的一个变量。undefined的最初值就是原始数据类型undefined。")。`void`运算符可用于返回[`undefined`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined "undefined是全局对象的一个属性。也就是说，它是全局作用域的一个变量。undefined的最初值就是原始数据类型undefined。")。例如：
     
-    ```javascript
-    
-      这个链接点击之后不会做任何事情，如果去掉 void()，
-      点击之后整个页面会被替换成一个字符 0。
-    
-     chrome中即使也没变化，firefox中会变成一个字符串0 
-    
-      点击这个链接会让页面背景变成绿色。
-    
+    ```html
+    <a href="javascript:void(0);">
+    这个链接点击之后不会做任何事情，如果去掉 void()，
+    点击之后整个页面会被替换成一个字符 0。
+    </a>
+    <p> chrome中即使<a href="javascript:0;">也没变化，firefox中会变成一个字符串0 </p>
+    <a href="javascript:void(document.body.style.backgroundColor='green');">
+    点击这个链接会让页面背景变成绿色。
+    </a>
     ```
