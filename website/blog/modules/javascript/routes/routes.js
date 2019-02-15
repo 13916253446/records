@@ -5,6 +5,7 @@ let loadPageExample = () => import(/* webpackChunkName: "javascript.pageTemplate
 let loadSkill = () => import(/* webpackChunkName: "javascript.skill" */'../skill/index.vue')
 let loadObject = () => import(/* webpackChunkName: "javascript.object" */'../object/index.vue')
 let loadAst = () => import(/* webpackChunkName: "javascript.ast" */'../ast/index.vue')
+let loadVoid = () => import(/* webpackChunkName: "javascript.void" */'../void/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -67,6 +68,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: '抽象语法树',
+      preload () {}
+    }
+  },
+  {
+    path: '/javascript/void',
+    name: 'JavascriptVoid',
+    component: loadVoid,
+    meta: {
+      module: 'javascript',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'void用法',
       preload () {}
     }
   },
