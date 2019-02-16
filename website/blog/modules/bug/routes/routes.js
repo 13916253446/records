@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "bug.pageTemplate" */'components/template/page/page.vue')
 let loadWebpack = () => import(/* webpackChunkName: "bug.webpack" */'../webpack/index.vue')
+let loadHybrid = () => import(/* webpackChunkName: "bug.hybrid" */'../hybrid/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/bug/hybrid',
+    name: 'BugHybrid',
+    component: loadHybrid,
+    meta: {
+      module: 'bug',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'hybrid存在的一些问题',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
