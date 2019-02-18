@@ -8,3 +8,16 @@
 
 
 - [uppy](https://github.com/transloadit/uppy)
+
+# 汉字转拼音
+
+-   [pinyin](https://github.com/hotoo/pinyin)
+    
+    ```javascript
+    var pinyin = require("pinyin");
+    
+    console.log(pinyin("中心"));    // [ [ 'zhōng' ], [ 'xīn' ] ]
+    console.log(pinyin("中心", {
+      heteronym: true               // 启用多音字模式
+    }));                            // [ [ 'zhōng', 'zhòng' ], [ 'xīn' ] ]
+    ```
