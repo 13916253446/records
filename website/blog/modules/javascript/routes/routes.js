@@ -7,6 +7,7 @@ let loadObject = () => import(/* webpackChunkName: "javascript.object" */'../obj
 let loadAst = () => import(/* webpackChunkName: "javascript.ast" */'../ast/index.vue')
 let loadVoid = () => import(/* webpackChunkName: "javascript.void" */'../void/index.vue')
 let loadErrorCollect = () => import(/* webpackChunkName: "javascript.errorCollect" */'../errorCollect/index.vue')
+let loadTemporalDeadZone = () => import(/* webpackChunkName: "javascript.temporalDeadZone" */'../temporalDeadZone/index.vue')
 
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
@@ -96,6 +97,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: '错误搜集',
+      preload () {}
+    }
+  },
+  {
+    path: '/javascript/temporalDeadZone',
+    name: 'JavascriptTemporalDeadZone',
+    component: loadTemporalDeadZone,
+    meta: {
+      module: 'javascript',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '暂时性死区',
       preload () {}
     }
   },
