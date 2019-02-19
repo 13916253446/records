@@ -40,3 +40,10 @@ if ('serviceWorker' in navigator) {
     })
   })
 }
+
+/* eslint-disable */
+function Parent () {}
+
+let child = new Parent()
+
+console.log(child.__proto__)

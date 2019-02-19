@@ -8,8 +8,8 @@ let loadAst = () => import(/* webpackChunkName: "javascript.ast" */'../ast/index
 let loadVoid = () => import(/* webpackChunkName: "javascript.void" */'../void/index.vue')
 let loadErrorCollect = () => import(/* webpackChunkName: "javascript.errorCollect" */'../errorCollect/index.vue')
 let loadTemporalDeadZone = () => import(/* webpackChunkName: "javascript.temporalDeadZone" */'../temporalDeadZone/index.vue')
-let loadTypeOfInstanceof = () => import(/* webpackChunkName: "javascript.typeOfInstanceof" */'../typeOfInstanceof/index.vue')
-
+let loadTypeOfInstanceof = () => import(/* webpackChunkName: "javascript.typeOfInstanceof" */'../typeOfInstanceof/index.vue')
+let loadPrototype = () => import(/* webpackChunkName: "javascript.prototype" */'../prototype/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -126,7 +126,22 @@ export const routes = [
       title: 'typeOf以及Instanceof的使用',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/javascript/prototype',
+    name: 'JavascriptPrototype',
+    component: loadPrototype,
+    meta: {
+      module: 'javascript',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '原型以及原型链',
+      preload () {}
+    }
+  },
+
+
 
 
 
