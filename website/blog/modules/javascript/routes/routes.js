@@ -8,6 +8,7 @@ let loadAst = () => import(/* webpackChunkName: "javascript.ast" */'../ast/index
 let loadVoid = () => import(/* webpackChunkName: "javascript.void" */'../void/index.vue')
 let loadErrorCollect = () => import(/* webpackChunkName: "javascript.errorCollect" */'../errorCollect/index.vue')
 let loadTemporalDeadZone = () => import(/* webpackChunkName: "javascript.temporalDeadZone" */'../temporalDeadZone/index.vue')
+let loadTypeOfInstanceof = () => import(/* webpackChunkName: "javascript.typeOfInstanceof" */'../typeOfInstanceof/index.vue')
 
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
@@ -113,6 +114,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/javascript/typeOfInstanceof',
+    name: 'JavascriptTypeOfInstanceof',
+    component: loadTypeOfInstanceof,
+    meta: {
+      module: 'javascript',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'typeOf以及Instanceof的使用',
+      preload () {}
+    }
+  },
 
 
 
