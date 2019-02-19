@@ -33,3 +33,16 @@ let a
 **ES6**规定，`let/const`命令会使区块形成封闭的作用域。若在声明之前使用变量，就会报错。
 总之，在代码块内，使用`let`命令声明变量之前，该变量都是不可用的。
 这在语法上，称为**暂时性死区**（ temporal dead zone，简称 TDZ）。
+
+# 其它影响
+**TDZ**也意味着`typeof`不再是一个百分之百安全的操作。
+
+我们看下面这段代码，
+
+```javascript
+typeof a // ReferenceError: a is not defined
+let a
+```
+
+在没有`let`之前，`typeof`运算符是百分之百安全的，不会报错。
+现在这一点不成立了。
