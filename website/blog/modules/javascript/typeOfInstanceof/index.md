@@ -51,3 +51,88 @@ instanceof (A,B) = {
     return false;
 }
 ```
+
+从上述过程可以看出，当 A 的 __proto__ 指向 B 的 prototype 时，就认为 A 就是 B 的实例，我们来看几个例子：
+
+```javascript
+[] instanceof Array; //true
+{} instanceof Object;//true
+new Date() instanceof Date;//true
+```
+
+`JS`万物皆对象的思想：
+
+```javascript
+[] instanceof Object //true
+function Person(){};
+new Person() instanceof Person; // true
+new Person instanceof Object; // true
+```
+
+# 扩展一下
+
+我们来分析一下 []、Array、Object 三者之间的关系：
+
+从 instanceof 能够判断出 [].proto 指向 Array.prototype，而 Array.prototype.proto 又指向了Object.prototype，最终 Object.prototype.proto 指向了 null，标志着原型链的结束。
+
+因此，[]、Array、Object 就在内部形成了一条原型链：
+
+![prototype](http://mp1.oss-cn-beijing.aliyuncs.com/proto.jpeg)
+
+>instanceof 只能用来判断两个对象是否属于实例关系， 而不能判断一个对象实例具体属于哪种类型。
+
+# 巩固知识
+
+- 下面的代码如何输出
+
+```javascript
+function fun() {}
+console.log(typeof fun);
+console.log(fun instanceof Function);
+console.log(fun instanceof Object);
+```
+
+答：`function` `true` `true`
+
+- 如何判断一个变量是一个数组
+
+```javascript
+// 不能使用typeof来判断
+
+typeof [] // object
+
+[] instanceof Array
+
+Array.isArray([])
+```
+
+- 下面的输出结果是什么
+
+```javascript
+var name = 'World!';
+(function () {
+    if (typeof name === 'undefined') {
+        var name = 'Jartto';
+        console.log('Hi~ ' + name);
+    } else {
+        console.log('Hello ' + name);
+    }
+})();
+```
+
+答：这里需要注意变量声明提升，所以上面代码等效于：
+
+```javascript
+var name = 'World!';
+(function () {
+    var name;
+    if (typeof name === 'undefined') {
+        var name = 'Jartto';
+        console.log('Hi~ ' + name);
+    } else {
+        console.log('Hello ' + name);
+    }
+})();
+```
+
+这时候，typeof name 就等于 undefined，所以输出结果为 Hi~Jartto。
