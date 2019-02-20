@@ -21,7 +21,9 @@ import javascriptRoutes from '../modules/javascript/routes/routes.js'
 //! 项目中遇到的坑
 import bugRoutes from '../modules/bug/routes/routes.js'
 //! 干货
-import FoodsRoutes from '../modules/Foods/routes/routes.js'
+import FoodsRoutes from '../modules/Foods/routes/routes.js'
+//! 性能优化
+import performanceRoutes from '../modules/performance/routes/routes.js'
 
 
 /* @init<%
@@ -54,7 +56,9 @@ const routes = [
   //! 项目中遇到的坑
   ...bugRoutes,
   //! 干货
-  ...FoodsRoutes,
+  ...FoodsRoutes,
+  //! 性能优化
+  ...performanceRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}

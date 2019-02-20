@@ -22,7 +22,9 @@ import javascriptStore from '../modules/javascript/store/store.js'
 //! 项目中遇到的坑
 import bugStore from '../modules/bug/store/store.js'
 //! 干货
-import FoodsStore from '../modules/Foods/store/store.js'
+import FoodsStore from '../modules/Foods/store/store.js'
+//! 性能优化
+import performanceStore from '../modules/performance/store/store.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -123,7 +125,12 @@ export const store = new Vuex.Store({
     Foods: {
       namespaced: true,
       ...FoodsStore
-    },
+    },
+    //! 性能优化
+    performance: {
+      namespaced: true,
+      ...performanceStore
+    },
 
 
     /* @init<%
