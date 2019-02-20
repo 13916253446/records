@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "CSS.pageTemplate" */'components/template/page/page.vue')
 let loadBoxShadow = () => import(/* webpackChunkName: "CSS.boxShadow" */'../boxShadow/index.vue')
+let loadSelector = () => import(/* webpackChunkName: "CSS.selector" */'../selector/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/CSS/selector',
+    name: 'CSSSelector',
+    component: loadSelector,
+    meta: {
+      module: 'CSS',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '重新学习css选择器',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
