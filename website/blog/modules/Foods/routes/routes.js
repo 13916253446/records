@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "Foods.pageTemplate" */'components/template/page/page.vue')
 let loadBackForwardCache = () => import(/* webpackChunkName: "Foods.BackForwardCache" */'../BackForwardCache/index.vue')
+let loadLGTM = () => import(/* webpackChunkName: "Foods.LGTM" */'../LGTM/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/Foods/LGTM',
+    name: 'FoodsLGTM',
+    component: loadLGTM,
+    meta: {
+      module: 'Foods',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '程序里面的缩写',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
