@@ -6,7 +6,8 @@ let loadSkill = () => import(/* webpackChunkName: "VUE.skill" */'../skill/index.
 let loadPlugin = () => import(/* webpackChunkName: "VUE.plugin" */'../plugin/index.vue')
 let loadRender = () => import(/* webpackChunkName: "VUE.render" */'../render/index.vue')
 let loadAbstract = () => import(/* webpackChunkName: "VUE.abstract" */'../abstract/index.vue')
-let loadMeasureVuePerformance = () => import(/* webpackChunkName: "VUE.measureVuePerformance" */'../measureVuePerformance/index.vue')
+let loadMeasureVuePerformance = () => import(/* webpackChunkName: "VUE.measureVuePerformance" */'../measureVuePerformance/index.vue')
+let loadExpand = () => import(/* webpackChunkName: "VUE.expand" */'../expand/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -97,7 +98,22 @@ export const routes = [
       title: '收集Vue性能',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/VUE/expand',
+    name: 'VUEExpand',
+    component: loadExpand,
+    meta: {
+      module: 'VUE',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '扩展Vue组件',
+      preload () {}
+    }
+  },
+
+
 
 
   /* @init<%
