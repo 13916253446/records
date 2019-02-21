@@ -8,6 +8,7 @@ let loadRender = () => import(/* webpackChunkName: "VUE.render" */'../render/ind
 let loadAbstract = () => import(/* webpackChunkName: "VUE.abstract" */'../abstract/index.vue')
 let loadMeasureVuePerformance = () => import(/* webpackChunkName: "VUE.measureVuePerformance" */'../measureVuePerformance/index.vue')
 let loadExpand = () => import(/* webpackChunkName: "VUE.expand" */'../expand/index.vue')
+let loadListeners = () => import(/* webpackChunkName: "VUE.listeners" */'../listeners/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -109,6 +110,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: '扩展Vue组件',
+      preload () {}
+    }
+  },
+  {
+    path: '/VUE/listeners',
+    name: 'VUEListeners',
+    component: loadListeners,
+    meta: {
+      module: 'VUE',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '$listeners的使用技巧',
       preload () {}
     }
   },
