@@ -10,6 +10,7 @@ let loadErrorCollect = () => import(/* webpackChunkName: "javascript.errorCollec
 let loadTemporalDeadZone = () => import(/* webpackChunkName: "javascript.temporalDeadZone" */'../temporalDeadZone/index.vue')
 let loadTypeOfInstanceof = () => import(/* webpackChunkName: "javascript.typeOfInstanceof" */'../typeOfInstanceof/index.vue')
 let loadPrototype = () => import(/* webpackChunkName: "javascript.prototype" */'../prototype/index.vue')
+let loadEventLoop = () => import(/* webpackChunkName: "javascript.eventLoop" */'../eventLoop/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -137,6 +138,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: '原型以及原型链',
+      preload () {}
+    }
+  },
+  {
+    path: '/javascript/eventLoop',
+    name: 'JavascriptEventLoop',
+    component: loadEventLoop,
+    meta: {
+      module: 'javascript',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '理解浏览器的事件循环',
       preload () {}
     }
   },
