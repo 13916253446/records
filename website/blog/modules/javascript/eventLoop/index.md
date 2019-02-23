@@ -77,6 +77,10 @@ Log: 'script start', 'script end', 'promise1', 'promise2', 'setTimeout'
 
 移除执行完毕的fn2，加入主线程的宏任务开始执行，打印setTimeout，所有的代码执行完毕
 
+### 调试
+
+
+
 ### 参考
 
 [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)

@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "chrome.pageTemplate" */'components/template/page/page.vue')
 let loadSkill = () => import(/* webpackChunkName: "chrome.skill" */'../skill/index.vue')
+let loadPerformance = () => import(/* webpackChunkName: "chrome.performance" */'../performance/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/chrome/performance',
+    name: 'ChromePerformance',
+    component: loadPerformance,
+    meta: {
+      module: 'chrome',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'devTool里面performance',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
