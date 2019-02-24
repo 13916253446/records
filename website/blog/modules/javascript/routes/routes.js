@@ -11,6 +11,7 @@ let loadTemporalDeadZone = () => import(/* webpackChunkName: "javascript.tempora
 let loadTypeOfInstanceof = () => import(/* webpackChunkName: "javascript.typeOfInstanceof" */'../typeOfInstanceof/index.vue')
 let loadPrototype = () => import(/* webpackChunkName: "javascript.prototype" */'../prototype/index.vue')
 let loadEventLoop = () => import(/* webpackChunkName: "javascript.eventLoop" */'../eventLoop/index.vue')
+let loadRequestAnimationFrame = () => import(/* webpackChunkName: "javascript.requestAnimationFrame" */'../requestAnimationFrame/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -154,6 +155,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/javascript/requestAnimationFrame',
+    name: 'JavascriptRequestAnimationFrame',
+    component: loadRequestAnimationFrame,
+    meta: {
+      module: 'javascript',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '关于requestAnimationFrame的总结',
+      preload () {}
+    }
+  },
 
 
 
