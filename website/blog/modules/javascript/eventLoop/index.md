@@ -77,12 +77,29 @@ Log: 'script start', 'script end', 'promise1', 'promise2', 'setTimeout'
 
 移除执行完毕的fn2，加入主线程的宏任务开始执行，打印setTimeout，所有的代码执行完毕
 
-### 调试
 
+### 总结
 
+`Task`宏任务有：
+
+- setTimeout
+- setInterval
+- setImmediate
+- I/O
+- UI rendering
+- requestAnimationFrame
+
+`microTask`微任务有：
+
+- process.nextTick
+- promises
+- Object.observe
+- MutationObserver
 
 ### 参考
 
 [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
 
 [一次弄懂Event Loop](https://mp.weixin.qq.com/s/a32ZJComEggECDb2cXl5DQ)
+
+[深入探究 eventloop 与浏览器渲染的时序问题](https://www.404forest.com/2017/07/18/how-javascript-actually-works-eventloop-and-uirendering/#7-%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99)
