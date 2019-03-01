@@ -11,7 +11,8 @@ let loadTemporalDeadZone = () => import(/* webpackChunkName: "javascript.tempora
 let loadTypeOfInstanceof = () => import(/* webpackChunkName: "javascript.typeOfInstanceof" */'../typeOfInstanceof/index.vue')
 let loadPrototype = () => import(/* webpackChunkName: "javascript.prototype" */'../prototype/index.vue')
 let loadEventLoop = () => import(/* webpackChunkName: "javascript.eventLoop" */'../eventLoop/index.vue')
-let loadRequestAnimationFrame = () => import(/* webpackChunkName: "javascript.requestAnimationFrame" */'../requestAnimationFrame/index.vue')
+let loadRequestAnimationFrame = () => import(/* webpackChunkName: "javascript.requestAnimationFrame" */'../requestAnimationFrame/index.vue')
+let loadArray = () => import(/* webpackChunkName: "javascript.Array" */'../Array/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -167,7 +168,22 @@ export const routes = [
       title: '关于requestAnimationFrame的总结',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/javascript/Array',
+    name: 'JavascriptArray',
+    component: loadArray,
+    meta: {
+      module: 'javascript',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: false,
+      title: '数组的操作',
+      preload () {}
+    }
+  },
+
+
 
 
 
