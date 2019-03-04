@@ -3,7 +3,8 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "CSS.pageTemplate" */'components/template/page/page.vue')
 let loadBoxShadow = () => import(/* webpackChunkName: "CSS.boxShadow" */'../boxShadow/index.vue')
-let loadSelector = () => import(/* webpackChunkName: "CSS.selector" */'../selector/index.vue')
+let loadSelector = () => import(/* webpackChunkName: "CSS.selector" */'../selector/index.vue')
+let loadOftenCss = () => import(/* webpackChunkName: "CSS.oftenCss" */'../oftenCss/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -55,7 +56,20 @@ export const routes = [
       title: '重新学习css选择器',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/CSS/oftenCss',
+    name: 'CSSOftenCss',
+    component: loadOftenCss,
+    meta: {
+      module: 'CSS',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '常用css片段',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
