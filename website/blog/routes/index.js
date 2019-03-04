@@ -23,7 +23,9 @@ import bugRoutes from '../modules/bug/routes/routes.js'
 //! 干货
 import FoodsRoutes from '../modules/Foods/routes/routes.js'
 //! 性能优化
-import performanceRoutes from '../modules/performance/routes/routes.js'
+import performanceRoutes from '../modules/performance/routes/routes.js'
+//! 编程思想
+import thoughtRoutes from '../modules/thought/routes/routes.js'
 
 
 /* @init<%
@@ -58,7 +60,9 @@ const routes = [
   //! 干货
   ...FoodsRoutes,
   //! 性能优化
-  ...performanceRoutes,
+  ...performanceRoutes,
+  //! 编程思想
+  ...thoughtRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}

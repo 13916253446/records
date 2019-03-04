@@ -24,7 +24,9 @@ import bugStore from '../modules/bug/store/store.js'
 //! 干货
 import FoodsStore from '../modules/Foods/store/store.js'
 //! 性能优化
-import performanceStore from '../modules/performance/store/store.js'
+import performanceStore from '../modules/performance/store/store.js'
+//! 编程思想
+import thoughtStore from '../modules/thought/store/store.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -130,7 +132,12 @@ export const store = new Vuex.Store({
     performance: {
       namespaced: true,
       ...performanceStore
-    },
+    },
+    //! 编程思想
+    thought: {
+      namespaced: true,
+      ...thoughtStore
+    },
 
 
     /* @init<%
