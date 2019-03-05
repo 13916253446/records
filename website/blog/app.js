@@ -45,4 +45,3 @@ if ('serviceWorker' in navigator) {
 function Parent () {}
 
 let child = new Parent()
-1
