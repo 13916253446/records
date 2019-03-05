@@ -86,3 +86,7 @@ git status
 - git commit:当前分支指针指向新创建的快照
 - git pull:当前分支与远程分支合并后，指向新创建的快照
 - git reset:当前分支指针重置为指定快照
+
+#### 参考
+
+- [Git 原理入门](http://www.ruanyifeng.com/blog/2018/10/git-internals.html)
