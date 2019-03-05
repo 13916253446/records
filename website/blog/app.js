@@ -46,3 +46,4 @@ function Parent () {}
 
 let child = new Parent()
 3
+4
