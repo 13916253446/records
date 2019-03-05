@@ -9,6 +9,8 @@ let loadMarkdownTree = () => import(/* webpackChunkName: "Tools.markdownTree" */
 let loadWebpackErrors = () => import(/* webpackChunkName: "Tools.webpackErrors" */'../webpackErrors/index.vue')
 let loadCss = () => import(/* webpackChunkName: "Tools.css" */'../css/index.vue')
 let loadGitTheory = () => import(/* webpackChunkName: "Tools.gitTheory" */'../gitTheory/index.vue')
+let loadOftenGit = () => import(/* webpackChunkName: "Tools.oftenGit" */'../oftenGit/index.vue')
+
 
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')
@@ -128,6 +130,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/Tools/oftenGit',
+    name: 'ToolsOftenGit',
+    component: loadOftenGit,
+    meta: {
+      module: 'Tools',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '常用git',
+      preload () {}
+    }
+  },
 
 
 
