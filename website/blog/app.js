@@ -45,5 +45,3 @@ if ('serviceWorker' in navigator) {
 function Parent () {}
 
 let child = new Parent()
-
-console.log(child.__proto__)
