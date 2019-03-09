@@ -89,7 +89,7 @@ Object.prototype.hasOwnProperty.call(a,'name')
 
 -   `for...in`
     
-    -   包括原型上的属性（所以一般配合hasOwnerProperty使用）
+    -   包括原型上的属性（所以一般配合hasOwnProperty使用）
         
     -   只遍历可枚举的属性
         
@@ -99,7 +99,7 @@ Object.prototype.hasOwnProperty.call(a,'name')
     ```javascript
     let obj = { name: '崔海峰' }
     for (let item in obj) {
-        if (obj.hasOwnerProperty(item)) {
+        if (obj.hasOwnProperty(item)) {
             //TODO
         }
     }
