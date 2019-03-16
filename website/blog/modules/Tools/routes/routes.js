@@ -10,8 +10,6 @@ let loadWebpackErrors = () => import(/* webpackChunkName: "Tools.webpackErrors" 
 let loadCss = () => import(/* webpackChunkName: "Tools.css" */'../css/index.vue')
 let loadGitTheory = () => import(/* webpackChunkName: "Tools.gitTheory" */'../gitTheory/index.vue')
 let loadOftenGit = () => import(/* webpackChunkName: "Tools.oftenGit" */'../oftenGit/index.vue')
-
-
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')
 %> */
@@ -142,7 +140,8 @@ export const routes = [
       title: '常用git',
       preload () {}
     }
-  },
+  },
+
 
 
 

@@ -7,7 +7,7 @@
 <script>
 import md from './index.md'
 export default {
-  name: 'ToolsGitTheory',
+  name: 'ES6ForOf',
   components: {
     md
   }
