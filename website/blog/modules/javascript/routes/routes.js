@@ -13,6 +13,7 @@ let loadPrototype = () => import(/* webpackChunkName: "javascript.prototype" */'
 let loadEventLoop = () => import(/* webpackChunkName: "javascript.eventLoop" */'../eventLoop/index.vue')
 let loadRequestAnimationFrame = () => import(/* webpackChunkName: "javascript.requestAnimationFrame" */'../requestAnimationFrame/index.vue')
 let loadArray = () => import(/* webpackChunkName: "javascript.Array" */'../Array/index.vue')
+let loadBreakLoop = () => import(/* webpackChunkName: "javascript.breakLoop" */'../breakLoop/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -179,6 +180,19 @@ export const routes = [
       bgClass: '',
       keepAlive: false,
       title: '数组的操作',
+      preload () {}
+    }
+  },
+  {
+    path: '/javascript/breakLoop',
+    name: 'JavascriptBreakLoop',
+    component: loadBreakLoop,
+    meta: {
+      module: 'javascript',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '退出循环',
       preload () {}
     }
   },

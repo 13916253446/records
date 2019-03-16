@@ -43,18 +43,13 @@ if ('serviceWorker' in navigator) {
 
 /* eslint-disable */
 let arr = [10, 11, 12, 13]
-let arr1 =[1, 2, 3]
 
 function test () {
-  for (let [index, value] of arr.entries()) {
-    console.error('arr', index)
-    if (index === 1) continue
-    for (let [index1] of arr1.entries()) {
-      console.log('arr1', index, index1)
-      if (index1 === 1) break
-    }
+  for (let value of arr) {
+    if (value === 11) return
+    console.log(value)
   }
-  console.log('方法执行完毕')
+  console.log('完成')
 }
 
 test()
