@@ -47,3 +47,12 @@
 ![AST](http://mp1.oss-cn-beijing.aliyuncs.com/blog/api-map.svg)
 
 - [css-rules](https://www.npmjs.com/package/css-rules)
+
+
+# 动画
+
+- [laxxx](https://github.com/alexfoxy/laxxx) 2kb的插件，快速创建页面滚动动画
+
+# 排版
+
+- [wechat-format](https://github.com/lyricat/wechat-format)
