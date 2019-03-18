@@ -9,7 +9,8 @@ let loadAbstract = () => import(/* webpackChunkName: "VUE.abstract" */'../abstra
 let loadMeasureVuePerformance = () => import(/* webpackChunkName: "VUE.measureVuePerformance" */'../measureVuePerformance/index.vue')
 let loadExpand = () => import(/* webpackChunkName: "VUE.expand" */'../expand/index.vue')
 let loadListeners = () => import(/* webpackChunkName: "VUE.listeners" */'../listeners/index.vue')
-let loadSetTitle = () => import(/* webpackChunkName: "VUE.setTitle" */'../setTitle/index.vue')
+let loadSetTitle = () => import(/* webpackChunkName: "VUE.setTitle" */'../setTitle/index.vue')
+let loadComponentHooks = () => import(/* webpackChunkName: "VUE.componentHooks" */'../componentHooks/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -139,7 +140,22 @@ export const routes = [
       title: '更新title的另一种思路',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/VUE/componentHooks',
+    name: 'VUEComponentHooks',
+    component: loadComponentHooks,
+    meta: {
+      module: 'VUE',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '捕获子组件生命周期',
+      preload () {}
+    }
+  },
+
+
 
 
 
