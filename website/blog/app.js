@@ -42,14 +42,19 @@ if ('serviceWorker' in navigator) {
 }
 
 /* eslint-disable */
-let arr = [10, 11, 12, 13]
 
-function test () {
-  for (let value of arr) {
-    if (value === 11) return
-    console.log(value)
-  }
-  console.log('完成')
+let arr = [0, 1, 2, 3]
+
+async function test () {
+  arr.forEach(async (item) => {
+    await new Promise(resolve => {
+      setTimeout(() => {
+        console.log(item)
+        resolve()
+      }, 1000);
+    })
+  })
+  console.log('完毕')
 }
 
 test()

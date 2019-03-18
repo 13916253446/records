@@ -6,6 +6,7 @@ let loadAsync = () => import(/* webpackChunkName: "ES6.async" */'../async/index.
 let loadClass = () => import(/* webpackChunkName: "ES6.class" */'../class/index.vue')
 let loadPromiseTopic = () => import(/* webpackChunkName: "ES6.promiseTopic" */'../promiseTopic/index.vue')
 let loadForOf = () => import(/* webpackChunkName: "ES6.forOf" */'../forOf/index.vue')
+let loadForAwait = () => import(/* webpackChunkName: "ES6.forAwait" */'../forAwait/index.vue')
 
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
@@ -83,6 +84,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/ES6/forAwait',
+    name: 'ES6ForAwait',
+    component: loadForAwait,
+    meta: {
+      module: 'ES6',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '在循环中使用异步',
+      preload () {}
+    }
+  },
 
 
   /* @init<%
