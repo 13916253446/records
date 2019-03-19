@@ -42,19 +42,11 @@ if ('serviceWorker' in navigator) {
 }
 
 /* eslint-disable */
+let arrModel = [
+  { id: 1 },
+  { id: 2 },
+  { id: 4 },
+  { id: 3 }
+]
 
-let arr = [0, 1, 2, 3]
-
-async function test () {
-  arr.forEach(async (item) => {
-    await new Promise(resolve => {
-      setTimeout(() => {
-        console.log(item)
-        resolve()
-      }, 1000);
-    })
-  })
-  console.log('完毕')
-}
-
-test()
+console.log(arrModel.sort())

@@ -14,6 +14,7 @@ let loadEventLoop = () => import(/* webpackChunkName: "javascript.eventLoop" */'
 let loadRequestAnimationFrame = () => import(/* webpackChunkName: "javascript.requestAnimationFrame" */'../requestAnimationFrame/index.vue')
 let loadArray = () => import(/* webpackChunkName: "javascript.Array" */'../Array/index.vue')
 let loadBreakLoop = () => import(/* webpackChunkName: "javascript.breakLoop" */'../breakLoop/index.vue')
+let loadArrayAdvanced = () => import(/* webpackChunkName: "javascript.arrayAdvanced" */'../arrayAdvanced/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -196,6 +197,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/javascript/arrayAdvanced',
+    name: 'JavascriptArrayAdvanced',
+    component: loadArrayAdvanced,
+    meta: {
+      module: 'javascript',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '数组的高级操作',
+      preload () {}
+    }
+  },
 
 
 
