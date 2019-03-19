@@ -25,7 +25,9 @@ import { entryBefore as FoodsEntryBefore } from '../modules/Foods/routes/routerH
 //! performance模块钩子
 import { entryBefore as performanceEntryBefore } from '../modules/performance/routes/routerHooks.js'
 //! thought模块钩子
-import { entryBefore as thoughtEntryBefore } from '../modules/thought/routes/routerHooks.js'
+import { entryBefore as thoughtEntryBefore } from '../modules/thought/routes/routerHooks.js'
+//! webpack模块钩子
+import { entryBefore as webpackEntryBefore } from '../modules/webpack/routes/routerHooks.js'
 
 /* @init<%
 //! ${TplModuleName}模块钩子
@@ -45,7 +47,8 @@ const hooksModel = {
   bugEntryBefore,
   FoodsEntryBefore,
   performanceEntryBefore,
-  thoughtEntryBefore,
+  thoughtEntryBefore,
+  webpackEntryBefore,
 
 
   /* @init<%

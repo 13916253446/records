@@ -26,7 +26,9 @@ import FoodsStore from '../modules/Foods/store/store.js'
 //! 性能优化
 import performanceStore from '../modules/performance/store/store.js'
 //! 编程思想
-import thoughtStore from '../modules/thought/store/store.js'
+import thoughtStore from '../modules/thought/store/store.js'
+//! webpack总结
+import webpackStore from '../modules/webpack/store/store.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -137,7 +139,12 @@ export const store = new Vuex.Store({
     thought: {
       namespaced: true,
       ...thoughtStore
-    },
+    },
+    //! webpack总结
+    webpack: {
+      namespaced: true,
+      ...webpackStore
+    },
 
 
     /* @init<%

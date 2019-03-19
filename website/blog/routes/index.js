@@ -25,7 +25,9 @@ import FoodsRoutes from '../modules/Foods/routes/routes.js'
 //! 性能优化
 import performanceRoutes from '../modules/performance/routes/routes.js'
 //! 编程思想
-import thoughtRoutes from '../modules/thought/routes/routes.js'
+import thoughtRoutes from '../modules/thought/routes/routes.js'
+//! webpack总结
+import webpackRoutes from '../modules/webpack/routes/routes.js'
 
 
 /* @init<%
@@ -62,7 +64,9 @@ const routes = [
   //! 性能优化
   ...performanceRoutes,
   //! 编程思想
-  ...thoughtRoutes,
+  ...thoughtRoutes,
+  //! webpack总结
+  ...webpackRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}

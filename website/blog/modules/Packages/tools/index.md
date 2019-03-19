@@ -56,3 +56,11 @@
 # 排版
 
 - [wechat-format](https://github.com/lyricat/wechat-format)
+
+# 终端录屏
+
+- [asciinema](https://asciinema.org/) 终端录屏而且可以复制内容
+
+# 生成二维码
+
+- [QR-Code](https://github.com/sylnsfar/qrcode) 生成带图片或者带动画的二维码
