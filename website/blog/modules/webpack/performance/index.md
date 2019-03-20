@@ -134,3 +134,31 @@ module.exports = {
   ],
 };
 ```
+
+##### 5. 提高资源加载的优先级
+
+利用[@vue/preload-webpack-plugin](https://github.com/vuejs/preload-webpack-plugin)提高首屏需要的资源，达到预加载的作用
+
+- `preload`提高`runtime`,入口文件，以及入口`css`，以及首屏需要的字体
+
+```javascrpt
+module.exports = {
+  plugins: [
+    new PreloadWebpackPlugin({
+      rel: 'prefetch',
+      include: 'asyncChunks',
+      as(entry) {
+        if (/\.css$/.test(entry)) return 'style';
+        if (/\.woff$/.test(entry)) return 'font';
+        if (/\.png$/.test(entry)) return 'image';
+        return 'script';
+      }
+    }),
+    new PreloadWebpackPlugin({
+      rel: 'preload',
+      include: 'initial',
+      excludeHtmlNames: ['example.html']
+    })
+  ]
+}
+```
