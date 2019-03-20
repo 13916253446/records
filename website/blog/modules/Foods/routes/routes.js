@@ -4,7 +4,8 @@
 let loadPageExample = () => import(/* webpackChunkName: "Foods.pageTemplate" */'components/template/page/page.vue')
 let loadBackForwardCache = () => import(/* webpackChunkName: "Foods.BackForwardCache" */'../BackForwardCache/index.vue')
 let loadLGTM = () => import(/* webpackChunkName: "Foods.LGTM" */'../LGTM/index.vue')
-let loadBrowserRender = () => import(/* webpackChunkName: "Foods.browserRender" */'../browserRender/index.vue')
+let loadBrowserRender = () => import(/* webpackChunkName: "Foods.browserRender" */'../browserRender/index.vue')
+let loadPageLifeCircle = () => import(/* webpackChunkName: "Foods.pageLifeCircle" */'../pageLifeCircle/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -69,7 +70,20 @@ export const routes = [
       title: '浏览器解析过程',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/Foods/pageLifeCircle',
+    name: 'FoodsPageLifeCircle',
+    component: loadPageLifeCircle,
+    meta: {
+      module: 'Foods',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '页面事件',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
