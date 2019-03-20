@@ -5,7 +5,7 @@ let loadPageExample = () => import(/* webpackChunkName: "Foods.pageTemplate" */'
 let loadBackForwardCache = () => import(/* webpackChunkName: "Foods.BackForwardCache" */'../BackForwardCache/index.vue')
 let loadLGTM = () => import(/* webpackChunkName: "Foods.LGTM" */'../LGTM/index.vue')
 let loadBrowserRender = () => import(/* webpackChunkName: "Foods.browserRender" */'../browserRender/index.vue')
-let loadPageLifeCircle = () => import(/* webpackChunkName: "Foods.pageLifeCircle" */'../pageLifeCircle/index.vue')
+let loadPageLifeCircle = () => import(/* webpackChunkName: "Foods.pageLifeCircle" */'../pageLifeCircle/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -83,7 +83,10 @@ export const routes = [
       title: '页面事件',
       preload () {}
     }
-  },
+  },
+
+
+
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
