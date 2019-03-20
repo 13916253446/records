@@ -3,7 +3,8 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "Foods.pageTemplate" */'components/template/page/page.vue')
 let loadBackForwardCache = () => import(/* webpackChunkName: "Foods.BackForwardCache" */'../BackForwardCache/index.vue')
-let loadLGTM = () => import(/* webpackChunkName: "Foods.LGTM" */'../LGTM/index.vue')
+let loadLGTM = () => import(/* webpackChunkName: "Foods.LGTM" */'../LGTM/index.vue')
+let loadBrowserRender = () => import(/* webpackChunkName: "Foods.browserRender" */'../browserRender/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -55,7 +56,20 @@ export const routes = [
       title: '程序里面的缩写',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/Foods/browserRender',
+    name: 'FoodsBrowserRender',
+    component: loadBrowserRender,
+    meta: {
+      module: 'Foods',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '浏览器解析过程',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
