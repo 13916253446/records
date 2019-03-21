@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "performance.pageTemplate" */'components/template/page/page.vue')
 let loadRepaint = () => import(/* webpackChunkName: "performance.repaint" */'../repaint/index.vue')
+let loadPreload = () => import(/* webpackChunkName: "performance.preload" */'../preload/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/performance/preload',
+    name: 'PerformancePreload',
+    component: loadPreload,
+    meta: {
+      module: 'performance',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '深入preload',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
