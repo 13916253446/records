@@ -7,6 +7,7 @@ let loadLGTM = () => import(/* webpackChunkName: "Foods.LGTM" */'../LGTM/index.v
 let loadBrowserRender = () => import(/* webpackChunkName: "Foods.browserRender" */'../browserRender/index.vue')
 let loadPageLifeCircle = () => import(/* webpackChunkName: "Foods.pageLifeCircle" */'../pageLifeCircle/index.vue')
 let loadEventCapturePropagation = () => import(/* webpackChunkName: "Foods.eventCapturePropagation" */'../eventCapturePropagation/index.vue')
+let loadFontFace = () => import(/* webpackChunkName: "Foods.fontFace" */'../fontFace/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -98,6 +99,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/Foods/fontFace',
+    name: 'FoodsFontFace',
+    component: loadFontFace,
+    meta: {
+      module: 'Foods',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '字体文件优化加载和渲染',
+      preload () {}
+    }
+  },
 
 
 
