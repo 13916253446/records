@@ -7,7 +7,8 @@ let loadLGTM = () => import(/* webpackChunkName: "Foods.LGTM" */'../LGTM/index.v
 let loadBrowserRender = () => import(/* webpackChunkName: "Foods.browserRender" */'../browserRender/index.vue')
 let loadPageLifeCircle = () => import(/* webpackChunkName: "Foods.pageLifeCircle" */'../pageLifeCircle/index.vue')
 let loadEventCapturePropagation = () => import(/* webpackChunkName: "Foods.eventCapturePropagation" */'../eventCapturePropagation/index.vue')
-let loadFontFace = () => import(/* webpackChunkName: "Foods.fontFace" */'../fontFace/index.vue')
+let loadFontFace = () => import(/* webpackChunkName: "Foods.fontFace" */'../fontFace/index.vue')
+let loadChromeFirstPain = () => import(/* webpackChunkName: "Foods.chromeFirstPain" */'../chromeFirstPain/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -111,7 +112,22 @@ export const routes = [
       title: '字体文件优化加载和渲染',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/Foods/chromeFirstPain',
+    name: 'FoodsChromeFirstPain',
+    component: loadChromeFirstPain,
+    meta: {
+      module: 'Foods',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'chrome的第一帧渲染',
+      preload () {}
+    }
+  },
+
+
 
 
 
