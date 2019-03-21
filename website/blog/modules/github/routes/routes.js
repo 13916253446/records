@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "github.pageTemplate" */'components/template/page/page.vue')
 let loadSkills = () => import(/* webpackChunkName: "github.skills" */'../skills/index.vue')
+let loadGitOften = () => import(/* webpackChunkName: "github.gitOften" */'../gitOften/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/github/gitOften',
+    name: 'GithubGitOften',
+    component: loadGitOften,
+    meta: {
+      module: 'github',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'git常用命令',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',

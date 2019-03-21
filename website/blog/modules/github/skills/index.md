@@ -22,3 +22,38 @@ https://github.com/13916253446/records/blob/master/.eslintrc.js#L16
 ```
 
 Github支持的完整表情符号列表详见[emoji-cheat-sheet.com](https://www.webfx.com/tools/emoji-cheat-sheet/) 或 [scotch-io/All-Github-Emoji-Icons](https://github.com/scotch-io/All-Github-Emoji-Icons)。
+
+
+##### Git命令自定义别名
+别名用来帮助你定义自己的git命令。比如你可以定义 git a 来运行 git add --all。
+
+要添加一个别名， 一种方法是打开 ~/.gitconfig 文件并添加如下内容：
+
+```config
+[alias]
+  co = checkout
+  cm = commit
+  p = push
+  # Show verbose output about tags, branches or remotes
+  tags = tag -l
+  branches = branch -a
+  remotes = remote -v
+```
+
+...或者在命令行里键入：
+
+```shell
+git config --global alias.new_alias git_function
+```
+
+例如：
+
+```shell
+git config --global alias.cm commit
+# 多个
+git config --global alias.ac 'add -A . && commit'
+```
+
+#### 参考：
+
+- [Github秘籍](https://snowdream86.gitbooks.io/github-cheat-sheet/content/zh/index.html#%E8%B0%83%E6%95%B4tab%E5%AD%97%E7%AC%A6%E6%89%80%E4%BB%A3%E8%A1%A8%E7%9A%84%E7%A9%BA%E6%A0%BC%E6%95%B0)
