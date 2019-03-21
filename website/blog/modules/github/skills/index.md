@@ -11,3 +11,14 @@
 ```javascript
 https://github.com/13916253446/records/blob/master/.eslintrc.js#L16
 ```
+
+##### 表情符
+
+可以在Pull Requests, Issues, 提交消息, Markdown文件里加入表情符。使用方法:name_of_emoji:
+
+```javascript
+// 笑脸
+:smile:
+```
+
+Github支持的完整表情符号列表详见[emoji-cheat-sheet.com](https://www.webfx.com/tools/emoji-cheat-sheet/) 或 [scotch-io/All-Github-Emoji-Icons](https://github.com/scotch-io/All-Github-Emoji-Icons)。
