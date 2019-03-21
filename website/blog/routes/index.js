@@ -27,7 +27,9 @@ import performanceRoutes from '../modules/performance/routes/routes.js'
 //! 编程思想
 import thoughtRoutes from '../modules/thought/routes/routes.js'
 //! webpack总结
-import webpackRoutes from '../modules/webpack/routes/routes.js'
+import webpackRoutes from '../modules/webpack/routes/routes.js'
+//! github总结
+import githubRoutes from '../modules/github/routes/routes.js'
 
 
 /* @init<%
@@ -66,7 +68,9 @@ const routes = [
   //! 编程思想
   ...thoughtRoutes,
   //! webpack总结
-  ...webpackRoutes,
+  ...webpackRoutes,
+  //! github总结
+  ...githubRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}

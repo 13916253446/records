@@ -28,7 +28,9 @@ import performanceStore from '../modules/performance/store/store.js'
 //! 编程思想
 import thoughtStore from '../modules/thought/store/store.js'
 //! webpack总结
-import webpackStore from '../modules/webpack/store/store.js'
+import webpackStore from '../modules/webpack/store/store.js'
+//! github总结
+import githubStore from '../modules/github/store/store.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -144,7 +146,12 @@ export const store = new Vuex.Store({
     webpack: {
       namespaced: true,
       ...webpackStore
-    },
+    },
+    //! github总结
+    github: {
+      namespaced: true,
+      ...githubStore
+    },
 
 
     /* @init<%
