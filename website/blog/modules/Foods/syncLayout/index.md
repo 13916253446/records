@@ -84,8 +84,20 @@ function logBoxHeight() {
 
 ```
 
+#### 为什么动画要使用`requestAnimationFrame`
+
+假设使用`setTimeout`或`setInterval`来触发JS执行并修改样式从而导致视觉变化；那么会有这样一种情况，因为`setTimeout`或`setInterval`没有办法保证回调函数什么时候执行，它可能在每一帧的中间执行，也可能在每一帧的最后执行。所以会导致即便我们能保障每一帧的总耗时小于16ms，但是执行的时机如果在每一帧的中间或最后，最后的结果依然是**没有办法每隔16ms让屏幕产生一次变化**。
+
+![requestAnimationFrame](http://mp1.oss-cn-beijing.aliyuncs.com/blog/1696b79a9fc1ddd6)
+
+也就是说，即便我们能保证每一帧总体时间小于16ms，但如果使用定时器触发动画，那么由于定时器的触发时机不确定，所以还是会导致动画丢帧。现在整个Web只有一个API可以解决这个问题，那就是requestAnimationFrame，它可以保证回调函数稳定的在每一帧最开始触发。
+
+![requestAnimationFrame](http://mp1.oss-cn-beijing.aliyuncs.com/blog/1696b79a9fcadb87)
+
 ### 参考：
 
 - [避免大型、复杂的布局和布局抖动](https://developers.google.com/web/fundamentals/performance/rendering/avoid-large-complex-layouts-and-layout-thrashing?hl=zh-cn#avoid-forced-synchronous-layouts)
 
 - [前端性能优化之浏览器渲染优化 —— 打造60FPS页面](https://github.com/fi3ework/blog/issues/9)
+
+- [让你的网页更丝滑（一）](https://juejin.im/post/5c860282e51d45531330e10e)

@@ -107,4 +107,7 @@ export default {
     width: 230px;
     max-width: calc(100vw - 125px);
   }
+>>> .md-drawer.md-persistent-mini:not(.md-active)
+  width 90px !important
+  padding-bottom 60px
 </style>
