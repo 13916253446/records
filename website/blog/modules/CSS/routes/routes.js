@@ -5,6 +5,7 @@ let loadPageExample = () => import(/* webpackChunkName: "CSS.pageTemplate" */'co
 let loadBoxShadow = () => import(/* webpackChunkName: "CSS.boxShadow" */'../boxShadow/index.vue')
 let loadSelector = () => import(/* webpackChunkName: "CSS.selector" */'../selector/index.vue')
 let loadOftenCss = () => import(/* webpackChunkName: "CSS.oftenCss" */'../oftenCss/index.vue')
+let loadCssGetListCount = () => import(/* webpackChunkName: "CSS.cssGetListCount" */'../cssGetListCount/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -67,6 +68,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: '常用css片段',
+      preload () {}
+    }
+  },
+  {
+    path: '/CSS/cssGetListCount',
+    name: 'CSSCssGetListCount',
+    component: loadCssGetListCount,
+    meta: {
+      module: 'CSS',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '通过伪类获取列表总数',
       preload () {}
     }
   },
