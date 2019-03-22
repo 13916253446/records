@@ -9,6 +9,7 @@ let loadPageLifeCircle = () => import(/* webpackChunkName: "Foods.pageLifeCircle
 let loadEventCapturePropagation = () => import(/* webpackChunkName: "Foods.eventCapturePropagation" */'../eventCapturePropagation/index.vue')
 let loadFontFace = () => import(/* webpackChunkName: "Foods.fontFace" */'../fontFace/index.vue')
 let loadChromeFirstPain = () => import(/* webpackChunkName: "Foods.chromeFirstPain" */'../chromeFirstPain/index.vue')
+let loadSyncLayout = () => import(/* webpackChunkName: "Foods.syncLayout" */'../syncLayout/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -123,6 +124,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: 'chrome的第一帧渲染',
+      preload () {}
+    }
+  },
+  {
+    path: '/Foods/syncLayout',
+    name: 'FoodsSyncLayout',
+    component: loadSyncLayout,
+    meta: {
+      module: 'Foods',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '强制同步布局',
       preload () {}
     }
   },
