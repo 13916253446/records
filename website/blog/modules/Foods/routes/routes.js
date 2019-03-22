@@ -10,6 +10,7 @@ let loadEventCapturePropagation = () => import(/* webpackChunkName: "Foods.event
 let loadFontFace = () => import(/* webpackChunkName: "Foods.fontFace" */'../fontFace/index.vue')
 let loadChromeFirstPain = () => import(/* webpackChunkName: "Foods.chromeFirstPain" */'../chromeFirstPain/index.vue')
 let loadSyncLayout = () => import(/* webpackChunkName: "Foods.syncLayout" */'../syncLayout/index.vue')
+let loadActionScopeList = () => import(/* webpackChunkName: "Foods.actionScopeList" */'../actionScopeList/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -140,6 +141,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/Foods/actionScopeList',
+    name: 'FoodsActionScopeList',
+    component: loadActionScopeList,
+    meta: {
+      module: 'Foods',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '理解作用域链',
+      preload () {}
+    }
+  },
 
 
 
