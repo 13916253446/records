@@ -6,7 +6,8 @@ let loadAsync = () => import(/* webpackChunkName: "ES6.async" */'../async/index.
 let loadClass = () => import(/* webpackChunkName: "ES6.class" */'../class/index.vue')
 let loadPromiseTopic = () => import(/* webpackChunkName: "ES6.promiseTopic" */'../promiseTopic/index.vue')
 let loadForOf = () => import(/* webpackChunkName: "ES6.forOf" */'../forOf/index.vue')
-let loadForAwait = () => import(/* webpackChunkName: "ES6.forAwait" */'../forAwait/index.vue')
+let loadForAwait = () => import(/* webpackChunkName: "ES6.forAwait" */'../forAwait/index.vue')
+let loadNewEs6 = () => import(/* webpackChunkName: "ES6.newEs6" */'../newEs6/index.vue')
 
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
@@ -96,7 +97,20 @@ export const routes = [
       title: '在循环中使用异步',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/ES6/newEs6',
+    name: 'ES6NewEs6',
+    component: loadNewEs6,
+    meta: {
+      module: 'ES6',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '新的ES6语法',
+      preload () {}
+    }
+  },
 
 
   /* @init<%
