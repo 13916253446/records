@@ -27,3 +27,7 @@ li:first-child:nth-last-child(3) + li {}
 /* 3个li项目的第一个列表项后面两个列表项，也就是第2项和第3项的样式 */
 li:first-child:nth-last-child(3) ~ li {}
 ```
+
+### 参考：
+
+- [伪类匹配列表数目实现微信群头像CSS布局的技巧](https://www.zhangxinxu.com/wordpress/2019/03/nth-last-child-css-layout/)

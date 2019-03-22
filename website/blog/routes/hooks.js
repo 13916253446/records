@@ -29,7 +29,9 @@ import { entryBefore as thoughtEntryBefore } from '../modules/thought/routes/rou
 //! webpack模块钩子
 import { entryBefore as webpackEntryBefore } from '../modules/webpack/routes/routerHooks.js'
 //! github模块钩子
-import { entryBefore as githubEntryBefore } from '../modules/github/routes/routerHooks.js'
+import { entryBefore as githubEntryBefore } from '../modules/github/routes/routerHooks.js'
+//! html模块钩子
+import { entryBefore as htmlEntryBefore } from '../modules/html/routes/routerHooks.js'
 
 /* @init<%
 //! ${TplModuleName}模块钩子
@@ -51,7 +53,8 @@ const hooksModel = {
   performanceEntryBefore,
   thoughtEntryBefore,
   webpackEntryBefore,
-  githubEntryBefore,
+  githubEntryBefore,
+  htmlEntryBefore,
 
 
   /* @init<%

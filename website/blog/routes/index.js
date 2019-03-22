@@ -29,7 +29,9 @@ import thoughtRoutes from '../modules/thought/routes/routes.js'
 //! webpack总结
 import webpackRoutes from '../modules/webpack/routes/routes.js'
 //! github总结
-import githubRoutes from '../modules/github/routes/routes.js'
+import githubRoutes from '../modules/github/routes/routes.js'
+//! html相关
+import htmlRoutes from '../modules/html/routes/routes.js'
 
 
 /* @init<%
@@ -70,7 +72,9 @@ const routes = [
   //! webpack总结
   ...webpackRoutes,
   //! github总结
-  ...githubRoutes,
+  ...githubRoutes,
+  //! html相关
+  ...htmlRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}
