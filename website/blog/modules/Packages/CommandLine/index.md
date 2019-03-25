@@ -28,6 +28,7 @@
 # 命令行加载中提示动画
 
 -   [ora](https://github.com/sindresorhus/ora)
+-   [log-symbols](https://github.com/sindresorhus/log-symbols) 在终端上显示对勾或者叉图案
 
 # 命令行进度条
 
