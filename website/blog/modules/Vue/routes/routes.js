@@ -11,6 +11,7 @@ let loadExpand = () => import(/* webpackChunkName: "VUE.expand" */'../expand/ind
 let loadListeners = () => import(/* webpackChunkName: "VUE.listeners" */'../listeners/index.vue')
 let loadSetTitle = () => import(/* webpackChunkName: "VUE.setTitle" */'../setTitle/index.vue')
 let loadComponentHooks = () => import(/* webpackChunkName: "VUE.componentHooks" */'../componentHooks/index.vue')
+let loadFunctionalComponent = () => import(/* webpackChunkName: "VUE.functionalComponent" */'../functionalComponent/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -151,6 +152,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: '捕获子组件生命周期',
+      preload () {}
+    }
+  },
+  {
+    path: '/VUE/functionalComponent',
+    name: 'VUEFunctionalComponent',
+    component: loadFunctionalComponent,
+    meta: {
+      module: 'VUE',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '函数式组件',
       preload () {}
     }
   },
