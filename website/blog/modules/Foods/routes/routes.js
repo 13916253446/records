@@ -10,7 +10,8 @@ let loadEventCapturePropagation = () => import(/* webpackChunkName: "Foods.event
 let loadFontFace = () => import(/* webpackChunkName: "Foods.fontFace" */'../fontFace/index.vue')
 let loadChromeFirstPain = () => import(/* webpackChunkName: "Foods.chromeFirstPain" */'../chromeFirstPain/index.vue')
 let loadSyncLayout = () => import(/* webpackChunkName: "Foods.syncLayout" */'../syncLayout/index.vue')
-let loadActionScopeList = () => import(/* webpackChunkName: "Foods.actionScopeList" */'../actionScopeList/index.vue')
+let loadActionScopeList = () => import(/* webpackChunkName: "Foods.actionScopeList" */'../actionScopeList/index.vue')
+let loadEventLoop = () => import(/* webpackChunkName: "Foods.eventLoop" */'../eventLoop/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -153,7 +154,22 @@ export const routes = [
       title: '理解作用域链',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/Foods/eventLoop',
+    name: 'FoodsEventLoop',
+    component: loadEventLoop,
+    meta: {
+      module: 'Foods',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '再谈浏览器事件循环',
+      preload () {}
+    }
+  },
+
+
 
 
 
