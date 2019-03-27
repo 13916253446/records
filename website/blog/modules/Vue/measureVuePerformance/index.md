@@ -12,7 +12,7 @@
 
 -   打开它并点击`Chrome DevTools`上的性能标签中的重新加载按钮：
     
-    ![](http://mp1.oss-cn-beijing.aliyuncs.com/featured.png)
+    ![](https://mp1.oss-cn-beijing.aliyuncs.com/featured.png)
 
 # 如何利用performance测量代码性能
 

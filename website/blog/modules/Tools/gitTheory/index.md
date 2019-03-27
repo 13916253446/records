@@ -1,4 +1,4 @@
-![git](http://mp1.oss-cn-beijing.aliyuncs.com/blog/385704-20150915155600929-543996061.jpg)
+![git](https://mp1.oss-cn-beijing.aliyuncs.com/blog/385704-20150915155600929-543996061.jpg)
 
 1. 目录结构
 

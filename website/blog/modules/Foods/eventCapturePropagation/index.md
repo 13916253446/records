@@ -19,7 +19,7 @@ document.addEventListener('click', () => {
 
 这个参数决定了，事件处理器的执行顺序：
 
-![capture](http://mp1.oss-cn-beijing.aliyuncs.com/blog/page_event.png)
+![capture](https://mp1.oss-cn-beijing.aliyuncs.com/blog/page_event.png)
 
 ### 参考：
 

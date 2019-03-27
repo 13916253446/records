@@ -142,7 +142,7 @@ font.load().then(function() {
 在 src 列表中优先列出 `local()`：在 src 列表中首先列出`local('Font Name')`可确保不会针对已安装的字体发出 HTTP 请求
 :::
 
-![fontFace](http://mp1.oss-cn-beijing.aliyuncs.com/blog/font_loading_api.png)
+![fontFace](https://mp1.oss-cn-beijing.aliyuncs.com/blog/font_loading_api.png)
 
 
 #### 参考：

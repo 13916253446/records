@@ -4,7 +4,7 @@
 
 但是`bfcache`的引入，导致了很多问题。下面，举一个我们遇到的场景：
 
-![](http://mp1.oss-cn-beijing.aliyuncs.com/blog/41332653-60610f92-6f11-11e8-86d4-6a704ab7d4ec.jpg)![](http://mp1.oss-cn-beijing.aliyuncs.com/blog/41332653-60610f92-6f11-11e8-86d4-6a704ab7d4ec.jpg)
+![](https://mp1.oss-cn-beijing.aliyuncs.com/blog/41332653-60610f92-6f11-11e8-86d4-6a704ab7d4ec.jpg)![](https://mp1.oss-cn-beijing.aliyuncs.com/blog/41332653-60610f92-6f11-11e8-86d4-6a704ab7d4ec.jpg)
 
 页面A是一个任务列表，用户从A页面选择了“任务1：看新闻”，点击“去完成”跳转到B页面。当用户进入B页面后，任务完成。此时用户点击回退按钮，会回退到A页面。此时的A页面“任务1：看新闻”的按钮，应该需要标记为“已完成”，由于`bfcache`的存在，当存入`bfcache`时，“任务1”的按钮是“去完成”，所以此时回来，按钮也是“去完成”，而不会标记为“已完成”。
 

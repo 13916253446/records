@@ -29,14 +29,14 @@
 
 通过`Performance`查看`Layout`的影响范围以及时间
 
-![layout](http://mp1.oss-cn-beijing.aliyuncs.com/blog/Layout.png)
+![layout](https://mp1.oss-cn-beijing.aliyuncs.com/blog/Layout.png)
 
 
 #### 什么是强制同步布局
 
 渲染一帧的正常顺序应该是：
 
-![frame](http://mp1.oss-cn-beijing.aliyuncs.com/blog/frame.jpg)
+![frame](https://mp1.oss-cn-beijing.aliyuncs.com/blog/frame.jpg)
 
 :::tip
 在`javascript`运行时，来至上一帧的所有布局值，都是已知的，所以在当前帧里面获取布局值是最好的做法(因为浏览器的优化可能把批量的操作统一化异步布局了，下一帧读取上一帧的布局肯定是能读到的)
@@ -88,11 +88,11 @@ function logBoxHeight() {
 
 假设使用`setTimeout`或`setInterval`来触发JS执行并修改样式从而导致视觉变化；那么会有这样一种情况，因为`setTimeout`或`setInterval`没有办法保证回调函数什么时候执行，它可能在每一帧的中间执行，也可能在每一帧的最后执行。所以会导致即便我们能保障每一帧的总耗时小于16ms，但是执行的时机如果在每一帧的中间或最后，最后的结果依然是**没有办法每隔16ms让屏幕产生一次变化**。
 
-![requestAnimationFrame](http://mp1.oss-cn-beijing.aliyuncs.com/blog/1696b79a9fc1ddd6)
+![requestAnimationFrame](https://mp1.oss-cn-beijing.aliyuncs.com/blog/1696b79a9fc1ddd6)
 
 也就是说，即便我们能保证每一帧总体时间小于16ms，但如果使用定时器触发动画，那么由于定时器的触发时机不确定，所以还是会导致动画丢帧。现在整个Web只有一个API可以解决这个问题，那就是requestAnimationFrame，它可以保证回调函数稳定的在每一帧最开始触发。
 
-![requestAnimationFrame](http://mp1.oss-cn-beijing.aliyuncs.com/blog/1696b79a9fcadb87)
+![requestAnimationFrame](https://mp1.oss-cn-beijing.aliyuncs.com/blog/1696b79a9fcadb87)
 
 ### 参考：
 

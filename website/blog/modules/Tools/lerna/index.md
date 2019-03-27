@@ -146,7 +146,7 @@ lerna version patch
 lerna version
 ```
 
-![](http://mp1.oss-cn-beijing.aliyuncs.com/blog/screely-1545557968431.png)![](http://mp1.oss-cn-beijing.aliyuncs.com/blog/screely-1545557968431.png)
+![](https://mp1.oss-cn-beijing.aliyuncs.com/blog/screely-1545557968431.png)![](https://mp1.oss-cn-beijing.aliyuncs.com/blog/screely-1545557968431.png)
 
 执行此命令，将执行以下操作
 

@@ -2,7 +2,7 @@
 
 基础选择器包括：**通用选择器**、**标签选择器**、**类选择器**、 **id选择器**
 
-![selector](http://mp1.oss-cn-beijing.aliyuncs.com/787564103-5c6ac113a0b47.png)
+![selector](https://mp1.oss-cn-beijing.aliyuncs.com/787564103-5c6ac113a0b47.png)
 
 ## 组合选择器
 
@@ -12,25 +12,25 @@
 
 **相邻**：靠近，离得近的都叫相邻
 
-![selector](http://mp1.oss-cn-beijing.aliyuncs.com/3135369761-5c6ac530275f8.png)
+![selector](https://mp1.oss-cn-beijing.aliyuncs.com/3135369761-5c6ac530275f8.png)
 
 ## 属性选择器
 
-![selector](http://mp1.oss-cn-beijing.aliyuncs.com/3158539893-5c6ac9634b897.png)
+![selector](https://mp1.oss-cn-beijing.aliyuncs.com/3158539893-5c6ac9634b897.png)
 
 ## 伪类选择器
 
 CSS1-2伪类选择器
 
-![selector](http://mp1.oss-cn-beijing.aliyuncs.com/1370704475-5c6c111e2bf30.png)
+![selector](https://mp1.oss-cn-beijing.aliyuncs.com/1370704475-5c6c111e2bf30.png)
 
 CSS3伪类选择器
 
-![selector](http://mp1.oss-cn-beijing.aliyuncs.com/3403027093-5c6c10fbe77f4.png)
+![selector](https://mp1.oss-cn-beijing.aliyuncs.com/3403027093-5c6c10fbe77f4.png)
 
 ## 伪元素
 
-![selector](http://mp1.oss-cn-beijing.aliyuncs.com/2854313473-5c6c17c398937.png)
+![selector](https://mp1.oss-cn-beijing.aliyuncs.com/2854313473-5c6c17c398937.png)
 
 ## 伪类与伪元素的区别与作用
 

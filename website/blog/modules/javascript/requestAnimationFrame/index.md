@@ -15,7 +15,7 @@
 </script>
 ```
 
-![requestAnimationFrame](http://mp1.oss-cn-beijing.aliyuncs.com/20190223082625.png)
+![requestAnimationFrame](https://mp1.oss-cn-beijing.aliyuncs.com/20190223082625.png)
 
 - `raf`是一个宏任务(`task`)
 
@@ -35,7 +35,7 @@
   </script>
 ```
 
-![requestAnimationFrame](http://mp1.oss-cn-beijing.aliyuncs.com/20190223083641.png)
+![requestAnimationFrame](https://mp1.oss-cn-beijing.aliyuncs.com/20190223083641.png)
 
 可以看出`requestAnimationFrame`是一个宏任务，`Promise`是一个微任务。
 

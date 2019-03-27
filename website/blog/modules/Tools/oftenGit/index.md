@@ -34,7 +34,7 @@ git checkout head~2
 git reset head~1
 ```
 
-![git](http://mp1.oss-cn-beijing.aliyuncs.com/blog/aze1u-k0azb.gif)
+![git](https://mp1.oss-cn-beijing.aliyuncs.com/blog/aze1u-k0azb.gif)
 
 使用`reset`就会有一个问题，本地的快照要慢于服务器上面的快照，直接`push`的时候，就需要`pull`代码，就又会把回退过后的代码拉下来。
 

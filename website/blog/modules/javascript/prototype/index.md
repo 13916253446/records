@@ -33,7 +33,7 @@ console.log(person2.name) // Kevin
 那什么是原型呢？你可以这样理解：每一个JavaScript对象(null除外)在创建的时候就会与之关联另一个对象，这个对象就是我们所说的原型，每一个对象都会从原型"继承"属性。
 
 让我们用一张图表示构造函数和实例原型之间的关系：
-![prototyp](http://mp1.oss-cn-beijing.aliyuncs.com/prototype1.png)
+![prototyp](https://mp1.oss-cn-beijing.aliyuncs.com/prototype1.png)
 
 在这张图中我们用 Object.prototype 表示实例原型。
 
@@ -54,7 +54,7 @@ console.log(person.__proto__ === Person.prototype); // true
 
 于是我们更新下关系图：
 
-![prototype](http://mp1.oss-cn-beijing.aliyuncs.com/prototype2.png)
+![prototype](https://mp1.oss-cn-beijing.aliyuncs.com/prototype2.png)
 
 ## constructor
 原型指向构造函数倒是有的，这就要讲到第三个属性：constructor，每个原型都有一个 constructor 属性指向关联的构造函数。
@@ -69,7 +69,7 @@ console.log(Person === Person.prototype.constructor); // true
 ```
 
 所以再更新下关系图：
-![prototype](http://mp1.oss-cn-beijing.aliyuncs.com/prototype3.png)
+![prototype](https://mp1.oss-cn-beijing.aliyuncs.com/prototype3.png)
 
 综上我们已经得出：
 
@@ -125,7 +125,7 @@ console.log(obj.name) // Kevin
 ```
 
 其实原型对象就是通过 Object 构造函数生成的，结合之前所讲，实例的 __proto__ 指向构造函数的 prototype ，所以我们再更新下关系图：
-![prototype](http://mp1.oss-cn-beijing.aliyuncs.com/prototype4.png)
+![prototype](https://mp1.oss-cn-beijing.aliyuncs.com/prototype4.png)
 
 ## 原型链
 那 Object.prototype 的原型呢？
@@ -137,4 +137,4 @@ console.log(Object.prototype.__proto__ === null) // true
 ```
 
 最后一张关系图也可以更新为：
-![prototype](http://mp1.oss-cn-beijing.aliyuncs.com/prototype5.png)
+![prototype](https://mp1.oss-cn-beijing.aliyuncs.com/prototype5.png)

@@ -77,7 +77,7 @@ new Person instanceof Object; // true
 
 因此，[]、Array、Object 就在内部形成了一条原型链：
 
-![prototype](http://mp1.oss-cn-beijing.aliyuncs.com/proto.jpeg)
+![prototype](https://mp1.oss-cn-beijing.aliyuncs.com/proto.jpeg)
 
 >instanceof 只能用来判断两个对象是否属于实例关系， 而不能判断一个对象实例具体属于哪种类型。
 

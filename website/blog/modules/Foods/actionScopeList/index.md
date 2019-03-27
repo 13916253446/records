@@ -30,7 +30,7 @@ var sum = 30;
 将抽象语法树（AST）转换为一组机器指令，也就是可执行代码，简单说，就是用来创建一个变量a，并将3这个值储存在a中。
 :::
 
-<img src="http://mp1.oss-cn-beijing.aliyuncs.com/blog/169826acb0356502" style="height:160px;">
+<img src="https://mp1.oss-cn-beijing.aliyuncs.com/blog/169826acb0356502" style="height:160px;">
 
 :::warning
 - JavaScript 大部分情况下编译发生在代码执行前的几微秒(甚至更短!)的时间内

@@ -28,7 +28,7 @@
 </html>
 ```
 
-![preload](http://mp1.oss-cn-beijing.aliyuncs.com/blog/no_preload.png)
+![preload](https://mp1.oss-cn-beijing.aliyuncs.com/blog/no_preload.png)
 
 可以看到`html`下载完毕，在执行`Parse HTML`阶段并发的发出了基于标记语言的三个资源请求(`index.css、index1.js、index.js`)
 
@@ -53,7 +53,7 @@
 </html>
 ```
 
-![preload](http://mp1.oss-cn-beijing.aliyuncs.com/blog/preload.png)
+![preload](https://mp1.oss-cn-beijing.aliyuncs.com/blog/preload.png)
 
 使用了`preload`可以看到`index1.js`在`HTML`下载完毕，立马就发出了资源请求，而另外两个还是在`Parse HTML`阶段发出的资源请求，虽然时间相差不大(**118.8ms，119.3ms**)但是对于一些小的资源请求来说，可能已经足够下载了
 
