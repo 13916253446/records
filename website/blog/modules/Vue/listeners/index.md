@@ -2,7 +2,7 @@
 
 比如说包装了一个input组件，但是这个组件可能分发各种类型的事件：
 
-```html
+```HTML
 <template>
     <div class="wrapper-comp">
         <label>My Label</label>
@@ -18,7 +18,7 @@
 
 为了减少代码量，我们可以通过`$listeners`直接绑定事件：
 
-```html
+```HTML
 <template>
     <div class="wrapper-comp">
         <label>My Label</label>
@@ -31,7 +31,7 @@
 
 ### 子组件调用父组件绑定的事件并接收返回的参数
 
-```html
+```HTML
 // parent.vue
 <template>
   <div>
@@ -52,7 +52,7 @@ export default {
 
 通过`$emit`的方式是不能拿到返回值的，因为`$emit`相当于是分发一个事件，父组件有一个监听事件，是个异步操作，是不能返回值
 
-```html
+```HTML
 <template>
   <div @click="handler"></div>
 </template>
@@ -70,7 +70,7 @@ export default {
 
 但是通过`$listeners`对象拿到绑定的事件的方法，直接调用，就可能拿到返回值了
 
-```html
+```HTML
 <template>
   <div @click="handler"></div>
 </template>

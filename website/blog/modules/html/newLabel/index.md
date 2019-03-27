@@ -1,6 +1,6 @@
 #### 1. 注释标签
 
-```html
+```HTML
 <ruby>
   汉 <rp>(</rp><rt>Han</rt><rp>)</rp>
   字 <rp>(</rp><rt>zi</rt><rp>)</rp>

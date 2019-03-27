@@ -36,7 +36,7 @@ Safari | 无超时 | 不适用 | 不适用
 
 您的页面很有可能需要您事先在知道的网址上托管特定的网页字体，如果确实如此，您可利用新的网络平台功能：`<link rel="preload">`
 
-```html
+```HTML
 <head>
   <!-- Other tags... -->
   <link rel="preload" href="/fonts/awesome-l.woff2" as="font">

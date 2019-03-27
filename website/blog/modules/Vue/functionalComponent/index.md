@@ -32,7 +32,7 @@ Vue.component('my-component', {
 在 2.5.0 及以上版本中，可以这样申明
 :::
 
-```html
+```HTML
 <template functional>
 </template>
 ```
@@ -60,7 +60,7 @@ Vue.component('my-component', {
 
 比如使用模板的形式:
 
-```html
+```HTML
 <template functional>
   <div>{{props.name}}</div>
 </template>

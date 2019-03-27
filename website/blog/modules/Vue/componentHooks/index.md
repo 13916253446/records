@@ -14,7 +14,7 @@ mounted () {
 #### 2. 捕获`vue`内部分发的事件
 
 通过`@hooks:生命周期`来实现监听
-```html
+```HTML
 <child @hooks:mounted="mounted"></child>
 ```
 

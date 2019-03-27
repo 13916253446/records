@@ -3,7 +3,8 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "performance.pageTemplate" */'components/template/page/page.vue')
 let loadRepaint = () => import(/* webpackChunkName: "performance.repaint" */'../repaint/index.vue')
-let loadPreload = () => import(/* webpackChunkName: "performance.preload" */'../preload/index.vue')
+let loadPreload = () => import(/* webpackChunkName: "performance.preload" */'../preload/index.vue')
+let loadPerformanceFunctions = () => import(/* webpackChunkName: "performance.performanceFunctions" */'../performanceFunctions/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -55,7 +56,22 @@ export const routes = [
       title: '深入preload',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/performance/performanceFunctions',
+    name: 'PerformancePerformanceFunctions',
+    component: loadPerformanceFunctions,
+    meta: {
+      module: 'performance',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '高性能函数',
+      preload () {}
+    }
+  },
+
+
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',

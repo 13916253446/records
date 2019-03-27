@@ -11,7 +11,7 @@ Vue.directive('title', {
 
 路由组件内部使用：
 
-```html
+```HTML
 <div v-title>标题内容</div>
 ```
 
@@ -29,6 +29,6 @@ export default {
 
 组件内部使用：
 
-```html
+```HTML
 <title>标题内容</title>
 ```

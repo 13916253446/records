@@ -10,7 +10,7 @@
 
 - 父组件
 
-  ```html
+  ```HTML
   <div  v-for="(item, index) in array]">
     <child  @refresh="refresh(index)"></child>
   </div>
@@ -20,7 +20,7 @@
 
 - 父组件捕获事件自定义一个事件，然后调用父组件内部的方法
 
-  ```html
+  ```HTML
   <div  v-for="(item, index) in array]">
     <child  @refresh="(model) => { refresh(model, index) }"></child>
   </div>

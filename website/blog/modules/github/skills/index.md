@@ -57,7 +57,7 @@ git config --global alias.ac 'add -A . && commit'
 #### 嵌入Github
 
 比如：
-```html
+```HTML
 <iframe src="//ghbtns.com/github-btn.html?user=13916253446&repo=records&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
 ```
 

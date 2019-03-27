@@ -121,7 +121,7 @@ console.log(girl.happiness); //还是8
     
     当用户点击一个以`javascript:` URI 时，它会执行URI中的代码，然后用返回的值替换页面内容，除非返回的值是[`undefined`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined "undefined是全局对象的一个属性。也就是说，它是全局作用域的一个变量。undefined的最初值就是原始数据类型undefined。")。`void`运算符可用于返回[`undefined`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined "undefined是全局对象的一个属性。也就是说，它是全局作用域的一个变量。undefined的最初值就是原始数据类型undefined。")。例如：
     
-    ```html
+    ```HTML
     <a href="javascript:void(0);">
     这个链接点击之后不会做任何事情，如果去掉 void()，
     点击之后整个页面会被替换成一个字符 0。

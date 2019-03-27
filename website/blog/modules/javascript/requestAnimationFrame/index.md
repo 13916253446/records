@@ -2,7 +2,7 @@
 
 - `raf`里面的`callback`，会在重绘和回流之前执行，也就是下一次布局和绘制前面执行
 
-```html
+```HTML
 <div id="btn">按钮</div>
 <script>
   var btn = document.getElementById('btn')
@@ -19,7 +19,7 @@
 
 - `raf`是一个宏任务(`task`)
 
-```html
+```HTML
 <div id="btn">按钮</div>
   <script>
     var btn = document.getElementById('btn')
@@ -44,7 +44,7 @@
 
 - 同样的如果你在一个`Task`里面去改变`DOM`，然后你在`requestAnimationFrame`里面去读取`DOM`，你只会拿到一个没有发生改变的`DOM`
 
-```html
+```HTML
 <div id="btn">按钮</div>
   <div id="dialog" class="dialog"></div>
   <script>
@@ -64,7 +64,7 @@
 
 - 最好的操作`DOM`做法是：**在requestAnimationFrame里面改变DOM，然后在其他的Task里面去读取DOM**
 
-```html
+```HTML
 <div id="btn">按钮</div>
   <div id="dialog" class="dialog"></div>
   <script>
@@ -86,7 +86,7 @@
 
 还有一种做法是在`requestAnimationFrame`强制触发一次回流
 
-```html
+```HTML
 <div id="btn">按钮</div>
   <div id="dialog" class="dialog"></div>
   <script>
