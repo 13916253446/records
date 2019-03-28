@@ -96,6 +96,83 @@ Log: 'script start', 'script end', 'promise1', 'promise2', 'setTimeout'
 - Object.observe
 - MutationObserver
 
+
+#### 微任务(`MicroTask`)的起源
+
+:::tip
+浏览器希望为开发人员提供一种监控DOM变化的方法，但是如果发生下面的情况，你是希望想听到一次，还是100次呢
+:::
+
+```javascript
+for (let i = 0; i < 100; i ++) {
+  const span = document.createElement('span')
+  document.body.appendChild(span)
+}
+```
+
+:::tip
+答案肯定就是一次了，这里浏览器就创建了一个新的队列:微任务(`microTask`),他承诺你在当前js执行完毕，也就是栈空的时候就会执行所有的微任务，微任务可能发生在事件循环的任何地方，比如在`requestAnimationFrame`回调里面启动一个微任务，这个微任务就会在`requestAnimationFrame`回调栈空之后，渲染之前执行，也说明了如果有一个一直执行的微任务队列，那么浏览器也就会卡死
+:::
+
+```javascript
+function loop () {
+  Promise.resolve().then(loop)
+  loop()
+}
+```
+
+**看个例子:**
+
+我们给一个`DOM`绑定两个事件
+
+```javascript
+dom.addEventListener('click', () => {
+  Promise.resolve().then(() => {
+    console.log(1)
+  })
+  console.log(2)
+})
+dom.addEventListener('click', () => {
+  Promise.resolve().then(() => {
+    console.log(3)
+  })
+  console.log(4)
+})
+```
+
+:::tip
+当我们点击`DOM`的时候，会打印2,1,4,3
+:::
+
+但是如果是`js`触发的呢
+
+```javascript
+dom.addEventListener('click', () => {
+  Promise.resolve().then(() => {
+    console.log(1)
+  })
+  console.log(2)
+})
+dom.addEventListener('click', () => {
+  Promise.resolve().then(() => {
+    console.log(3)
+  })
+  console.log(4)
+})
+
+dom.click()
+```
+
+:::tip
+js触发的时候，就会打印2,4,1,3
+:::
+
+<video controls="controls" autoplay src="https://mp1.oss-cn-beijing.aliyuncs.com/blog/loop9.mov"></video>
+
+:::warning
+js调用触发的时候，两次回调没有执行完，`dom.click()`这里的javascript不会从栈里面移除，导致微任务一直不能触发，最后才会触发
+:::
+
 ### 参考
 
 [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)

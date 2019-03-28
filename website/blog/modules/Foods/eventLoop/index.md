@@ -81,8 +81,113 @@ dom.addEventListener('click', () => {
 也说明了一点：渲染可以在任务之间发生，但是并不是说一定会在两次任务之间就会发生一次渲染，浏览器尽可能的尝试高效的渲染，也许在两次三次任务之后渲染，比如当前选项卡切换了，即使发生样式变化也不会渲染，因为渲染没有任何意义，而且只有在样式发生改变的时候，才会触发渲染，又比如在60HZ的显示器上面，即使一秒钟触发1000次样式修改，浏览器也最多也只会渲染60次，因为渲染1000次没有任何意义，用户也看不到。
 :::
 
-看到17分钟的位置
+#### 分析一下为什么`setTimeout`不适于做动画
+
+假设在60HZ的显示器上面，我们用`setTimeout(animFrame, 1000 / 60)`来模拟：可能会发生下面的现象
+
+![loop](https://mp1.oss-cn-beijing.aliyuncs.com/blog/loop4.png)
+
+:::warning
+`setTimeout`并不是为动画而设计的，他的表现并不准确，有可能在一帧中什么也不做，然后在下一帧中做，这对用户来说简直就是视觉冲击
+:::
+
+![loop](https://mp1.oss-cn-beijing.aliyuncs.com/blog/loop5.png)
+
+:::warning
+也有可能某个任务运行时间过长，最终会移动渲染步骤，因为他们都在同一个线程中运行
+:::
+
+![loop](https://mp1.oss-cn-beijing.aliyuncs.com/blog/loop6.png)
+
+:::tip
+而你使用`requestAnimationFrame`就会是这样的，他是为动画而设计的，会在计算样式和渲染之前，而不是像任务一样无法掌控运行的时机，任务和帧没有强制的关联关系，所以任何可能会发生在任何时候，从下面的图可以看到在每一帧中，时间分配的很合理，即使`requestAnimationFrame`里面的任务过长也不会影响当前帧的时间
+:::
+
+![loop](https://mp1.oss-cn-beijing.aliyuncs.com/blog/loop7.png)
+
+:::tip
+当然你无法避免任务，比如一些点击之类的任务传递给你，希望你尽快做出响应，还比如一些定时器的任务，网络请求的任务等等，你已经有动画在运行了，用`requestAnimation`就会下面这样的
+:::
+
+![loop](https://mp1.oss-cn-beijing.aliyuncs.com/blog/loop8.png)
+
+#### 微任务(`MicroTask`)的起源
+
+:::tip
+浏览器希望为开发人员提供一种监控DOM变化的方法，但是如果发生下面的情况，你是希望想听到一次，还是100次呢
+:::
+
+```javascript
+for (let i = 0; i < 100; i ++) {
+  const span = document.createElement('span')
+  document.body.appendChild(span)
+}
+```
+
+:::tip
+答案肯定就是一次了，这里浏览器就创建了一个新的队列:微任务(`microTask`),他承诺你在当前js执行完毕，也就是栈空的时候就会执行所有的微任务，微任务可能发生在事件循环的任何地方，比如在`requestAnimationFrame`回调里面启动一个微任务，这个微任务就会在`requestAnimationFrame`回调栈空之后，渲染之前执行，也说明了如果有一个一直执行的微任务队列，那么浏览器也就会卡死
+:::
+
+```javascript
+function loop () {
+  Promise.resolve().then(loop)
+  loop()
+}
+```
+
+**看个例子:**
+
+我们给一个`DOM`绑定两个事件
+
+```javascript
+dom.addEventListener('click', () => {
+  Promise.resolve().then(() => {
+    console.log(1)
+  })
+  console.log(2)
+})
+dom.addEventListener('click', () => {
+  Promise.resolve().then(() => {
+    console.log(3)
+  })
+  console.log(4)
+})
+```
+
+:::tip
+当我们点击`DOM`的时候，会打印2,1,4,3
+:::
+
+但是如果是`js`触发的呢
+
+```javascript
+dom.addEventListener('click', () => {
+  Promise.resolve().then(() => {
+    console.log(1)
+  })
+  console.log(2)
+})
+dom.addEventListener('click', () => {
+  Promise.resolve().then(() => {
+    console.log(3)
+  })
+  console.log(4)
+})
+
+dom.click()
+```
+
+:::tip
+js触发的时候，就会打印2,4,1,3
+:::
+
+<video controls="controls" autoplay src="https://mp1.oss-cn-beijing.aliyuncs.com/blog/loop9.mov"></video>
+
+:::warning
+js调用触发的时候，两次回调没有执行完，`dom.click()`这里的javascript不会从栈里面移除，导致微任务一直不能触发，最后才会触发
+:::
 
 ### 参考：
 
--[Jake Archibald: In The Loop - JSConf.Asia 2018](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
+- [Jake Archibald: In The Loop - JSConf.Asia 2018](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
+- [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/)
