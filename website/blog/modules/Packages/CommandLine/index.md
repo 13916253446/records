@@ -181,3 +181,7 @@ var endOfLine = require('os').EOL
 # 命令行检测页面性能
 
   - [lighthouse-ci](https://github.com/ebidel/lighthouse-ci)
+
+# 自动化发布`npm`,`git`
+
+  - [release-it](https://github.com/release-it/release-it#git)可以自动化修改版本，以及更改日志等等
