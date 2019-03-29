@@ -196,3 +196,143 @@ export default {
 :::tip
 因为所有绑定在this上面的属性，都会增加`get`,`set`方法，也就是说你读取`this.base`的时候，实际会走一遍`get`方法，由于堆栈的原由，就会耗费时间
 :::
+
+#### 4. 延迟渲染
+
+<div class="flex">
+<section class="flex-full">
+
+- 普通写法
+
+```HTML
+<template>
+  <div>
+    <h2>I'm an heavy page</h2>
+
+    <Heavy v-for="n in 10" :key="n"/>
+
+    <Heavy class="super-heavy" :n="9999999"/>
+  </div>
+</template>
+```
+</section>
+<div style="width: 10px;"></div>
+<section class="flex-full">
+
+- 延迟写法写法
+
+```HTML
+<template>
+  <div>
+    <h2>I'm an heavy page</h2>
+
+    <template v-if="defer(2)">
+      <Heavy v-for="n in 10" :key="n"/>
+    </template>
+
+    <Heavy v-if="defer(3)" class="super-heavy" :n="9999999"/>
+  </div>
+</template>
+
+<script>
+import Defer from '@/mixins/Defer'
+
+export default {
+  mixins: [
+    Defer()
+  ]
+}
+</script>
+```
+
+**Defer Mixin**
+
+```javascript
+export default function (count = 10) {
+  return {
+    data () {
+      return {
+        displayPriority: 0
+      }
+    },
+
+    mounted () {
+      this.runDisplayPriority()
+    },
+
+    methods: {
+      runDisplayPriority () {
+        const step = () => {
+          requestAnimationFrame(() => {
+            this.displayPriority++
+            if (this.displayPriority < count) {
+              step()
+            }
+          })
+        }
+        step()
+      },
+
+      defer (priority) {
+        return this.displayPriority >= priority
+      }
+    }
+  }
+}
+```
+</section>
+</div>
+
+#### 5. 定制不需要监听变化的属性值
+
+<div class="flex">
+<section class="flex-full">
+
+- 普通写法
+
+```javascript
+const data = items.map(
+  item => ({
+    id: uid++,
+    data: item,
+    vote: 0
+  })
+)
+```
+</section>
+<div style="width: 10px;"></div>
+<section class="flex-full">
+
+- 不让添加`get`,`set`方法的写法
+
+```javascript
+const data = items.map(
+  item => optimizeItem(item)
+)
+
+function optimizeItem (item) {
+  const itemData = {
+    id: uid++,
+    vote: 0
+  }
+  Object.defineProperty(itemData, 'data', {
+    // Mark as non-reactive
+    configurable: false,
+    value: item
+  })
+  return itemData
+}
+```
+
+:::tip
+这样可以定制局部属性，不用`Vue`添加`get`,`set`方法
+:::
+
+#### 6. 虚拟滚动组件
+
+[vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller)
+
+
+### 参考:
+
+- [9 performance secrets revealed](https://slides.com/akryum/vueconfus-2019#/)
