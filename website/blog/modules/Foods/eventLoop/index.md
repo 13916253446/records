@@ -187,6 +187,21 @@ js触发的时候，就会打印2,4,1,3
 js调用触发的时候，两次回调没有执行完，`dom.click()`这里的javascript不会从栈里面移除，导致微任务一直不能触发，最后才会触发
 :::
 
+#### `requestIdleCallback`
+
+:::tip
+`requestIdleCallback`注册的回调函数，可以在当前帧渲染的时候，如果这一帧渲染还有剩余的时间，就会在这一帧的末尾执行，因此可以用这个函数捕捉一帧的最后时机
+:::
+
+```javascript
+requestAnimationFrame(function raf () {
+  console.log(1)
+  requestIdleCallback(function fic () {
+    console.log(2)
+  })
+})
+```
+
 ### 参考：
 
 - [Jake Archibald: In The Loop - JSConf.Asia 2018](https://www.youtube.com/watch?v=cCOL7MC4Pl0)

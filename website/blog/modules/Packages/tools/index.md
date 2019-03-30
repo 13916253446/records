@@ -64,3 +64,7 @@
 # 生成二维码
 
 - [QR-Code](https://github.com/sylnsfar/qrcode) 生成带图片或者带动画的二维码
+
+# 34中自定义的ESlint规则
+
+- [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
