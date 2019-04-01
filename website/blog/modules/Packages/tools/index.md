@@ -69,4 +69,5 @@
 
 - [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
 
-# [majestic](https://github.com/Raathigesh/majestic)可视化测试Jest
+# Jest可视化(GUI)
+- [majestic](https://github.com/Raathigesh/majestic)可视化测试Jest
