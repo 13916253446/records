@@ -68,3 +68,5 @@
 # 34中自定义的ESlint规则
 
 - [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
+
+# [majestic](https://github.com/Raathigesh/majestic)可视化测试Jest
