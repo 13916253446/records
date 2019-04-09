@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "webpack.pageTemplate" */'components/template/page/page.vue')
 let loadPerformance = () => import(/* webpackChunkName: "webpack.performance" */'../performance/index.vue')
+let loadEslintNewRules = () => import(/* webpackChunkName: "webpack.eslintNewRules" */'../eslintNewRules/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/webpack/eslintNewRules',
+    name: 'WebpackEslintNewRules',
+    component: loadEslintNewRules,
+    meta: {
+      module: 'webpack',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'eslint新的规则',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
