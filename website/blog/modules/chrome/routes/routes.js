@@ -3,7 +3,8 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "chrome.pageTemplate" */'components/template/page/page.vue')
 let loadSkill = () => import(/* webpackChunkName: "chrome.skill" */'../skill/index.vue')
-let loadPerformance = () => import(/* webpackChunkName: "chrome.performance" */'../performance/index.vue')
+let loadPerformance = () => import(/* webpackChunkName: "chrome.performance" */'../performance/index.vue')
+let loadNativeLazy = () => import(/* webpackChunkName: "chrome.nativeLazy" */'../nativeLazy/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -55,7 +56,22 @@ export const routes = [
       title: 'devTool里面performance',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/chrome/nativeLazy',
+    name: 'ChromeNativeLazy',
+    component: loadNativeLazy,
+    meta: {
+      module: 'chrome',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '原生懒加载',
+      preload () {}
+    }
+  },
+
+
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
