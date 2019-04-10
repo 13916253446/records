@@ -6,7 +6,8 @@ let loadBoxShadow = () => import(/* webpackChunkName: "CSS.boxShadow" */'../boxS
 let loadSelector = () => import(/* webpackChunkName: "CSS.selector" */'../selector/index.vue')
 let loadOftenCss = () => import(/* webpackChunkName: "CSS.oftenCss" */'../oftenCss/index.vue')
 let loadCssGetListCount = () => import(/* webpackChunkName: "CSS.cssGetListCount" */'../cssGetListCount/index.vue')
-let loadChangeSkin = () => import(/* webpackChunkName: "CSS.changeSkin" */'../changeSkin/index.vue')
+let loadChangeSkin = () => import(/* webpackChunkName: "CSS.changeSkin" */'../changeSkin/index.vue')
+let loadBackgroundPosition = () => import(/* webpackChunkName: "CSS.backgroundPosition" */'../backgroundPosition/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -97,7 +98,22 @@ export const routes = [
       title: '切换皮肤方案',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/CSS/backgroundPosition',
+    name: 'CSSBackgroundPosition',
+    component: loadBackgroundPosition,
+    meta: {
+      module: 'CSS',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '理解背景定位',
+      preload () {}
+    }
+  },
+
+
 
 
   /* @init<%
