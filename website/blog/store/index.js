@@ -32,7 +32,9 @@ import webpackStore from '../modules/webpack/store/store.js'
 //! github总结
 import githubStore from '../modules/github/store/store.js'
 //! html相关
-import htmlStore from '../modules/html/store/store.js'
+import htmlStore from '../modules/html/store/store.js'
+//! vscode技巧
+import vscodeStore from '../modules/vscode/store/store.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -158,7 +160,12 @@ export const store = new Vuex.Store({
     html: {
       namespaced: true,
       ...htmlStore
-    },
+    },
+    //! vscode技巧
+    vscode: {
+      namespaced: true,
+      ...vscodeStore
+    },
 
 
     /* @init<%

@@ -31,7 +31,9 @@ import webpackRoutes from '../modules/webpack/routes/routes.js'
 //! github总结
 import githubRoutes from '../modules/github/routes/routes.js'
 //! html相关
-import htmlRoutes from '../modules/html/routes/routes.js'
+import htmlRoutes from '../modules/html/routes/routes.js'
+//! vscode技巧
+import vscodeRoutes from '../modules/vscode/routes/routes.js'
 
 
 /* @init<%
@@ -74,7 +76,9 @@ const routes = [
   //! github总结
   ...githubRoutes,
   //! html相关
-  ...htmlRoutes,
+  ...htmlRoutes,
+  //! vscode技巧
+  ...vscodeRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}

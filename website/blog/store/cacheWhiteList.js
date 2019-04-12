@@ -29,7 +29,9 @@ import webpackWhite from '../modules/webpack/store/cacheWhiteList.js'
 //! github模块白名单
 import githubWhite from '../modules/github/store/cacheWhiteList.js'
 //! html模块白名单
-import htmlWhite from '../modules/html/store/cacheWhiteList.js'
+import htmlWhite from '../modules/html/store/cacheWhiteList.js'
+//! vscode模块白名单
+import vscodeWhite from '../modules/vscode/store/cacheWhiteList.js'
 
 
 /* @init<%
@@ -50,7 +52,8 @@ export const whiteList = [
   ...thoughtWhite,
   ...webpackWhite,
   ...githubWhite,
-  ...htmlWhite,
+  ...htmlWhite,
+  ...vscodeWhite,
 
 
   /* @init<%
