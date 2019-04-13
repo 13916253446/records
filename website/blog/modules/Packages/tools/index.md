@@ -71,3 +71,7 @@
 
 # Jest可视化(GUI)
 - [majestic](https://github.com/Raathigesh/majestic)可视化测试Jest
+
+# 工程化
+
+- [dimport](https://github.com/lukeed/dimport)让浏览器支持动态导入和静态导入(ESM)
