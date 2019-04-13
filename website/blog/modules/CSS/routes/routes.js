@@ -8,6 +8,7 @@ let loadOftenCss = () => import(/* webpackChunkName: "CSS.oftenCss" */'../oftenC
 let loadCssGetListCount = () => import(/* webpackChunkName: "CSS.cssGetListCount" */'../cssGetListCount/index.vue')
 let loadChangeSkin = () => import(/* webpackChunkName: "CSS.changeSkin" */'../changeSkin/index.vue')
 let loadBackgroundPosition = () => import(/* webpackChunkName: "CSS.backgroundPosition" */'../backgroundPosition/index.vue')
+let loadObjectFit = () => import(/* webpackChunkName: "CSS.objectFit" */'../objectFit/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -109,6 +110,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: '理解背景定位',
+      preload () {}
+    }
+  },
+  {
+    path: '/CSS/objectFit',
+    name: 'CSSObjectFit',
+    component: loadObjectFit,
+    meta: {
+      module: 'CSS',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '理解ObjectFit',
       preload () {}
     }
   },
