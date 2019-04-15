@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "vscode.pageTemplate" */'components/template/page/page.vue')
 let loadCustomeColor = () => import(/* webpackChunkName: "vscode.customeColor" */'../customeColor/index.vue')
+let loadPracticalShortcutKey = () => import(/* webpackChunkName: "vscode.practicalShortcutKey" */'../practicalShortcutKey/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/vscode/practicalShortcutKey',
+    name: 'VscodePracticalShortcutKey',
+    component: loadPracticalShortcutKey,
+    meta: {
+      module: 'vscode',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '实用快捷键',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
