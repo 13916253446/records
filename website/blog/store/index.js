@@ -34,7 +34,9 @@ import githubStore from '../modules/github/store/store.js'
 //! html相关
 import htmlStore from '../modules/html/store/store.js'
 //! vscode技巧
-import vscodeStore from '../modules/vscode/store/store.js'
+import vscodeStore from '../modules/vscode/store/store.js'
+//! 关于npm的知识
+import npmStore from '../modules/npm/store/store.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -165,7 +167,12 @@ export const store = new Vuex.Store({
     vscode: {
       namespaced: true,
       ...vscodeStore
-    },
+    },
+    //! 关于npm的知识
+    npm: {
+      namespaced: true,
+      ...npmStore
+    },
 
 
     /* @init<%

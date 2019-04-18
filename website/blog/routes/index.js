@@ -33,7 +33,9 @@ import githubRoutes from '../modules/github/routes/routes.js'
 //! html相关
 import htmlRoutes from '../modules/html/routes/routes.js'
 //! vscode技巧
-import vscodeRoutes from '../modules/vscode/routes/routes.js'
+import vscodeRoutes from '../modules/vscode/routes/routes.js'
+//! 关于npm的知识
+import npmRoutes from '../modules/npm/routes/routes.js'
 
 
 /* @init<%
@@ -78,7 +80,9 @@ const routes = [
   //! html相关
   ...htmlRoutes,
   //! vscode技巧
-  ...vscodeRoutes,
+  ...vscodeRoutes,
+  //! 关于npm的知识
+  ...npmRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}
