@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "npm.pageTemplate" */'components/template/page/page.vue')
 let loadSkill = () => import(/* webpackChunkName: "npm.skill" */'../skill/index.vue')
+let loadVersionManager = () => import(/* webpackChunkName: "npm.versionManager" */'../versionManager/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/npm/versionManager',
+    name: 'NpmVersionManager',
+    component: loadVersionManager,
+    meta: {
+      module: 'npm',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '版本管理',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
