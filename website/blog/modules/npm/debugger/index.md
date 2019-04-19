@@ -30,7 +30,7 @@ cd path/to/my-project/node_modules
 ln -s path/to/my-utils my-utils
 ```
 
-### `npm link`创建软链
+### 3. `npm link`创建软链
 
 ```shell
 # 指定本地目录
@@ -65,6 +65,12 @@ egg-init
 ```shell
 npm unlink my-utils
 ```
+
+:::tip
+创建软链之后，项目的node_modules目录下会多出文件包名的资源文件夹，就可以直接使用当前这个模块了，在vscode里面，可以查看资源包带有箭头标志，如下图：
+
+![npm link](https://mp1.oss-cn-beijing.aliyuncs.com/blog/20190419080045.png)
+:::
 
 ## 参考：
 
