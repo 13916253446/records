@@ -3,7 +3,8 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "npm.pageTemplate" */'components/template/page/page.vue')
 let loadSkill = () => import(/* webpackChunkName: "npm.skill" */'../skill/index.vue')
-let loadVersionManager = () => import(/* webpackChunkName: "npm.versionManager" */'../versionManager/index.vue')
+let loadVersionManager = () => import(/* webpackChunkName: "npm.versionManager" */'../versionManager/index.vue')
+let loadDebugger = () => import(/* webpackChunkName: "npm.debugger" */'../debugger/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -55,7 +56,22 @@ export const routes = [
       title: '版本管理',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/npm/debugger',
+    name: 'NpmDebugger',
+    component: loadDebugger,
+    meta: {
+      module: 'npm',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'npm调试技巧',
+      preload () {}
+    }
+  },
+
+
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
