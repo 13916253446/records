@@ -1,6 +1,6 @@
 {
   "name": "composite",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "移动端多项目渐进式编译模板",
   "main": "index.js",
   "scripts": {
