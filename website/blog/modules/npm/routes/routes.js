@@ -6,6 +6,7 @@ let loadSkill = () => import(/* webpackChunkName: "npm.skill" */'../skill/index.
 let loadVersionManager = () => import(/* webpackChunkName: "npm.versionManager" */'../versionManager/index.vue')
 let loadDebugger = () => import(/* webpackChunkName: "npm.debugger" */'../debugger/index.vue')
 let loadPackageLock = () => import(/* webpackChunkName: "npm.packageLock" */'../packageLock/index.vue')
+let loadInstallDetail = () => import(/* webpackChunkName: "npm.installDetail" */'../installDetail/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -84,6 +85,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/npm/installDetail',
+    name: 'NpmInstallDetail',
+    component: loadInstallDetail,
+    meta: {
+      module: 'npm',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '模块安装机制',
+      preload () {}
+    }
+  },
 
 
   /* @init<%
