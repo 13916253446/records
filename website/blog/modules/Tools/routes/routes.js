@@ -10,6 +10,8 @@ let loadWebpackErrors = () => import(/* webpackChunkName: "Tools.webpackErrors" 
 let loadCss = () => import(/* webpackChunkName: "Tools.css" */'../css/index.vue')
 let loadGitTheory = () => import(/* webpackChunkName: "Tools.gitTheory" */'../gitTheory/index.vue')
 let loadOftenGit = () => import(/* webpackChunkName: "Tools.oftenGit" */'../oftenGit/index.vue')
+let loadTreeCommand = () => import(/* webpackChunkName: "Tools.treeCommand" */'../treeCommand/index.vue')
+
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')
 %> */
@@ -138,6 +140,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: '常用git',
+      preload () {}
+    }
+  },
+  {
+    path: '/Tools/treeCommand',
+    name: 'ToolsTreeCommand',
+    component: loadTreeCommand,
+    meta: {
+      module: 'Tools',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '生成项目树状结构的tree命令',
       preload () {}
     }
   },
