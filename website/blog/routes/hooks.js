@@ -35,7 +35,9 @@ import { entryBefore as htmlEntryBefore } from '../modules/html/routes/routerHoo
 //! vscode模块钩子
 import { entryBefore as vscodeEntryBefore } from '../modules/vscode/routes/routerHooks.js'
 //! npm模块钩子
-import { entryBefore as npmEntryBefore } from '../modules/npm/routes/routerHooks.js'
+import { entryBefore as npmEntryBefore } from '../modules/npm/routes/routerHooks.js'
+//! project模块钩子
+import { entryBefore as projectEntryBefore } from '../modules/project/routes/routerHooks.js'
 
 /* @init<%
 //! ${TplModuleName}模块钩子
@@ -60,7 +62,8 @@ const hooksModel = {
   githubEntryBefore,
   htmlEntryBefore,
   vscodeEntryBefore,
-  npmEntryBefore,
+  npmEntryBefore,
+  projectEntryBefore,
 
 
   /* @init<%
