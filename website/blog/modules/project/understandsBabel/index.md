@@ -55,6 +55,54 @@ if (!Array.prototype.findIndex) {
 }
 ```
 
+### `babel-runtime`是什么
+
+我们拿 `Object.assign` 为例，剖析下 `babel-polyfill` 与 `babel-runtime` 的异同。
+
+我们知道，IE 11 不支持 `Object.assign`，此时，我们有俩种候选方案：
+
+1、引入 `babel-polyfill`，补丁一打，`Object.assign` 就被创造出来
+2、配置 `@babel/plugin-transform-object-assign`
+
+第二种方案中，`babel` 会将所有的 `Object.assign` 替换成 `_extends` 这样一个辅助函数。如下所示：
+
+```javascript
+Object.assign({}, {})
+```
+
+**编译成**
+
+```javascript
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+_extends({}, {});
+```
+
+:::warning
+问题是，如果你的项目里有 100 个文件，其中有 50 个文件里写了 Object.assign，那么，坏消息来了，_extends 辅助函数会出现 50 次
+:::
+
+怎么办？我们自然而然会想到把 `_extends` 分离出去，然后在每个文件中引入 - 这正是 `@babel/runtime` 的作用：
+
+```javascript
+var _extends = require("@babel/runtime/helpers/extends");
+
+_extends({}, {});
+```
+
+
+## 总结几点：
+
+:::tip
+1、`presets`实际上就是一系列的插件集合</br></br>
+2、`babel-runtime`实际上和`babel-polyfill`干的事情是一样的，但他不会污染全局命名空间和原型</br></br>
+3、`babel-runtime`是一些垫片也就是实现的方法，而分离这些方法，是需要插件支持的(`transform-runtime`)所以，这两个必须一起使用</br></br>
+4、`babel-runtime`既然是垫片就必须是项目依赖('dependencies')</br></br>
+5、虽然`babel-runtime`和`babel-polyfill`干的事情差不多，但是比如`myArray.includes(1)`这些实例方法，`babel-runtime`是无能为力的。只能使用`babel-polyfill`</br></br>
+6、`babel-polyfill` 与 `babel-runtime` 的一大区别，前者改造目标浏览器，让你的浏览器拥有本来不支持的特性；后者改造你的代码，让你的代码能在所有目标浏览器上运行，但不改造浏览器
+:::
+
+
 ## 参考：
 
 - [corejs@3](https://github.com/zloirock/core-js/blob/master/docs/2019-03-19-core-js-3-babel-and-a-look-into-the-future.md)
