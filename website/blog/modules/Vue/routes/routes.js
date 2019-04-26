@@ -12,7 +12,8 @@ let loadListeners = () => import(/* webpackChunkName: "VUE.listeners" */'../list
 let loadSetTitle = () => import(/* webpackChunkName: "VUE.setTitle" */'../setTitle/index.vue')
 let loadComponentHooks = () => import(/* webpackChunkName: "VUE.componentHooks" */'../componentHooks/index.vue')
 let loadFunctionalComponent = () => import(/* webpackChunkName: "VUE.functionalComponent" */'../functionalComponent/index.vue')
-let loadPerformance = () => import(/* webpackChunkName: "VUE.performance" */'../performance/index.vue')
+let loadPerformance = () => import(/* webpackChunkName: "VUE.performance" */'../performance/index.vue')
+let loadDebuggerTemplate = () => import(/* webpackChunkName: "VUE.debuggerTemplate" */'../debuggerTemplate/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -181,7 +182,22 @@ export const routes = [
       title: 'vue性能优化',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/VUE/debuggerTemplate',
+    name: 'VUEDebuggerTemplate',
+    component: loadDebuggerTemplate,
+    meta: {
+      module: 'VUE',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '调试Vue模板',
+      preload () {}
+    }
+  },
+
+
 
 
 
