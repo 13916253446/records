@@ -65,6 +65,28 @@ git config --global alias.ac 'add -A . && commit'
 
 所有的[Github btn](https://ghbtns.com/)
 
+#### `Github徽章`
+
+```javascript
+https://img.shields.io/github/issues-closed/kezhenxu94/mini-github.svg
+
+https://img.shields.io/github/stars/13916253446/records.svg
+
+https://img.shields.io/badge/WeChat-CynicalKid-%2344b549.svg
+
+https://img.shields.io/badge/QQ-917423081-12b7f5.svg
+```
+
+![github](https://img.shields.io/github/issues-closed/13916253446/records.svg)
+![github](https://img.shields.io/github/stars/13916253446/records.svg)
+
+![github](https://img.shields.io/badge/WeChat-CynicalKid-%2344b549.svg)
+
+![github](https://img.shields.io/badge/QQ-917423081-12b7f5.svg)
+
+**完整的请查看官网**
+
+[shields.io](https://shields.io/category/license)
 #### 参考：
 
 - [Github秘籍](https://snowdream86.gitbooks.io/github-cheat-sheet/content/zh/index.html#%E8%B0%83%E6%95%B4tab%E5%AD%97%E7%AC%A6%E6%89%80%E4%BB%A3%E8%A1%A8%E7%9A%84%E7%A9%BA%E6%A0%BC%E6%95%B0)
