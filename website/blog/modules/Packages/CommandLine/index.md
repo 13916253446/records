@@ -10,6 +10,28 @@
 # 命令行提示输入，选择
 
 -   [Inquirer](https://github.com/SBoudrias/Inquirer.js)
+
+```javascript
+// when的用法
+const { bump, customVersion } = await inquirer.prompt([
+    {
+      name: 'bump',
+      message: '请选择发布类型:',
+      type: 'list',
+      choices: [
+        ...bumpChoices,
+        { name: '自定义版本', value: 'custom' }
+      ]
+    },
+    {
+      name: 'customVersion',
+      message: 'Input version:',
+      type: 'input',
+      when: answers => answers.bump === 'custom'
+    }
+  ])
+```
+
 - [prompts](https://github.com/terkelg/prompts)
 -   [enquirer](https://github.com/enquirer/enquirer)样式好看一点的prompt
 
@@ -217,4 +239,22 @@ function checkNodeVersion (wanted, id) {
 }
 
 checkNodeVersion(requiredVersion, 'gigle-cli')
+```
+
+# 判断项目名称是否有效
+
+- [validate-npm-package-name](https://www.npmjs.com/package/validate-npm-package-name)
+
+```javascript
+const result = validateProjectName(name)
+if (!result.validForNewPackages) {
+  console.error(chalk.red(`Invalid project name: "${name}"`))
+  result.errors && result.errors.forEach(err => {
+    console.error(chalk.red.dim('Error: ' + err))
+  })
+  result.warnings && result.warnings.forEach(warn => {
+    console.error(chalk.red.dim('Warning: ' + warn))
+  })
+  exit(1)
+}
 ```
