@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "project.pageTemplate" */'components/template/page/page.vue')
 let loadUnderstandsBabel = () => import(/* webpackChunkName: "project.understandsBabel" */'../understandsBabel/index.vue')
+let loadBabelConfig = () => import(/* webpackChunkName: "project.babelConfig" */'../babelConfig/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/project/babelConfig',
+    name: 'ProjectBabelConfig',
+    component: loadBabelConfig,
+    meta: {
+      module: 'project',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'babel配置技巧',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
