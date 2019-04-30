@@ -65,3 +65,8 @@
 }
 ```
 :::
+
+:::warning
+配置的浏览器不区分大小写: 如`Android >= 8.0` 和`android >= 8.0`都是可以的</br>
+具体的浏览器配置文档[可以查看](https://github.com/browserslist/browserslist)
+:::
