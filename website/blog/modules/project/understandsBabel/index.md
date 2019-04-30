@@ -90,6 +90,33 @@ var _extends = require("@babel/runtime/helpers/extends");
 _extends({}, {});
 ```
 
+### 执行顺序
+
+- Plugin 会运行在 Preset 之前。
+- Plugin 会从前到后顺序执行。
+- Preset 的顺序则 刚好相反(从后向前)。
+
+:::tip
+preset 的逆向顺序主要是为了保证向后兼容，因为大多数用户的编写顺序是 ['es2015', 'stage-0']。这样必须先执行 stage-0 才能确保 babel 不报错。因此我们编排 preset 的时候，也要注意顺序，其实只要**按照规范的时间顺序**列出即可。
+:::
+
+### 插件和预设配置项的格式
+
+```javascript
+"presets": [
+  // 带了配置项，自己变成数组
+  [
+    // 第一个元素是名字
+    "env",
+    // 第二个元素是对象，也就是配置项
+    {
+      "module": false
+    }
+  ],
+  // 不带配置项，直接列出名字
+  "stage-0"
+]
+```
 
 ## 总结几点：
 
