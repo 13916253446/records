@@ -3,7 +3,8 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "github.pageTemplate" */'components/template/page/page.vue')
 let loadSkills = () => import(/* webpackChunkName: "github.skills" */'../skills/index.vue')
-let loadGitOften = () => import(/* webpackChunkName: "github.gitOften" */'../gitOften/index.vue')
+let loadGitOften = () => import(/* webpackChunkName: "github.gitOften" */'../gitOften/index.vue')
+let loadGithubStaticServer = () => import(/* webpackChunkName: "github.githubStaticServer" */'../githubStaticServer/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -55,7 +56,22 @@ export const routes = [
       title: 'git常用命令',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/github/githubStaticServer',
+    name: 'GithubGithubStaticServer',
+    component: loadGithubStaticServer,
+    meta: {
+      module: 'github',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '把github当成静态服务使用',
+      preload () {}
+    }
+  },
+
+
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
