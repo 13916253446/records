@@ -37,7 +37,9 @@ import vscodeRoutes from '../modules/vscode/routes/routes.js'
 //! 关于npm的知识
 import npmRoutes from '../modules/npm/routes/routes.js'
 //! 前端工程化
-import projectRoutes from '../modules/project/routes/routes.js'
+import projectRoutes from '../modules/project/routes/routes.js'
+//! flutter学习
+import flutterRoutes from '../modules/flutter/routes/routes.js'
 
 
 /* @init<%
@@ -86,7 +88,9 @@ const routes = [
   //! 关于npm的知识
   ...npmRoutes,
   //! 前端工程化
-  ...projectRoutes,
+  ...projectRoutes,
+  //! flutter学习
+  ...flutterRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}

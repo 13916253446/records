@@ -35,7 +35,9 @@ import vscodeWhite from '../modules/vscode/store/cacheWhiteList.js'
 //! npm模块白名单
 import npmWhite from '../modules/npm/store/cacheWhiteList.js'
 //! project模块白名单
-import projectWhite from '../modules/project/store/cacheWhiteList.js'
+import projectWhite from '../modules/project/store/cacheWhiteList.js'
+//! flutter模块白名单
+import flutterWhite from '../modules/flutter/store/cacheWhiteList.js'
 
 
 /* @init<%
@@ -59,7 +61,8 @@ export const whiteList = [
   ...htmlWhite,
   ...vscodeWhite,
   ...npmWhite,
-  ...projectWhite,
+  ...projectWhite,
+  ...flutterWhite,
 
 
   /* @init<%

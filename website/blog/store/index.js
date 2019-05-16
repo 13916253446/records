@@ -38,7 +38,9 @@ import vscodeStore from '../modules/vscode/store/store.js'
 //! 关于npm的知识
 import npmStore from '../modules/npm/store/store.js'
 //! 前端工程化
-import projectStore from '../modules/project/store/store.js'
+import projectStore from '../modules/project/store/store.js'
+//! flutter学习
+import flutterStore from '../modules/flutter/store/store.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -179,7 +181,12 @@ export const store = new Vuex.Store({
     project: {
       namespaced: true,
       ...projectStore
-    },
+    },
+    //! flutter学习
+    flutter: {
+      namespaced: true,
+      ...flutterStore
+    },
 
 
     /* @init<%
