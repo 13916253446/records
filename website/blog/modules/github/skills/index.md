@@ -87,6 +87,31 @@ https://img.shields.io/badge/QQ-917423081-12b7f5.svg
 **完整的请查看官网**
 
 [shields.io](https://shields.io/category/license)
+
+# unpkg
+
+所有上传到`npm`上面的包，都默认会有一个`cnd`的访问路径，这个服务是由`unpkg`提供的。
+
+```javascript
+unpkg.com/:package@:version/:file
+```
+
+例如: [https://unpkg.com/vue](https://unpkg.com/vue)
+
+具体使用请查看[unpkg官网](https://unpkg.com/)
+
+# runpkg
+
+又有人根据`unpkg`，提供了一种可以查看`npm`包详细文件以及信息的服务(`runpkg`)，只需要将原来的`unpkg.com`改成`runpkg.com`就可以了。
+
+```javascript
+runpkg.com/:package@:version/:file
+```
+
+例如: [https://runpkg.com/vue](https://runpkg.com/vue)
+
+更多用法请查看[runpkg github](https://github.com/formidablelabs/runpkg)
+
 #### 参考：
 
 - [Github秘籍](https://snowdream86.gitbooks.io/github-cheat-sheet/content/zh/index.html#%E8%B0%83%E6%95%B4tab%E5%AD%97%E7%AC%A6%E6%89%80%E4%BB%A3%E8%A1%A8%E7%9A%84%E7%A9%BA%E6%A0%BC%E6%95%B0)
