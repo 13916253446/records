@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "flutter.pageTemplate" */'components/template/page/page.vue')
 let loadSetEnvironment = () => import(/* webpackChunkName: "flutter.setEnvironment" */'../setEnvironment/index.vue')
+let loadCommand = () => import(/* webpackChunkName: "flutter.command" */'../command/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,20 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/flutter/command',
+    name: 'FlutterCommand',
+    component: loadCommand,
+    meta: {
+      module: 'flutter',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'flutter命令',
+      preload () {}
+    }
+  },
+
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
