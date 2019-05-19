@@ -12,6 +12,7 @@ let loadChromeFirstPain = () => import(/* webpackChunkName: "Foods.chromeFirstPa
 let loadSyncLayout = () => import(/* webpackChunkName: "Foods.syncLayout" */'../syncLayout/index.vue')
 let loadActionScopeList = () => import(/* webpackChunkName: "Foods.actionScopeList" */'../actionScopeList/index.vue')
 let loadEventLoop = () => import(/* webpackChunkName: "Foods.eventLoop" */'../eventLoop/index.vue')
+let loadHttpStatusCode = () => import(/* webpackChunkName: "Foods.httpStatusCode" */'../httpStatusCode/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -165,6 +166,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: '再谈浏览器事件循环',
+      preload () {}
+    }
+  },
+  {
+    path: '/Foods/httpStatusCode',
+    name: 'FoodsHttpStatusCode',
+    component: loadHttpStatusCode,
+    meta: {
+      module: 'Foods',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '理解Http请求的状态码',
       preload () {}
     }
   },
