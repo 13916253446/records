@@ -9,6 +9,7 @@ let loadCssGetListCount = () => import(/* webpackChunkName: "CSS.cssGetListCount
 let loadChangeSkin = () => import(/* webpackChunkName: "CSS.changeSkin" */'../changeSkin/index.vue')
 let loadBackgroundPosition = () => import(/* webpackChunkName: "CSS.backgroundPosition" */'../backgroundPosition/index.vue')
 let loadObjectFit = () => import(/* webpackChunkName: "CSS.objectFit" */'../objectFit/index.vue')
+let loadFlexAuto = () => import(/* webpackChunkName: "CSS.flexAuto" */'../flexAuto/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -126,6 +127,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/CSS/flexAuto',
+    name: 'CSSFlexAuto',
+    component: loadFlexAuto,
+    meta: {
+      module: 'CSS',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'flex中神奇的margin',
+      preload () {}
+    }
+  },
 
 
 
