@@ -33,6 +33,10 @@ module.exports = {
 };
 ```
 
+:::warning
+最新的`css-loader`已经不再支持`minimize`配置，可以采用[cssnano](https://cssnano.co/guides/)来压缩`css`
+:::
+
 #### 2. 设置`process.env.NODE_ENV`的值
 
 一些大型的库，针对这个环境变量做了一些操作，比如说`Vue`，开发环境多了很多警告
