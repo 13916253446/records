@@ -75,3 +75,7 @@
 # 工程化
 
 - [dimport](https://github.com/lukeed/dimport)让浏览器支持动态导入和静态导入(ESM)
+
+# 颜色选择器
+
+- [pickr](https://simonwep.github.io/pickr/)
