@@ -21,7 +21,7 @@
     "////////": "清除目录",
     "clear:dist": "rimraf dist",
     "/////////": "发布站点",
-    "predeploy": "npm run build blog && npm run build:app",
+    "predeploy": "npm run build blog && node build/app/geneListData.js && npm run build:app",
     "deploy": "node build/publish.js",
     "dev:app": "cross-env NODE_ENV=development webpack-dev-server --mode development --config build/app/webpack.config.dev.js --progress",
     "build:app": "cross-env NODE_ENV=production webpack --mode production --config build/app/webpack.config.prod.js"

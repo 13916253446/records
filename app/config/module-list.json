@@ -734,6 +734,13 @@
         "introduction": "<app-name>可以是.，在当前目录创建，并以当前文件夹名称作为项目名称。启动项目是需要安装模拟器的，在Mac上面Xcode自带了模拟器，在跑项目之前，需要先启动模拟器:::tip\n在Mac上面可以使用open -a Simulator命令来查找启动模拟器。\n:::",
         "moduleIntro": "flutter学习",
         "path": "/flutter/command"
+      },
+      {
+        "module": "flutter",
+        "title": "基本语法",
+        "introduction": " 1、 var也可以申明变量，一种声明变量而不指定其类型的方法。:::tip\n因为 ，var 并不是直接存储值，而是存储的值的对象的引用，例如：var content = 'Dart 语法' 这句，是名字为 content 的 var 变量存储了值为 'Dart 语法' 的 String 对象的引用，所以 var 才能定义任何变量。\n:::当给var变量赋值了之后，就确定了这个变量的数据类型，再重新赋值的时候，只能是初始赋值的数据类型。2、$variableName 或 ${expression}字符串插值：将变量的值直接插入字符串中。3、dynamic（[daɪ'næmɪk]）意思是数据类型是动态可变的，也可以定义任何变量，但是和var不同的是，var一旦赋值后，就不能改变数据类型了，但是dynamic可以。:::warning\n请不要滥用dynamic，一般情况下都可以用Object代替dynamic。\n什么情况下使用：当这个变量没法用 Dart 的类型来表示时，比如 Native 和 Flutter 交互，从 Native 传来的数据。所以你会看到 PlatformChannel 里有很多地方使用到了dynamic。\n:::4、ObjectDart 里所有东西都是对象，是因为 Dart 的所有东西都继承自Object，因此Object可以定义任何变量，而且赋值后，类型也可以更改。5、 常量: final和const如果你不想更改变量的值，那么你可以用 final 和 const:常量有以下特点：:::tip\n以下划线_开头的类或成员变量是私有的。\nDart 没有 Public、Protected、Private 的关键字，在 Dart 里，类或成员变量默认都是 Public 的，以下划线 _ 开头的就是私有的，例如成员变量 _name 就是私有的。\n:::函数的格式如下：例如：1、函数的类型是Function判断函数say的类型是不是Function，用is来判断。2、必选参数和可选参数判断是必选参数还是可选参数：首先必选参数在前面，和普通的参数定义一样，后面跟可选参数，可选参数需要用{}或者[]包起来，用不同的括号，可选参数的意义与用法也不一样。可选参数也分为两类：1、可选命名参数：使用 {} 包起来的参数是可选命名参数。2、可选位置参数：使用 [] 包起来的参数是可选位置参数。用 {} 包起来的参数是可选命名参数，前面讲数据类型的时候，使用 {} 来赋值的数据类型是 Map，所以可选的命名参数的类型也是 Map， 因此调用函数时，可选参数的赋值必须是 paramName: value 这种 key: value 格式的，下面是可选命名参数的例子：要调用 say 函数，方法如下：",
+        "moduleIntro": "flutter学习",
+        "path": "/flutter/baseSyntax"
       }
     ]
   }
