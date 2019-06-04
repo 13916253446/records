@@ -79,3 +79,7 @@
 # 颜色选择器
 
 - [pickr](https://simonwep.github.io/pickr/)
+
+# puppeteer
+
+- [puppeteer-recorder](https://github.com/checkly/puppeteer-recorder) chrome拓展用来记录浏览器的操作行为，生成puppeteer代码
