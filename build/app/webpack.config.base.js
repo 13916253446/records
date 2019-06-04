@@ -1,15 +1,18 @@
 
 const path = require('path')
+const htmlWebpackPlugin = require('html-webpack-plugin')
 const markdownConfig = require('../mardkown.config.js')
+let resolve = dir => path.resolve(__dirname, dir)
+let assetsArray = [resolve('../../website'), resolve('../../components'), resolve('../../app')]
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, '../../app/app.js')
+    main: [path.resolve(__dirname, '../../app/app.js')]
   },
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: "vue-loader",
+        loader: 'vue-loader',
         options: {
           cssSourceMap: true,
           cacheBusting: true,
@@ -24,6 +27,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        include: assetsArray,
         options: {
           cacheDirectory: true
         }
@@ -32,7 +36,7 @@ module.exports = {
         test: /\.md$/,
         use: [
           {
-            loader:'vue-markdown-loader',
+            loader: 'vue-markdown-loader',
             options: markdownConfig
           }
         ]
@@ -42,7 +46,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 1000,
-          name: file =>'static/img/[name].[hash:7].[ext]'
+          name: file => 'static/img/[name].[hash:7].[ext]'
         }
       },
       {
@@ -62,10 +66,26 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new htmlWebpackPlugin({
+      template: resolve('../../app/index.html'),
+      filename: 'index.html',
+      inject: true,
+      minify: {
+        removeComments: process.env.NODE_ENV === 'production',
+        collapseWhitespace: process.env.NODE_ENV === 'production',
+        removeAttributeQuotes: process.env.NODE_ENV === 'production'
+      }
+    })
+  ],
   resolve: {
     extensions: ['.js', '.json', '.vue', '.jsx', '.css', '.scss', 'styl', 'sass', 'less'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      // 组件库的别名
+      'components': path.resolve(__dirname, '../../components'),
+      // 站点根节点的别名
+      '@': path.resolve(__dirname, '../../website')
     }
   }
 }

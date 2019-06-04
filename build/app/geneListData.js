@@ -11,7 +11,7 @@ const listJSONPath = path.resolve(__dirname, '../../app/config/module-list.json'
 async function geneList () {
   let promises = []
   let dataModel = {}
-  modules.forEach(({ module = '', pages = [] }) => {
+  modules.forEach(({ module = '', pages = [], introduction: moduleIntro }) => {
     pages.forEach(page => {
       let pageMd = `${pageBasePath}/${module}/${page.name}/index.md`
       if (fs.pathExistsSync(pageMd)) {
@@ -23,10 +23,13 @@ async function geneList () {
             }
             const $ = cheerio.load(marked(content))
             const introduction = ($('p') && $('p').text()) || ''
+            const path = `/${module}/${page.name}`
             resolve({
               module,
               title: page.title,
-              introduction
+              introduction,
+              moduleIntro,
+              path
             })
           })
         }))
@@ -34,11 +37,20 @@ async function geneList () {
     })
   })
   const result = await Promise.all(promises)
+  let dataArr = []
   result.forEach(item => {
-    if (dataModel[item.module]) dataModel[item.module].push(item)
-    else dataModel[item.module] = [item]
+    if (dataModel[item.module] !== void 0) {
+      dataArr[dataModel[item.module]].views.push(item)
+    } else {
+      dataModel[item.module] = dataArr.length
+      dataArr.push({
+        module: item.module,
+        title: item.moduleIntro,
+        views: [item]
+      })
+    }
   })
-  await fs.writeJson(listJSONPath, dataModel, { spaces: 2 })
+  await fs.writeJson(listJSONPath, dataArr, { spaces: 2 })
 }
 
 geneList()

@@ -24,7 +24,7 @@ const config = {
   //! 生产环境的基础配置
   prod: {
     //? 资源目录
-    assetsRoot: path.resolve(__dirname, '../app-dist'),
+    assetsRoot: path.resolve(__dirname, '../../dist/app'),
     //? 静态资源路径
     assetsPublicPath: '.',
     //? css映射
