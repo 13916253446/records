@@ -4,6 +4,7 @@
 let loadPageExample = () => import(/* webpackChunkName: "flutter.pageTemplate" */'components/template/page/page.vue')
 let loadSetEnvironment = () => import(/* webpackChunkName: "flutter.setEnvironment" */'../setEnvironment/index.vue')
 let loadCommand = () => import(/* webpackChunkName: "flutter.command" */'../command/index.vue')
+let loadBaseSyntax = () => import(/* webpackChunkName: "flutter.baseSyntax" */'../baseSyntax/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -53,6 +54,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: 'flutter命令',
+      preload () {}
+    }
+  },
+  {
+    path: '/flutter/baseSyntax',
+    name: 'FlutterBaseSyntax',
+    component: loadBaseSyntax,
+    meta: {
+      module: 'flutter',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '基本语法',
       preload () {}
     }
   },
