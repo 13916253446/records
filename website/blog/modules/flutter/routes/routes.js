@@ -5,6 +5,7 @@ let loadPageExample = () => import(/* webpackChunkName: "flutter.pageTemplate" *
 let loadSetEnvironment = () => import(/* webpackChunkName: "flutter.setEnvironment" */'../setEnvironment/index.vue')
 let loadCommand = () => import(/* webpackChunkName: "flutter.command" */'../command/index.vue')
 let loadBaseSyntax = () => import(/* webpackChunkName: "flutter.baseSyntax" */'../baseSyntax/index.vue')
+let loadWidget = () => import(/* webpackChunkName: "flutter.widget" */'../widget/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -70,6 +71,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/flutter/widget',
+    name: 'FlutterWidget',
+    component: loadWidget,
+    meta: {
+      module: 'flutter',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'widget的使用',
+      preload () {}
+    }
+  },
 
   /* @init<%
   {
