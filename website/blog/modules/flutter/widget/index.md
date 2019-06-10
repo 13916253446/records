@@ -66,3 +66,84 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+
+# StatefulWidget的实现
+
+需要有两部分组成：
+
+- StatefulWidget
+- State
+
+1、StatefulWidget实现步骤
+
+- 首先继承StatefulWidget
+- 实现createState方法，返回一个State
+
+```dart
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return MyAppState("Hello World");
+  }
+}
+```
+
+:::tip
+主要功能就是创建State
+:::
+
+2、State的实现步骤
+
+- 首先继承State，State 的泛型类型是上面定义的 Widget 的类型
+- 实现build方法，返回一个Widget
+- 调用setState方法，来刷新UI
+
+```dart
+class MyAppState extends State<MyApp> {
+  bool isShowText =true;
+  void increment(){
+    setState(() {
+      widget.content += "d";
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: Scaffold(
+          appBar: AppBar(title: Text("Widget -- StatefulWidget及State"),),
+          body: Center(
+              child: GestureDetector(
+                child: isShowText? Text(widget.content) :null,
+                onTap: increment,
+              )
+          ),
+        )
+    );
+  }
+}
+```
+
+:::tip
+State的两个功能:</br>
+1、build() —— 创建 Widget
+2、setState() —— 刷新 UI
+:::
+
+:::tip
+为什么 StatefulWidget 被分成 StatefulWidget 和 State 两部分？</br>
+一方面是为了保存当前 APP 的状态，另一个重要的原因就是为了性能！
+
+当 UI 需要更新时候，假设 Widget 和 State 都重建，可是 State 里保存了 UI 显示的数据，State 重建，创建新的实例，UI 之前的状态就会丢失，导致 UI 显示异常，所以要分成两部分，一部分会重建，一部分不会重建，重建的部分就是 StatefulWidget，不会重建的部分就是 State。
+
+Widget 重建的成本很低，但 State 的重建成本很高，因此将 StatefulWidget 分成两部分：重建成本低的 Widget 和重建成本高的 State。这样就使得 State 不会被频繁重建，也就提高了性能。
+:::
+
+# StatefulWidget 的生命周期
+
+因为 StatefulWidget 由 StatefulWidget 和 State 两部分组成，所以也有 StatefulWidget 的生命周期和 State 生命周期。
+
+![StatefulWidget](https://raw.githubusercontent.com/13916253446/assets/master/public/16ab1dbc405c19e2.zgjxv6g5m9n.jpg)
