@@ -83,3 +83,11 @@
 # puppeteer
 
 - [puppeteer-recorder](https://github.com/checkly/puppeteer-recorder) chrome拓展用来记录浏览器的操作行为，生成puppeteer代码
+
+# web端实时数据库
+
+- [rxdb](https://github.com/pubkey/rxdb)
+
+# 好用的图片上传
+
+- [filepond](https://github.com/pqina/filepond) 支持各种流行的框架
