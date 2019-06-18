@@ -91,3 +91,7 @@
 # 好用的图片上传
 
 - [filepond](https://github.com/pqina/filepond) 支持各种流行的框架
+
+# 视频播放器
+
+- [DPlayer](http://dplayer.js.org/zh/)
