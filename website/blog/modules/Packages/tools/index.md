@@ -95,3 +95,7 @@
 # 视频播放器
 
 - [DPlayer](http://dplayer.js.org/zh/)
+
+# 方便的正则表达式库
+
+- [verbal-expressions](https://github.com/VerbalExpressions/JSVerbalExpressions)
