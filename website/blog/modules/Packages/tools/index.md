@@ -99,3 +99,7 @@
 # 方便的正则表达式库
 
 - [verbal-expressions](https://github.com/VerbalExpressions/JSVerbalExpressions)
+
+# 轮播图
+
+- [slick](https://github.com/kenwheeler/slick) PC端好用的轮播图
