@@ -3,7 +3,9 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "bug.pageTemplate" */'components/template/page/page.vue')
 let loadWebpack = () => import(/* webpackChunkName: "bug.webpack" */'../webpack/index.vue')
-let loadHybrid = () => import(/* webpackChunkName: "bug.hybrid" */'../hybrid/index.vue')
+let loadHybrid = () => import(/* webpackChunkName: "bug.hybrid" */'../hybrid/index.vue')
+let loadVueFix = () => import(/* webpackChunkName: "bug.vueFix" */'../vueFix/index.vue')
+
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -55,7 +57,22 @@ export const routes = [
       title: 'hybrid存在的一些问题',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/bug/vueFix',
+    name: 'BugVueFix',
+    component: loadVueFix,
+    meta: {
+      module: 'bug',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'vue相关的问题',
+      preload () {}
+    }
+  },
+
+
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
