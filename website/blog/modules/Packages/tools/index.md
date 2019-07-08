@@ -52,6 +52,7 @@
 # 动画
 
 - [laxxx](https://github.com/alexfoxy/laxxx) 2kb的插件，快速创建页面滚动动画
+- [popmotion](https://popmotion.io/)高性能而且使用方便的动画库，包含svg动画
 
 # 排版
 
