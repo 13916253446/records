@@ -449,6 +449,13 @@
         "introduction": "通过historyapi去解决",
         "moduleIntro": "项目中遇到的坑",
         "path": "/bug/hybrid"
+      },
+      {
+        "module": "bug",
+        "title": "vue相关的问题",
+        "introduction": "前提条件是，路由参数是number类型，才会有这些问题1、通过query传递的方式，页面通过vue-router的方式进入的时候(push,back,go)这些方法进入的时候，页面参数还是Number类型，别的方式进入(F5刷新，window.location.href，浏览器返回等方式进入)都会变成String类型。2、通过params的方式进入，始终都是String类型3、通过props的方式进入，始终都是String类型由于params方式，是把参数放到内存里面，所以刷新页面后参数会丢失，但是可以设置动态路由的方式，动态路由的参数，也可以通过params方式去读取参数，这样就不会丢失了",
+        "moduleIntro": "项目中遇到的坑",
+        "path": "/bug/vueFix"
       }
     ]
   },

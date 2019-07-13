@@ -104,3 +104,11 @@
 # 轮播图
 
 - [slick](https://github.com/kenwheeler/slick) PC端好用的轮播图
+
+# 加密
+
+- [crypto-js](https://github.com/brix/crypto-js) 可以配置私有秘钥的加密解密库
+
+# 文档网站
+
+- [docusaurus](https://github.com/facebook/docusaurus) 快速开发开源项目文档
