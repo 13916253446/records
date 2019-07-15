@@ -5,6 +5,7 @@ let loadPageExample = () => import(/* webpackChunkName: "bug.pageTemplate" */'co
 let loadWebpack = () => import(/* webpackChunkName: "bug.webpack" */'../webpack/index.vue')
 let loadHybrid = () => import(/* webpackChunkName: "bug.hybrid" */'../hybrid/index.vue')
 let loadVueFix = () => import(/* webpackChunkName: "bug.vueFix" */'../vueFix/index.vue')
+let loadDll = () => import(/* webpackChunkName: "bug.dll" */'../dll/index.vue')
 
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
@@ -68,6 +69,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: 'vue相关的问题',
+      preload () {}
+    }
+  },
+  {
+    path: '/bug/dll',
+    name: 'BugDll',
+    component: loadDll,
+    meta: {
+      module: 'bug',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '打包dll问题',
       preload () {}
     }
   },

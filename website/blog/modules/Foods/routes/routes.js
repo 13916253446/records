@@ -13,6 +13,7 @@ let loadSyncLayout = () => import(/* webpackChunkName: "Foods.syncLayout" */'../
 let loadActionScopeList = () => import(/* webpackChunkName: "Foods.actionScopeList" */'../actionScopeList/index.vue')
 let loadEventLoop = () => import(/* webpackChunkName: "Foods.eventLoop" */'../eventLoop/index.vue')
 let loadHttpStatusCode = () => import(/* webpackChunkName: "Foods.httpStatusCode" */'../httpStatusCode/index.vue')
+let loadEtagStorage = () => import(/* webpackChunkName: "Foods.EtagStorage" */'../EtagStorage/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -182,6 +183,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/Foods/EtagStorage',
+    name: 'FoodsEtagStorage',
+    component: loadEtagStorage,
+    meta: {
+      module: 'Foods',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '利用Etag追踪用户',
+      preload () {}
+    }
+  },
 
 
 
