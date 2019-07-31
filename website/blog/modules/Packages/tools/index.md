@@ -116,3 +116,7 @@
 # 规范文档
 
 - [MATERIAL DESIGN](https://material.io/) 教你如何写MATERIAL组件，包括IOS,Android,Flutter
+
+# 全屏滚动插件
+
+- [fullpage.js](https://alvarotrigo.com/fullPage/zh/#page1)
