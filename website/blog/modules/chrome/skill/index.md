@@ -26,3 +26,7 @@ console.timeEnd("Array initialize"); // 输出: Array initialize: 266.000ms
 # 分析代码片段使用的cpu情况
 
 `console.profile`和`console.profileEnd`用来分析代码片段的使用cpu情况，使用方法和`console.time`一样，只是在查看搜集到的数据的时候要在**Javascript Profiler面板**查看，在控制台三个点菜单->更多工具->Javascript Profiler
+
+# 点击某个按钮跳转了页面如何查看上一个页面的请求
+
+![chrome](https://raw.githubusercontent.com/13916253446/assets/master/public/image.k8s5tte17w.png)
