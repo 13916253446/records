@@ -9,7 +9,8 @@ let loadCssGetListCount = () => import(/* webpackChunkName: "CSS.cssGetListCount
 let loadChangeSkin = () => import(/* webpackChunkName: "CSS.changeSkin" */'../changeSkin/index.vue')
 let loadBackgroundPosition = () => import(/* webpackChunkName: "CSS.backgroundPosition" */'../backgroundPosition/index.vue')
 let loadObjectFit = () => import(/* webpackChunkName: "CSS.objectFit" */'../objectFit/index.vue')
-let loadFlexAuto = () => import(/* webpackChunkName: "CSS.flexAuto" */'../flexAuto/index.vue')
+let loadFlexAuto = () => import(/* webpackChunkName: "CSS.flexAuto" */'../flexAuto/index.vue')
+let loadSkill = () => import(/* webpackChunkName: "CSS.skill" */'../skill/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -139,7 +140,22 @@ export const routes = [
       title: 'flex中神奇的margin',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/CSS/skill',
+    name: 'CSSSkill',
+    component: loadSkill,
+    meta: {
+      module: 'CSS',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'css技巧',
+      preload () {}
+    }
+  },
+
+
 
 
 

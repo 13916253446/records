@@ -39,7 +39,9 @@ import npmRoutes from '../modules/npm/routes/routes.js'
 //! 前端工程化
 import projectRoutes from '../modules/project/routes/routes.js'
 //! flutter学习
-import flutterRoutes from '../modules/flutter/routes/routes.js'
+import flutterRoutes from '../modules/flutter/routes/routes.js'
+//! 代码规范
+import standardRoutes from '../modules/standard/routes/routes.js'
 
 
 /* @init<%
@@ -90,7 +92,9 @@ const routes = [
   //! 前端工程化
   ...projectRoutes,
   //! flutter学习
-  ...flutterRoutes,
+  ...flutterRoutes,
+  //! 代码规范
+  ...standardRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}
