@@ -1,11 +1,11 @@
-const slugify = require('transliteration').slugify;
+const slugify = require('transliteration').slugify
 
-function wrap(render) {
-  return function() {
+function wrap (render) {
+  return function () {
     return render.apply(this, arguments)
       .replace('<code v-pre class="', '<code class="hljs ')
-      .replace('<code>', '<code class="hljs">');
-  };
+      .replace('<code>', '<code class="hljs">')
+  }
 }
 module.exports = {
   raw: true,
@@ -45,15 +45,16 @@ module.exports = {
         return '</div></demo-block>\n';
       }
     }], */
+    [require('markdown-it-container'), 'success'],
     [require('markdown-it-container'), 'tip'],
     [require('markdown-it-container'), 'warning']
   ],
-  preprocess: function(MarkdownIt, source) {
-    MarkdownIt.renderer.rules.table_open = function() {
-      return '<table class="table">';
-    };
-    MarkdownIt.renderer.rules.fence = wrap(MarkdownIt.renderer.rules.fence);
-    return source;
+  preprocess: function (MarkdownIt, source) {
+    MarkdownIt.renderer.rules.table_open = function () {
+      return '<table class="table">'
+    }
+    MarkdownIt.renderer.rules.fence = wrap(MarkdownIt.renderer.rules.fence)
+    return source
   },
   wrapper: 'section'
 }

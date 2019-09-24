@@ -42,7 +42,9 @@ import projectStore from '../modules/project/store/store.js'
 //! flutter学习
 import flutterStore from '../modules/flutter/store/store.js'
 //! 代码规范
-import standardStore from '../modules/standard/store/store.js'
+import standardStore from '../modules/standard/store/store.js'
+//! typescript使用
+import typescriptStore from '../modules/typescript/store/store.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -193,7 +195,12 @@ export const store = new Vuex.Store({
     standard: {
       namespaced: true,
       ...standardStore
-    },
+    },
+    //! typescript使用
+    typescript: {
+      namespaced: true,
+      ...typescriptStore
+    },
 
 
     /* @init<%
