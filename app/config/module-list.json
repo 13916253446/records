@@ -148,6 +148,13 @@
         "introduction": ":::tip\n上面的 display: flex 替换成 display: inline-flex | grid | inline-grid 也是可以的。\n:::disaply:blockBFC(块格式化上下文也就是block formatting context),margin: auto只能使水平居中而不能使垂直居中。查看CSS 文档，发现原因如下：If both margin-left and margin-right are auto, their used values are equal, causing horizontal centring.\n—CSS2 Visual formatting model details: 10.3.3:::tip\n简单翻译下，在块格式化上下文中，如果margin-left和margin-right都是auto，则它们的表达值相等，则margin的计算值就是平均分配剩余空间，所以造成水平居中\n:::If margin-top, or margin-bottom are auto, their used value is 0.\nCSS2 Visual formatting model details: 10.6.3:::tip\n简单翻译下，在块格式化上下文中，而如果margin-top和margin-bottom都是auto则margin的计算值就是0，当然也就无法造成垂直居中。\n:::disaply:flexFFC(块格式化上下文也就是block formatting context)、display: gridGFC(grid formatting context)中,margin: auto可以水平垂直居中。查看CSS 文档，发现原因如下：Prior to alignment via justify-content and align-self, any positive free space is distributed to auto margins in that dimension.\nCSS Flexible Box Layout Module Level 1 -- 8.1. Aligning with auto margins:::tip\n简单翻译一下，大意是在FFC中，设置了 margin: auto 的元素，任何正处于空闲的空间都会分配到该方向的自动margin中去\n而且是在通过justify-content和align-items进行对齐之前\njustify-content和align-items的对齐方式，也是基础剩余空间的，比如justify-content: center，就是水平方向的两侧main-start和main-end平分剩余空间。w3c文档\n::::::warning\nFFC中设置了margin，那么就会先把剩余空间分配给margin使用，然后再有的剩余空间才会分配给justify-content和align-items使用。\n:::例如：在flex布局中实现一个右对齐:::tip\n理解了原理之后，可以处理更多布局。\n:::",
         "moduleIntro": "css总结",
         "path": "/CSS/flexAuto"
+      },
+      {
+        "module": "CSS",
+        "title": "css技巧",
+        "introduction": "text-transform可以改变英文的大小写text-align-last:focus-within冒泡规则(兼容性不是很好)",
+        "moduleIntro": "css总结",
+        "path": "/CSS/skill"
       }
     ]
   },
@@ -769,6 +776,39 @@
         "introduction": "Flutter 中的 Widget 相当于 Android 里的 View，iOS 里的 UIView。在 Flutter 中要用 Widget 构件 UI。Flutter 的 Widget 渲染采用的是类似 React 的框架：当 Widget 状态发生变化，需要更新界面时，框架会先计算从上一个状态转换到下一个状态所需的最小更改，然后再去刷新界面。这是 Flutter Framework 层的架构图，可以看到 Framework 里面有一层是 Widgets。在 Widgets 层下面，有：Widgets 下面的层提供的是最基本的功能，但是这些平时很少使用到，因为要使用这些的话会比较复杂。我们在开发中使用的都是封装好的东西，也就是 Widgets 上面的那层：1、Material（[mə'tɪrɪəl]: 材料，原料） & Cupertino（库比蒂诺（苹果电脑的全球总公司所在地，位于美国旧金山））Material & Cupertino 指的 Widget 的风格是 Material 或 Cupertino 。Flutter 为了减轻开发人员的工作量，实现了两种不同风格的组件：Material 和 Cupertino 。Material 用于 Android，Cupertino 用于 iOS。有了这些组件，开发人员不需要再做额外的工作，就可以让 Flutter 的 UI 风格适应不同的平台，让 Flutter UI 获得和 Native UI 一样的使用体验。2、根 WidgetFlutter会默认把 根Widget 充满屏幕。在 Flutter 中，根Widget 只能是以下三个：1、WidgetsApp：WidgetsApp 是可以自定义风格的 根Widget。2、MaterialApp：MaterialApp 是在 WidgetsApp 上添加了很多 material-design 的功能，是 Material Design 风格的 根Widget。3、CupertinoApp：CupertinoApp 也是基于 WidgetsApp 实现的 iOS 风格的 根Widget。3、Widget 的分类：StatelessWidget 和 StatefulWidget因为渲染是很耗性能的，为了提高 Flutter 的帧率，就要尽量减少不必要的 UI 渲染，所以 Flutter 根据 UI 是否有变化，将 Widget 分为：StatefulWidget 是 UI 可以变化的 Widget，创建完后 UI 还可以在更改。StatelessWidget 是 UI 不可以变化的 Widget，创建完后 UI 就不可以在更改。例如：需要有两部分组成：1、StatefulWidget实现步骤:::tip\n主要功能就是创建State\n:::2、State的实现步骤:::tip\nState的两个功能:\n1、build() —— 创建 Widget\n2、setState() —— 刷新 UI\n::::::tip\n为什么 StatefulWidget 被分成 StatefulWidget 和 State 两部分？\n一方面是为了保存当前 APP 的状态，另一个重要的原因就是为了性能！当 UI 需要更新时候，假设 Widget 和 State 都重建，可是 State 里保存了 UI 显示的数据，State 重建，创建新的实例，UI 之前的状态就会丢失，导致 UI 显示异常，所以要分成两部分，一部分会重建，一部分不会重建，重建的部分就是 StatefulWidget，不会重建的部分就是 State。Widget 重建的成本很低，但 State 的重建成本很高，因此将 StatefulWidget 分成两部分：重建成本低的 Widget 和重建成本高的 State。这样就使得 State 不会被频繁重建，也就提高了性能。\n:::因为 StatefulWidget 由 StatefulWidget 和 State 两部分组成，所以也有 StatefulWidget 的生命周期和 State 生命周期。",
         "moduleIntro": "flutter学习",
         "path": "/flutter/widget"
+      }
+    ]
+  },
+  {
+    "module": "standard",
+    "title": "代码规范",
+    "views": [
+      {
+        "module": "standard",
+        "title": "注释规范",
+        "introduction": "无论是ts还是js申明变量都可以采用jsdoc注释的形式，给别的同事使用的时候带来提示。",
+        "moduleIntro": "代码规范",
+        "path": "/standard/comment"
+      }
+    ]
+  },
+  {
+    "module": "typescript",
+    "title": "typescript使用",
+    "views": [
+      {
+        "module": "typescript",
+        "title": "ts使用技巧",
+        "introduction": "有时候我们需要复用一个类型，但是又不需要此类型内的全部属性，因此需要剔除某些属性，这个时候Omit就派上用场了。:::tip\n这个方法在React中经常用到，当父组件通过props向下传递数据的时候，通常需要复用父组件的props类型，但是又需要剔除一些无用的类型。\n:::使用readonly使用类型断言(类型断言用来告诉编译器你比它更了解这个类型，并且它不应该再发出错误):::warning\n注意:这里的值不能修改,指的是数组里面的值,而不是整个数组变量,也就是说这样是可以改变的:::类型别名第一个作用是当作类型中的一个“变量”（类似于 js的const声明的变量）使用使用类型别名可以实现很多复杂的类型，很多复杂的类型别名都需要借助关键字，我们先来了解一下几个常用的关键字：extends可以用来继承一个类，也可以用来继承一个 interface，但还可以用来判断有条件类型在JS中typeof可以判断一个变量的基础数据类型，在 TS中，它还有一个作用，就是获取一个变量的声明类型，如果不存在，则获取该类型的推论类型。keyof可以用来取得一个对象接口的所有key值：in用来遍历枚举类型为了更方便的使用,typescript内部实现了一些别名,可以直接使用Partial的作用就是可以将某个类型里的属性全部变为可选项?:::success\n源码如下::::Required的作用刚好跟Partial相反，Partial 是将所有属性改成可选项，Required 则是将所有类型改成必选项-?:::success\n源码如下::::这个类型的作用是将传入的属性变为只读选项:::success\n源码如下::::这个类型则可以将某个类型中的子属性挑出来，变成包含这个类型部分属性的子类型。:::success\n源码如下::::该类型可以将K中所有的属性的值转化为T类型:::success\n源码如下:::::::success\n为什么keyof any等于string, number, symbolkeyof any表示可用作对象索引的任何值的类型。目前，您可以使用string或number或symbol索引到对象:::将某个类型中属于另一个的类型移除掉:::success\n源码如下:never类型never类型表示的是那些永不存在的值的类型。never类型是任何类型的子类型，也可以赋值给任何类型；然而，没有类型是never的子类型或可以赋值给never类型（除了never本身之外）。 即使 any也不可以赋值给never。\n:::就是从T中提取出U:::success\n源码如下::::该类型的作用是获取函数的返回类型。:::success\n源码如下::::下面是一些可能会经常用到，但是TS 没有内置的一些类型别名：有时候我们想要继承某个接口，但是又需要在新接口中将某个属性给overwrite掉，这时候通过Pick和 Exclude 就可以组合出来 Omit，用来忽略对象某些属性功能：:::success\n源码如下::::将T的所有属性的readonly移除:::success\n源码如下::::内置的Partial 有个局限性，就是只支持处理第一层的属性，如果是嵌套多层的就没有效果了，不过可以如下自定义：:::success\n源码如下::::相同的属性名称，但使值是一个 Promise，而不是一个具体的值：:::success\n源码如下::::",
+        "moduleIntro": "typescript使用",
+        "path": "/typescript/skill"
+      },
+      {
+        "module": "typescript",
+        "title": "如何编写tsd文件",
+        "introduction": "虽然JavaScript不支持合并，但你可以为导入的对象打补丁以更新它们。全局拓展通过global来申明:::success\n最新的typescript(3.6+)好像不再支持global\n:::直接申明全局拓展可以拓展内部自定义模块以及外部模块比如Vue比如增加Vue的根实例上面增加一个$get的请求方法通过模块导入import或者require的方式使用的模块,可以有两种方式来申明文件。1、在相应的模块文件夹下建立同名的.d.ts文件来申明:::warning\n无论在任何位置的.ts以及.d.ts文件内没有使用export申明declare的类型都将是全局的\n:::2、通过module来申明",
+        "moduleIntro": "typescript使用",
+        "path": "/typescript/tsd"
       }
     ]
   }
