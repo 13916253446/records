@@ -6,6 +6,7 @@ let loadSkill = () => import(/* webpackChunkName: "chrome.skill" */'../skill/ind
 let loadPerformance = () => import(/* webpackChunkName: "chrome.performance" */'../performance/index.vue')
 let loadNativeLazy = () => import(/* webpackChunkName: "chrome.nativeLazy" */'../nativeLazy/index.vue')
 let loadCoverage = () => import(/* webpackChunkName: "chrome.coverage" */'../coverage/index.vue')
+let loadPerformanceMonitor = () => import(/* webpackChunkName: "chrome.performanceMonitor" */'../performanceMonitor/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -84,6 +85,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/chrome/performanceMonitor',
+    name: 'ChromePerformanceMonitor',
+    component: loadPerformanceMonitor,
+    meta: {
+      module: 'chrome',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '性能实时监测',
+      preload () {}
+    }
+  },
 
 
   /* @init<%
