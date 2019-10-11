@@ -809,6 +809,13 @@
         "introduction": "虽然JavaScript不支持合并，但你可以为导入的对象打补丁以更新它们。全局拓展通过global来申明:::success\n最新的typescript(3.6+)好像不再支持global\n:::直接申明全局拓展可以拓展内部自定义模块以及外部模块比如Vue比如增加Vue的根实例上面增加一个$get的请求方法通过模块导入import或者require的方式使用的模块,可以有两种方式来申明文件。1、在相应的模块文件夹下建立同名的.d.ts文件来申明:::warning\n无论在任何位置的.ts以及.d.ts文件内没有使用export申明declare的类型都将是全局的\n:::2、通过module来申明",
         "moduleIntro": "typescript使用",
         "path": "/typescript/tsd"
+      },
+      {
+        "module": "typescript",
+        "title": "运算符",
+        "introduction": "也叫联合类型也叫交集类型:::warning\n联合类型和交集类型是有区别的 \n联合类型是只要满足其中一个类型就可以了:交集类型是两个类型都必须要满足:::",
+        "moduleIntro": "typescript使用",
+        "path": "/typescript/operator"
       }
     ]
   }

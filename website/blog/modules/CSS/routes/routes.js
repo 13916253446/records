@@ -11,6 +11,7 @@ let loadBackgroundPosition = () => import(/* webpackChunkName: "CSS.backgroundPo
 let loadObjectFit = () => import(/* webpackChunkName: "CSS.objectFit" */'../objectFit/index.vue')
 let loadFlexAuto = () => import(/* webpackChunkName: "CSS.flexAuto" */'../flexAuto/index.vue')
 let loadSkill = () => import(/* webpackChunkName: "CSS.skill" */'../skill/index.vue')
+let loadTriangleShadow = () => import(/* webpackChunkName: "CSS.triangleShadow" */'../triangleShadow/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -151,6 +152,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: 'css技巧',
+      preload () {}
+    }
+  },
+  {
+    path: '/CSS/triangleShadow',
+    name: 'CSSTriangleShadow',
+    component: loadTriangleShadow,
+    meta: {
+      module: 'CSS',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '实现三角形阴影',
       preload () {}
     }
   },
