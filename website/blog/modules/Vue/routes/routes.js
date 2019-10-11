@@ -14,6 +14,7 @@ let loadComponentHooks = () => import(/* webpackChunkName: "VUE.componentHooks" 
 let loadFunctionalComponent = () => import(/* webpackChunkName: "VUE.functionalComponent" */'../functionalComponent/index.vue')
 let loadPerformance = () => import(/* webpackChunkName: "VUE.performance" */'../performance/index.vue')
 let loadDebuggerTemplate = () => import(/* webpackChunkName: "VUE.debuggerTemplate" */'../debuggerTemplate/index.vue')
+let loadMaintain = () => import(/* webpackChunkName: "VUE.maintain" */'../maintain/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -193,6 +194,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: '调试Vue模板',
+      preload () {}
+    }
+  },
+  {
+    path: '/VUE/maintain',
+    name: 'VUEMaintain',
+    component: loadMaintain,
+    meta: {
+      module: 'VUE',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '维护Vue代码结构',
       preload () {}
     }
   },

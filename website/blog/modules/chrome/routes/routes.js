@@ -5,6 +5,7 @@ let loadPageExample = () => import(/* webpackChunkName: "chrome.pageTemplate" */
 let loadSkill = () => import(/* webpackChunkName: "chrome.skill" */'../skill/index.vue')
 let loadPerformance = () => import(/* webpackChunkName: "chrome.performance" */'../performance/index.vue')
 let loadNativeLazy = () => import(/* webpackChunkName: "chrome.nativeLazy" */'../nativeLazy/index.vue')
+let loadCoverage = () => import(/* webpackChunkName: "chrome.coverage" */'../coverage/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -67,6 +68,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: '原生懒加载',
+      preload () {}
+    }
+  },
+  {
+    path: '/chrome/coverage',
+    name: 'ChromeCoverage',
+    component: loadCoverage,
+    meta: {
+      module: 'chrome',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '查看代码覆盖率',
       preload () {}
     }
   },
