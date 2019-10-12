@@ -10,3 +10,11 @@
 截取图片:
 
 ![screenshot](https://raw.githubusercontent.com/13916253446/assets/master/public/v2.ieqxmkfu9rk.zhaogang.com_(iPhone%206_7_8%20Plus)%20(1)%20(1).png)
+
+##### 截取某个元素的图片
+
+- `Elements`下面选中某个元素
+
+- `command + shift + p`
+
+- 输入`screenshot`, 选择`Capture node screenshot`
