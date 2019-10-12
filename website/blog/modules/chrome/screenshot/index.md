@@ -18,3 +18,8 @@
 - `command + shift + p`
 
 - 输入`screenshot`, 选择`Capture node screenshot`
+
+截取图片:
+
+![screenshot](https://raw.githubusercontent.com/13916253446/assets/master/public/v2.t2x2k4i16zm.zhaogang.com_(iPhone%206_7_8%20Plus)%20(4)%20(1).png)
+
