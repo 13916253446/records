@@ -9,3 +9,7 @@
 `rgba`转`16进制`转`hsl`
 
 - 按住`shift`点击颜色区域切换
+
+### 在线模拟`box-shadow`的功能
+
+![box-shadow](https://raw.githubusercontent.com/13916253446/assets/master/public/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-10-12%20%E4%B8%8B%E5%8D%881.5otywawuk1j.16.07%20(1).png)
