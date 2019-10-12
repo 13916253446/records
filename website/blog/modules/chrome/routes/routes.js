@@ -6,7 +6,9 @@ let loadSkill = () => import(/* webpackChunkName: "chrome.skill" */'../skill/ind
 let loadPerformance = () => import(/* webpackChunkName: "chrome.performance" */'../performance/index.vue')
 let loadNativeLazy = () => import(/* webpackChunkName: "chrome.nativeLazy" */'../nativeLazy/index.vue')
 let loadCoverage = () => import(/* webpackChunkName: "chrome.coverage" */'../coverage/index.vue')
-let loadPerformanceMonitor = () => import(/* webpackChunkName: "chrome.performanceMonitor" */'../performanceMonitor/index.vue')
+let loadPerformanceMonitor = () => import(/* webpackChunkName: "chrome.performanceMonitor" */'../performanceMonitor/index.vue')
+let loadLCP = () => import(/* webpackChunkName: "chrome.LCP" */'../LCP/index.vue')
+let loadCopyEleStyle = () => import(/* webpackChunkName: "chrome.copyEleStyle" */'../copyEleStyle/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -97,7 +99,35 @@ export const routes = [
       title: '性能实时监测',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/chrome/LCP',
+    name: 'ChromeLCP',
+    component: loadLCP,
+    meta: {
+      module: 'chrome',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '分析页面第一帧渲染的性能',
+      preload () {}
+    }
+  },
+  {
+    path: '/chrome/copyEleStyle',
+    name: 'ChromeCopyEleStyle',
+    component: loadCopyEleStyle,
+    meta: {
+      module: 'chrome',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '复制元素的完整样式',
+      preload () {}
+    }
+  },
+
+
 
 
   /* @init<%

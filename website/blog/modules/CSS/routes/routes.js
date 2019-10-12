@@ -12,6 +12,7 @@ let loadObjectFit = () => import(/* webpackChunkName: "CSS.objectFit" */'../obje
 let loadFlexAuto = () => import(/* webpackChunkName: "CSS.flexAuto" */'../flexAuto/index.vue')
 let loadSkill = () => import(/* webpackChunkName: "CSS.skill" */'../skill/index.vue')
 let loadTriangleShadow = () => import(/* webpackChunkName: "CSS.triangleShadow" */'../triangleShadow/index.vue')
+let loadCopyEleStyle = () => import(/* webpackChunkName: "CSS.copyEleStyle" */'../copyEleStyle/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -168,6 +169,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/CSS/copyEleStyle',
+    name: 'CSSCopyEleStyle',
+    component: loadCopyEleStyle,
+    meta: {
+      module: 'CSS',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '复制元素的完整样式',
+      preload () {}
+    }
+  },
 
 
 
