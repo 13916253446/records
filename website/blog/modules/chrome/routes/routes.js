@@ -12,6 +12,7 @@ let loadCopyEleStyle = () => import(/* webpackChunkName: "chrome.copyEleStyle" *
 let loadScreenshot = () => import(/* webpackChunkName: "chrome.screenshot" */'../screenshot/index.vue')
 let loadColor = () => import(/* webpackChunkName: "chrome.color" */'../color/index.vue')
 let loadPauseJs = () => import(/* webpackChunkName: "chrome.pauseJs" */'../pauseJs/index.vue')
+let loadLiveJs = () => import(/* webpackChunkName: "chrome.liveJs" */'../liveJs/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -168,6 +169,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/chrome/liveJs',
+    name: 'ChromeLiveJs',
+    component: loadLiveJs,
+    meta: {
+      module: 'chrome',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '控制台实时的执行表达式',
+      preload () {}
+    }
+  },
 
 
 
