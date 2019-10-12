@@ -9,7 +9,8 @@ let loadCoverage = () => import(/* webpackChunkName: "chrome.coverage" */'../cov
 let loadPerformanceMonitor = () => import(/* webpackChunkName: "chrome.performanceMonitor" */'../performanceMonitor/index.vue')
 let loadLCP = () => import(/* webpackChunkName: "chrome.LCP" */'../LCP/index.vue')
 let loadCopyEleStyle = () => import(/* webpackChunkName: "chrome.copyEleStyle" */'../copyEleStyle/index.vue')
-let loadScreenshot = () => import(/* webpackChunkName: "chrome.screenshot" */'../screenshot/index.vue')
+let loadScreenshot = () => import(/* webpackChunkName: "chrome.screenshot" */'../screenshot/index.vue')
+let loadColor = () => import(/* webpackChunkName: "chrome.color" */'../color/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -139,7 +140,22 @@ export const routes = [
       title: '截屏',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/chrome/color',
+    name: 'ChromeColor',
+    component: loadColor,
+    meta: {
+      module: 'chrome',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '调试工具里面颜色快捷操作',
+      preload () {}
+    }
+  },
+
+
 
 
 
