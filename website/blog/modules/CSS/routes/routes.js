@@ -12,7 +12,8 @@ let loadObjectFit = () => import(/* webpackChunkName: "CSS.objectFit" */'../obje
 let loadFlexAuto = () => import(/* webpackChunkName: "CSS.flexAuto" */'../flexAuto/index.vue')
 let loadSkill = () => import(/* webpackChunkName: "CSS.skill" */'../skill/index.vue')
 let loadTriangleShadow = () => import(/* webpackChunkName: "CSS.triangleShadow" */'../triangleShadow/index.vue')
-let loadCopyEleStyle = () => import(/* webpackChunkName: "CSS.copyEleStyle" */'../copyEleStyle/index.vue')
+let loadCopyEleStyle = () => import(/* webpackChunkName: "CSS.copyEleStyle" */'../copyEleStyle/index.vue')
+let loadContent = () => import(/* webpackChunkName: "CSS.content" */'../content/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -181,7 +182,22 @@ export const routes = [
       title: '复制元素的完整样式',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/CSS/content',
+    name: 'CSSContent',
+    component: loadContent,
+    meta: {
+      module: 'CSS',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '伪元素技巧',
+      preload () {}
+    }
+  },
+
+
 
 
 
