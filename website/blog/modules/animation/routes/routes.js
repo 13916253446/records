@@ -3,6 +3,7 @@
 //! TODO: 路由例子
 let loadPageExample = () => import(/* webpackChunkName: "animation.pageTemplate" */'components/template/page/page.vue')
 let loadAnimationDelaySkill = () => import(/* webpackChunkName: "animation.animationDelaySkill" */'../animationDelaySkill/index.vue')
+let loadBorderWidth = () => import(/* webpackChunkName: "animation.borderWidth" */'../borderWidth/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -42,6 +43,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/animation/borderWidth',
+    name: 'AnimationBorderWidth',
+    component: loadBorderWidth,
+    meta: {
+      module: 'animation',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'border-widtd动画技巧',
+      preload () {}
+    }
+  },
   /* @init<%
   {
     path: '/${TplModuleName}/${TplModulePage}',
