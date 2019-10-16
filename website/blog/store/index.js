@@ -44,7 +44,9 @@ import flutterStore from '../modules/flutter/store/store.js'
 //! 代码规范
 import standardStore from '../modules/standard/store/store.js'
 //! typescript使用
-import typescriptStore from '../modules/typescript/store/store.js'
+import typescriptStore from '../modules/typescript/store/store.js'
+//! 动画技巧
+import animationStore from '../modules/animation/store/store.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -200,7 +202,12 @@ export const store = new Vuex.Store({
     typescript: {
       namespaced: true,
       ...typescriptStore
-    },
+    },
+    //! 动画技巧
+    animation: {
+      namespaced: true,
+      ...animationStore
+    },
 
 
     /* @init<%

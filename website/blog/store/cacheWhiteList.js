@@ -41,7 +41,9 @@ import flutterWhite from '../modules/flutter/store/cacheWhiteList.js'
 //! standard模块白名单
 import standardWhite from '../modules/standard/store/cacheWhiteList.js'
 //! typescript模块白名单
-import typescriptWhite from '../modules/typescript/store/cacheWhiteList.js'
+import typescriptWhite from '../modules/typescript/store/cacheWhiteList.js'
+//! animation模块白名单
+import animationWhite from '../modules/animation/store/cacheWhiteList.js'
 
 
 /* @init<%
@@ -68,7 +70,8 @@ export const whiteList = [
   ...projectWhite,
   ...flutterWhite,
   ...standardWhite,
-  ...typescriptWhite,
+  ...typescriptWhite,
+  ...animationWhite,
 
 
   /* @init<%

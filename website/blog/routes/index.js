@@ -43,7 +43,9 @@ import flutterRoutes from '../modules/flutter/routes/routes.js'
 //! 代码规范
 import standardRoutes from '../modules/standard/routes/routes.js'
 //! typescript使用
-import typescriptRoutes from '../modules/typescript/routes/routes.js'
+import typescriptRoutes from '../modules/typescript/routes/routes.js'
+//! 动画技巧
+import animationRoutes from '../modules/animation/routes/routes.js'
 
 
 /* @init<%
@@ -98,7 +100,9 @@ const routes = [
   //! 代码规范
   ...standardRoutes,
   //! typescript使用
-  ...typescriptRoutes,
+  ...typescriptRoutes,
+  //! 动画技巧
+  ...animationRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}
