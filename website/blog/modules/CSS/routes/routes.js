@@ -14,6 +14,7 @@ let loadSkill = () => import(/* webpackChunkName: "CSS.skill" */'../skill/index.
 let loadTriangleShadow = () => import(/* webpackChunkName: "CSS.triangleShadow" */'../triangleShadow/index.vue')
 let loadCopyEleStyle = () => import(/* webpackChunkName: "CSS.copyEleStyle" */'../copyEleStyle/index.vue')
 let loadContent = () => import(/* webpackChunkName: "CSS.content" */'../content/index.vue')
+let loadBorderRadius = () => import(/* webpackChunkName: "CSS.borderRadius" */'../borderRadius/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -193,6 +194,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: '伪元素技巧',
+      preload () {}
+    }
+  },
+  {
+    path: '/CSS/borderRadius',
+    name: 'CSSBorderRadius',
+    component: loadBorderRadius,
+    meta: {
+      module: 'CSS',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '深入理解border-radius',
       preload () {}
     }
   },
