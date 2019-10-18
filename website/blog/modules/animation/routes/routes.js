@@ -6,6 +6,7 @@ let loadAnimationDelaySkill = () => import(/* webpackChunkName: "animation.anima
 let loadBorderWidth = () => import(/* webpackChunkName: "animation.borderWidth" */'../borderWidth/index.vue')
 let loadTransformOrigin = () => import(/* webpackChunkName: "animation.transformOrigin" */'../transformOrigin/index.vue')
 let loadAnimationDirection = () => import(/* webpackChunkName: "animation.animationDirection" */'../animationDirection/index.vue')
+let loadDirectionAnimation = () => import(/* webpackChunkName: "animation.directionAnimation" */'../directionAnimation/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -84,6 +85,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/animation/directionAnimation',
+    name: 'AnimationDirectionAnimation',
+    component: loadDirectionAnimation,
+    meta: {
+      module: 'animation',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '径向动画里面的数学知识',
+      preload () {}
+    }
+  },
 
 
   /* @init<%
