@@ -12,7 +12,8 @@ let loadCopyEleStyle = () => import(/* webpackChunkName: "chrome.copyEleStyle" *
 let loadScreenshot = () => import(/* webpackChunkName: "chrome.screenshot" */'../screenshot/index.vue')
 let loadColor = () => import(/* webpackChunkName: "chrome.color" */'../color/index.vue')
 let loadPauseJs = () => import(/* webpackChunkName: "chrome.pauseJs" */'../pauseJs/index.vue')
-let loadLiveJs = () => import(/* webpackChunkName: "chrome.liveJs" */'../liveJs/index.vue')
+let loadLiveJs = () => import(/* webpackChunkName: "chrome.liveJs" */'../liveJs/index.vue')
+let loadSearchSkill = () => import(/* webpackChunkName: "chrome.searchSkill" */'../searchSkill/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -181,7 +182,22 @@ export const routes = [
       title: '控制台实时的执行表达式',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/chrome/searchSkill',
+    name: 'ChromeSearchSkill',
+    component: loadSearchSkill,
+    meta: {
+      module: 'chrome',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: 'Chrome搜索技巧',
+      preload () {}
+    }
+  },
+
+
 
 
 
