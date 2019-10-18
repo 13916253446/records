@@ -72,6 +72,27 @@ border-radius: 左上角水平圆角半径大小 右上角水平圆角半径大�
 }
 ```
 
+- 单独设置某个角落的值
+
+如果是一个值就是水平角和垂直角一样, 两个值用空格分开, 分别表示水平角和垂直角
+
+```css
+.example {
+  border-top-left-radius: 10px;
+}
+/** 对应 */
+.example {
+  border-top-left-radius: 10px 10px;
+}
+
+.example1 {
+  border-top-left-radius: 10px 20px;
+}
+/** 表示水平角是10px垂直角是20px */
+```
+
 ## 参考
 
 - [张鑫旭 CSS3 border-radius知多少？](https://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/)
+
+- [border-radius可视化生成各种图形](https://9elements.github.io/fancy-border-radius/#44.50.46.51--.)
