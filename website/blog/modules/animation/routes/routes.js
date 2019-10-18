@@ -5,6 +5,7 @@ let loadPageExample = () => import(/* webpackChunkName: "animation.pageTemplate"
 let loadAnimationDelaySkill = () => import(/* webpackChunkName: "animation.animationDelaySkill" */'../animationDelaySkill/index.vue')
 let loadBorderWidth = () => import(/* webpackChunkName: "animation.borderWidth" */'../borderWidth/index.vue')
 let loadTransformOrigin = () => import(/* webpackChunkName: "animation.transformOrigin" */'../transformOrigin/index.vue')
+let loadAnimationDirection = () => import(/* webpackChunkName: "animation.animationDirection" */'../animationDirection/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -67,6 +68,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: 'transform-origin动画技巧',
+      preload () {}
+    }
+  },
+  {
+    path: '/animation/animationDirection',
+    name: 'AnimationAnimationDirection',
+    component: loadAnimationDirection,
+    meta: {
+      module: 'animation',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '动画方向是否反向',
       preload () {}
     }
   },
