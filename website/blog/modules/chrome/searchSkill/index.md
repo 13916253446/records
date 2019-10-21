@@ -73,3 +73,11 @@ site:zhihu.com typescript
 :::success
 例如，你仅需在搜索引擎中输入 `**related:**theguardian.com` 即可得到所有和 theguardian.com 相关的网站的搜索结果。
 :::
+
+### 限定文件类型(`filetype`)
+
+:::success
+比如搜索ppt, 输入`关键字 filetype:ppt`
+:::
+
+![chrome-search-skill](https://raw.githubusercontent.com/13916253446/assets/master/public/521dfe899ffb54b7a7b3bff076e442e8_r%20(1).2b0avmghlte.jpg)
