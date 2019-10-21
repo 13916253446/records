@@ -86,6 +86,13 @@
         "introduction": "说明::::warning\n在Vue模板中使用的属性和方法，都会从Vue的原型上面寻找，而不是window或者是别的，所以这段代码会报错。\n::::::tip\n为了不影响正常的渲染，可以使用或运算符\n:::说明::::warning\n这样调试器会进到这个断点这里，根本无法调试当前上下文\n:::那么我们应该怎么做呢::::tip\n我们可以使用一个小技巧，将调试器放在一个立即调用的函数表达式(IIFE)里面\n::::::warning\n但是这也有个问题，断点进入之后，由于是个闭包，所以并不能调试当前组件的实例(_vm)\n:::所以我们可以这样:这样就可以调试message以及当前vue实例",
         "moduleIntro": "vue知识总结",
         "path": "/VUE/debuggerTemplate"
+      },
+      {
+        "module": "VUE",
+        "title": "维护Vue代码结构",
+        "introduction": "之前我们注册全局组件都是在index.js一个个导入组件,然后注册全局组件。这样就造成入口文件代码臃肿，难以维护。我们可以建立以component.js里面维护全局组件,入口文件只需要导入这个文件即可。",
+        "moduleIntro": "vue知识总结",
+        "path": "/VUE/maintain"
       }
     ]
   },
@@ -155,6 +162,41 @@
         "introduction": "text-transform可以改变英文的大小写text-align-last:focus-within冒泡规则(兼容性不是很好)",
         "moduleIntro": "css总结",
         "path": "/CSS/skill"
+      },
+      {
+        "module": "CSS",
+        "title": "实现三角形阴影",
+        "introduction": "利用一个父级元素超出隐藏，然后子元素实现阴影，利用transform来做rotate旋转，把块状元素旋转成三角形。父级元素添加超过隐藏即可。box-shadow顾名思意“盒阴影”，只是盒子的阴影；你想啊，这盒子中间明明是透明的，结果，阴影的时候，居然光线没有穿透；但是drop-shadow就符合真实世界的投影，非透明的颜色，我就有投影；透明部分，光线穿过，没投影，而什么盒子不盒子的，跟我没有任何关系。",
+        "moduleIntro": "css总结",
+        "path": "/CSS/triangleShadow"
+      },
+      {
+        "module": "CSS",
+        "title": "复制元素的完整样式",
+        "introduction": "",
+        "moduleIntro": "css总结",
+        "path": "/CSS/copyEleStyle"
+      },
+      {
+        "module": "CSS",
+        "title": "伪元素技巧",
+        "introduction": "",
+        "moduleIntro": "css总结",
+        "path": "/CSS/content"
+      },
+      {
+        "module": "CSS",
+        "title": "深入理解border-radius",
+        "introduction": "是相对于元素占据尺寸的百分比, 也就是包含边框，padding后的尺寸。而不是单纯地相对于width/height值。比如要实现一个正方形元素的圆角效果, 一个50%就解决了。而无需其他计算。单值实际上是一种简写。比如border-radius: 300px,实际则是也就是:无论设置圆角的值是多大，只会使用能够渲染的圆角大小渲染。比如以下是一个width: 200px;height: 100px的长方形, 那么水平圆角最大能渲染的值是100px,垂直圆角最大能渲染的值是50px。:::success\n所以设置一个圆方形圆角的时候,除了可以设置50%的时候,还可以设置一个特别大的值,达到同样的效果。\n:::比如以下是一个width: 200px;height: 300px的长方形, 此时值设置了左上角,那么水平圆角最大能渲染的值就是200px而不是100px了:::warning\n相对的角(比如左上角和左下角)都同时设置时,最大能渲染的值是宽高的一半;但是如果是只设置一个角(比如左上角)时,此时最大能渲染的值就是相应的宽高一样的值而不是一半。\n:::水平圆角和垂直圆角,始终保持同一个比列恒定不变。:::success\n比如说有一个长方形width: 100px;height: 200px 当设置圆角为border-radius: 100px时候,也就是border-radius: 100px/100px水平圆角和垂直圆角的比例是1:1,基于等比例性原则那么无论怎么渲染水平角和垂直角的比例始终是1:1,因为宽度是100px又因为对角也渲染所以水平最大渲染值是50px,所以此时垂直角渲染值也应该是50px。\n::::::success\n基于等比例性原则,只要保持水平角和垂直角比例保持一定的比例,设置最大圆角和固定的圆角效果是一样的。\n:::两个值就是一对对角值: “左上角, 右下角”和“右上角, 左下角”如果是一个值就是水平角和垂直角一样, 两个值用空格分开, 分别表示水平角和垂直角张鑫旭 CSS3 border-radius知多少？border-radius可视化生成各种图形",
+        "moduleIntro": "css总结",
+        "path": "/CSS/borderRadius"
+      },
+      {
+        "module": "CSS",
+        "title": "解决浏览器字体最小12像素问题",
+        "introduction": "缩放的形式来解决12px的问题, 但是元素本身所占的空间还是同样的大小, 在一定的场景下会存在问题。SVG本质上你可以看成是一张图片，图片设置width:100%自动就跟随容器尺寸拉伸，SVG也是如此，并且SVG由于是矢量的，因此，再怎么拉伸我们的文字效果都是清晰细腻的。",
+        "moduleIntro": "css总结",
+        "path": "/CSS/fontSizeMinPx"
       }
     ]
   },
@@ -230,6 +272,69 @@
         "introduction": "可以适用于图片(<img />)，以及iframe(<iframe>)",
         "moduleIntro": "chrome使用总结",
         "path": "/chrome/nativeLazy"
+      },
+      {
+        "module": "chrome",
+        "title": "查看代码覆盖率",
+        "introduction": "通过chrome的调试工具可以查看代码的覆盖率，也就是哪些有多少代码没有使用到",
+        "moduleIntro": "chrome使用总结",
+        "path": "/chrome/coverage"
+      },
+      {
+        "module": "chrome",
+        "title": "性能实时监测",
+        "introduction": "通过Performance只能调试页面初次加载或者手动记录某个情形的性能瓶颈，但是通过performance monitor可以实时的查看各种性能数据。",
+        "moduleIntro": "chrome使用总结",
+        "path": "/chrome/performanceMonitor"
+      },
+      {
+        "module": "chrome",
+        "title": "分析页面第一帧渲染的性能",
+        "introduction": "通过Performance的Timing可以准确的判断页面第一帧的渲染时间,以及页面完成加载的时间,而且还能看到堵塞第一帧渲染的元素。",
+        "moduleIntro": "chrome使用总结",
+        "path": "/chrome/LCP"
+      },
+      {
+        "module": "chrome",
+        "title": "复制元素的完整样式",
+        "introduction": "",
+        "moduleIntro": "chrome使用总结",
+        "path": "/chrome/copyEleStyle"
+      },
+      {
+        "module": "chrome",
+        "title": "截屏",
+        "introduction": "command + shit + p输入screenshot截取图片:Elements下面选中某个元素command + shift + p输入screenshot, 选择Capture node screenshot截取图片:",
+        "moduleIntro": "chrome使用总结",
+        "path": "/chrome/screenshot"
+      },
+      {
+        "module": "chrome",
+        "title": "调试工具里面颜色快捷操作",
+        "introduction": "rgba转16进制转hsl",
+        "moduleIntro": "chrome使用总结",
+        "path": "/chrome/color"
+      },
+      {
+        "module": "chrome",
+        "title": "暂停当前正在执行的代码",
+        "introduction": "不用设置断点即可调试当前正在执行的jscommand + \\ 或者 F8",
+        "moduleIntro": "chrome使用总结",
+        "path": "/chrome/pauseJs"
+      },
+      {
+        "module": "chrome",
+        "title": "控制台实时的执行表达式",
+        "introduction": "command + shif + p输入expression, 选择 Create live expression",
+        "moduleIntro": "chrome使用总结",
+        "path": "/chrome/liveJs"
+      },
+      {
+        "module": "chrome",
+        "title": "Chrome搜索技巧",
+        "introduction": "最简单和最有效的搜索方式是给关键词加上双引号，这样搜索引擎会反馈和关键词完全吻合的搜索结果。:::success\n例如，搜索 Joe Bloggs 时，搜索引擎会返回同时跟 Joe 和 Bloggs 相关的结果，而搜索 \"Joe Bloggs\" 时，搜索引擎只返回跟 \"Joe Bloggs\" 相关的结果。\n:::如果准确搜索不能得到想要的结果，你可以通过使用减号的方式来排除特定词汇。:::success\n例如搜索 Joe Bloggs -jeans 时，搜索引擎会返回与 Joe Bloggs 匹配但已经排除关键字 jeans 的信息。\n:::默认的文本搜索会返回所有和关键字相关的信息，通过使用 OR，不仅能返回和关键字都相关的信息，还能返回和两个关键字分别相关的信息。在不确定哪个哪个关键字对搜索结果起决定作用时，OR 搜索是很有用的。有时使用不确定的关键词进行搜索反而更有用。如果你不确定使用哪个关键词，可以试试使用同义词搜索。:::success\n例如，你搜索 plumbing ~university，则搜索引擎会返回包含 plumbing universities 和 plumbing colleges 的信息。\n:::很多网站缺乏搜索功能，但你可以通过谷歌等搜索引擎对站内进行搜索。:::success\n在搜索引擎上输入site:theguardian.com 和搜索关键字，搜索引擎会返回网站 theguardian.com 内和关键词相关的信息。结合准确搜索，能使这项功能更强大。\n:::例如:类似拼图游戏 Scrabble 的空白方块，在搜索引擎中，不管关键字缺失的是一连串单词中的其中一个还是一个单词的某一部分，都可以使用星号来填补缺失的部分，这同样适用于搜索一篇确定性偏低的文章。:::success\n例如，在搜索引擎输入 architect*，则会得到所有包含 architect、architectural、architecture、architected、architecting 以及其他所有以architect 作为开头的词汇的信息。\n:::在一定范围内使用限定词来搜索某些东西是一个不错的方法。:::success\n例如想要找出 1920 至 1950 年间的英国首相，直接在搜索引擎中输入 英国首相 1920.. 1950 即可得出想要的结果。记住，数值之间的符号是两个英文句号加一个空格键。\n:::有时，你只想找出所有和关键词相关的网页链接、网页主体(内容)和标题，这时，就可以使用对应的限定词：inurl: 、intext 和 intitle。:::success\n例如，在搜索引擎中输入 intitle: 评测 会得到所有和关键词 评测 相关的网页标题。\n:::相关的限定词可用于搜索相关网站时使用。:::success\n例如，你仅需在搜索引擎中输入 **related:**theguardian.com 即可得到所有和 theguardian.com 相关的网站的搜索结果。\n::::::success\n比如搜索ppt, 输入关键字 filetype:ppt\n:::",
+        "moduleIntro": "chrome使用总结",
+        "path": "/chrome/searchSkill"
       }
     ]
   },
@@ -816,6 +921,47 @@
         "introduction": "也叫联合类型也叫交集类型:::warning\n联合类型和交集类型是有区别的 \n联合类型是只要满足其中一个类型就可以了:交集类型是两个类型都必须要满足:::",
         "moduleIntro": "typescript使用",
         "path": "/typescript/operator"
+      }
+    ]
+  },
+  {
+    "module": "animation",
+    "title": "动画技巧",
+    "views": [
+      {
+        "module": "animation",
+        "title": "animation-delay技巧",
+        "introduction": "多个元素使用相同的动画效果时，将动画执行时机依次错开，可形成整齐有序的序列动画效果。",
+        "moduleIntro": "动画技巧",
+        "path": "/animation/animationDelaySkill"
+      },
+      {
+        "module": "animation",
+        "title": "border-widtd动画技巧",
+        "introduction": "我们先看一下border-width为0的各种效果",
+        "moduleIntro": "动画技巧",
+        "path": "/animation/borderWidth"
+      },
+      {
+        "module": "animation",
+        "title": "transform-origin动画技巧",
+        "introduction": "transform-origin用来设置元素变形的基点",
+        "moduleIntro": "动画技巧",
+        "path": "/animation/transformOrigin"
+      },
+      {
+        "module": "animation",
+        "title": "动画方向是否反向",
+        "introduction": "指示动画是否反向播放默认值。每次动画结束, 重置到起点重新播放。动画交替反向运行，反向运行时，动画按步后退，同时，带时间功能的函数也反向，比如，ease-in 在反向时成为ease-out。从尾到头反向运行动画, 每次动画结束后, 重置到尾点重新播放。反向交替， 反向开始交替。以下就是使用alternate和不使用的区别",
+        "moduleIntro": "动画技巧",
+        "path": "/animation/animationDirection"
+      },
+      {
+        "module": "animation",
+        "title": "径向动画里面的数学知识",
+        "introduction": "径向菜单动画, 需要定位各个菜单的位置, 需要运用到数学知识中的极坐标。实际上就是这个块状元素做的缩放动画, 块状元素上面各个固定好位置就可以了设M为平面上的一点，它的直角坐标为(x，y)，极坐标为(ρ，θ)由定义，结合图形，容易得到如下互化公式：",
+        "moduleIntro": "动画技巧",
+        "path": "/animation/directionAnimation"
       }
     ]
   }
