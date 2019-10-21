@@ -15,6 +15,7 @@ let loadTriangleShadow = () => import(/* webpackChunkName: "CSS.triangleShadow" 
 let loadCopyEleStyle = () => import(/* webpackChunkName: "CSS.copyEleStyle" */'../copyEleStyle/index.vue')
 let loadContent = () => import(/* webpackChunkName: "CSS.content" */'../content/index.vue')
 let loadBorderRadius = () => import(/* webpackChunkName: "CSS.borderRadius" */'../borderRadius/index.vue')
+let loadFontSizeMinPx = () => import(/* webpackChunkName: "CSS.fontSizeMinPx" */'../fontSizeMinPx/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -210,6 +211,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/CSS/fontSizeMinPx',
+    name: 'CSSFontSizeMinPx',
+    component: loadFontSizeMinPx,
+    meta: {
+      module: 'CSS',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '解决浏览器字体最小12像素问题',
+      preload () {}
+    }
+  },
 
 
 
