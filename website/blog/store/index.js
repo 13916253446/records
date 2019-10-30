@@ -46,7 +46,9 @@ import standardStore from '../modules/standard/store/store.js'
 //! typescript使用
 import typescriptStore from '../modules/typescript/store/store.js'
 //! 动画技巧
-import animationStore from '../modules/animation/store/store.js'
+import animationStore from '../modules/animation/store/store.js'
+//! 领先的概念
+import ideaStore from '../modules/idea/store/store.js'
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -207,7 +209,12 @@ export const store = new Vuex.Store({
     animation: {
       namespaced: true,
       ...animationStore
-    },
+    },
+    //! 领先的概念
+    idea: {
+      namespaced: true,
+      ...ideaStore
+    },
 
 
     /* @init<%

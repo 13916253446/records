@@ -45,7 +45,9 @@ import { entryBefore as standardEntryBefore } from '../modules/standard/routes/r
 //! typescript模块钩子
 import { entryBefore as typescriptEntryBefore } from '../modules/typescript/routes/routerHooks.js'
 //! animation模块钩子
-import { entryBefore as animationEntryBefore } from '../modules/animation/routes/routerHooks.js'
+import { entryBefore as animationEntryBefore } from '../modules/animation/routes/routerHooks.js'
+//! idea模块钩子
+import { entryBefore as ideaEntryBefore } from '../modules/idea/routes/routerHooks.js'
 
 /* @init<%
 //! ${TplModuleName}模块钩子
@@ -75,7 +77,8 @@ const hooksModel = {
   flutterEntryBefore,
   standardEntryBefore,
   typescriptEntryBefore,
-  animationEntryBefore,
+  animationEntryBefore,
+  ideaEntryBefore,
 
 
   /* @init<%
