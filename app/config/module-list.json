@@ -441,7 +441,7 @@
       {
         "module": "Packages",
         "title": "工具包",
-        "introduction": "revealHTML里面可以直接插入markdown，来制作漂亮的幻灯片，来做演示demopinyin",
+        "introduction": "revealHTML里面可以直接插入markdown，来制作漂亮的幻灯片，来做演示demopinyin兼容(IE9+), 内置惯性拖拽, svg拖拽",
         "moduleIntro": "插件包",
         "path": "/Packages/tools"
       }
@@ -962,6 +962,19 @@
         "introduction": "径向菜单动画, 需要定位各个菜单的位置, 需要运用到数学知识中的极坐标。实际上就是这个块状元素做的缩放动画, 块状元素上面各个固定好位置就可以了设M为平面上的一点，它的直角坐标为(x，y)，极坐标为(ρ，θ)由定义，结合图形，容易得到如下互化公式：",
         "moduleIntro": "动画技巧",
         "path": "/animation/directionAnimation"
+      }
+    ]
+  },
+  {
+    "module": "idea",
+    "title": "领先的概念",
+    "views": [
+      {
+        "module": "idea",
+        "title": "前端概念",
+        "introduction": "打通了客户端日志，结合对客户端能力的扩展，做到了 C 端的全链路日志，客户端同学和 Web 同学都可以分析对方日志，提高了问题定位速度。",
+        "moduleIntro": "领先的概念",
+        "path": "/idea/newIdea"
       }
     ]
   }
