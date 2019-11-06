@@ -120,3 +120,9 @@
 # 全屏滚动插件
 
 - [fullpage.js](https://alvarotrigo.com/fullPage/zh/#page1)
+
+# 好用的手势库
+
+兼容(IE9+), 内置惯性拖拽, svg拖拽
+
+- [interact.js](https://github.com/taye/interact.js)
