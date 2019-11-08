@@ -921,6 +921,13 @@
         "introduction": "也叫联合类型也叫交集类型:::warning\n联合类型和交集类型是有区别的 \n联合类型是只要满足其中一个类型就可以了:交集类型是两个类型都必须要满足:::",
         "moduleIntro": "typescript使用",
         "path": "/typescript/operator"
+      },
+      {
+        "module": "typescript",
+        "title": "版本变化",
+        "introduction": "双问号操作符：如果值是null或undefined时取默认值, 其它情况就是值本身。暂时不理解过去只有在存在checkJs 时，JavaScript源文件中的这一注释才会被认可。现在统一的在文件顶部添加//@ts-nocheck即可",
+        "moduleIntro": "typescript使用",
+        "path": "/typescript/versionChangeLog"
       }
     ]
   },
@@ -972,7 +979,7 @@
       {
         "module": "idea",
         "title": "前端概念",
-        "introduction": "打通了客户端日志，结合对客户端能力的扩展，做到了 C 端的全链路日志，客户端同学和 Web 同学都可以分析对方日志，提高了问题定位速度。",
+        "introduction": "打通了客户端日志，结合对客户端能力的扩展，做到了 C 端的全链路日志，客户端同学和 Web 同学都可以分析对方日志，提高了问题定位速度。无服务器的服务",
         "moduleIntro": "领先的概念",
         "path": "/idea/newIdea"
       }

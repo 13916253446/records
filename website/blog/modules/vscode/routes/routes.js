@@ -5,6 +5,7 @@ let loadPageExample = () => import(/* webpackChunkName: "vscode.pageTemplate" */
 let loadCustomeColor = () => import(/* webpackChunkName: "vscode.customeColor" */'../customeColor/index.vue')
 let loadPracticalShortcutKey = () => import(/* webpackChunkName: "vscode.practicalShortcutKey" */'../practicalShortcutKey/index.vue')
 let loadDebugger = () => import(/* webpackChunkName: "vscode.debugger" */'../debugger/index.vue')
+let loadFix = () => import(/* webpackChunkName: "vscode.fix" */'../fix/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -67,6 +68,19 @@ export const routes = [
       bgClass: '',
       keepAlive: true,
       title: '调试',
+      preload () {}
+    }
+  },
+  {
+    path: '/vscode/fix',
+    name: 'VscodeFix',
+    component: loadFix,
+    meta: {
+      module: 'vscode',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '解决问题',
       preload () {}
     }
   },
