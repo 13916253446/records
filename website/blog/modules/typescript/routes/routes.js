@@ -6,6 +6,7 @@ let loadSkill = () => import(/* webpackChunkName: "typescript.skill" */'../skill
 let loadTsd = () => import(/* webpackChunkName: "typescript.tsd" */'../tsd/index.vue')
 let loadOperator = () => import(/* webpackChunkName: "typescript.operator" */'../operator/index.vue')
 let loadVersionChangeLog = () => import(/* webpackChunkName: "typescript.versionChangeLog" */'../versionChangeLog/index.vue')
+let loadTsconfig = () => import(/* webpackChunkName: "typescript.tsconfig" */'../tsconfig/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
 
@@ -84,6 +85,19 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/typescript/tsconfig',
+    name: 'TypescriptTsconfig',
+    component: loadTsconfig,
+    meta: {
+      module: 'typescript',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '理解tsconfig',
+      preload () {}
+    }
+  },
 
 
   /* @init<%
