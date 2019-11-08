@@ -45,7 +45,9 @@ import typescriptWhite from '../modules/typescript/store/cacheWhiteList.js'
 //! animation模块白名单
 import animationWhite from '../modules/animation/store/cacheWhiteList.js'
 //! idea模块白名单
-import ideaWhite from '../modules/idea/store/cacheWhiteList.js'
+import ideaWhite from '../modules/idea/store/cacheWhiteList.js'
+//! stylistic模块白名单
+import stylisticWhite from '../modules/stylistic/store/cacheWhiteList.js'
 
 
 /* @init<%
@@ -74,7 +76,8 @@ export const whiteList = [
   ...standardWhite,
   ...typescriptWhite,
   ...animationWhite,
-  ...ideaWhite,
+  ...ideaWhite,
+  ...stylisticWhite,
 
 
   /* @init<%

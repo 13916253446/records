@@ -47,7 +47,9 @@ import { entryBefore as typescriptEntryBefore } from '../modules/typescript/rout
 //! animation模块钩子
 import { entryBefore as animationEntryBefore } from '../modules/animation/routes/routerHooks.js'
 //! idea模块钩子
-import { entryBefore as ideaEntryBefore } from '../modules/idea/routes/routerHooks.js'
+import { entryBefore as ideaEntryBefore } from '../modules/idea/routes/routerHooks.js'
+//! stylistic模块钩子
+import { entryBefore as stylisticEntryBefore } from '../modules/stylistic/routes/routerHooks.js'
 
 /* @init<%
 //! ${TplModuleName}模块钩子
@@ -78,7 +80,8 @@ const hooksModel = {
   standardEntryBefore,
   typescriptEntryBefore,
   animationEntryBefore,
-  ideaEntryBefore,
+  ideaEntryBefore,
+  stylisticEntryBefore,
 
 
   /* @init<%

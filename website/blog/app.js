@@ -49,4 +49,3 @@ let arrModel = [
   { id: 3 }
 ]
 
-console.log(arrModel.sort())

@@ -47,7 +47,9 @@ import typescriptRoutes from '../modules/typescript/routes/routes.js'
 //! 动画技巧
 import animationRoutes from '../modules/animation/routes/routes.js'
 //! 领先的概念
-import ideaRoutes from '../modules/idea/routes/routes.js'
+import ideaRoutes from '../modules/idea/routes/routes.js'
+//! 代码风格
+import stylisticRoutes from '../modules/stylistic/routes/routes.js'
 
 
 /* @init<%
@@ -106,7 +108,9 @@ const routes = [
   //! 动画技巧
   ...animationRoutes,
   //! 领先的概念
-  ...ideaRoutes,
+  ...ideaRoutes,
+  //! 代码风格
+  ...stylisticRoutes,
 
   /* @init<%
   //! ${TplModuleIntroduction}
