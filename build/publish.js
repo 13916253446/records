@@ -1,5 +1,5 @@
-const ghpages = require('gh-pages');
-const chalk = require('chalk');
+const ghpages = require('gh-pages')
+const chalk = require('chalk')
 const path = require('path')
 const copy = require('copy-template-dir')
 
@@ -12,9 +12,9 @@ copy(assetsDir, targetDir, { name: '崔海峰' }, err => {
       branch: 'master',
       repo: 'https://github.com/13916253446/13916253446.github.io',
       add: true
-    }, function () {
+    }, function (event) {
       console.log(chalk.blue(`\n站点发布成功\n`))
-    });
+    })
   } else {
     console.log(err)
   }

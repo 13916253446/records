@@ -779,6 +779,13 @@
         "introduction": "package.jsonlanuch.json",
         "moduleIntro": "vscode技巧",
         "path": "/vscode/debugger"
+      },
+      {
+        "module": "vscode",
+        "title": "解决问题",
+        "introduction": "比如说当前项目用的是typescript3.7, 但是因为vscode内置的typescript还没有更新到3.7, 这样就会导致一些语法在vscode上面显示错误。从拓展程序下载JavaScript and TypeScript Nightly来选择语言版本来支持。比如import PullDownRefresh from '@/components/pullDownRefresh/pull-down-refresh.vue'无法直接定位进去。解决方案: 在项目更目录添加jsconfig.json或者tsconfig.json配置compilerOptions.path",
+        "moduleIntro": "vscode技巧",
+        "path": "/vscode/fix"
       }
     ]
   },
@@ -925,9 +932,23 @@
       {
         "module": "typescript",
         "title": "版本变化",
-        "introduction": "双问号操作符：如果值是null或undefined时取默认值, 其它情况就是值本身。暂时不理解过去只有在存在checkJs 时，JavaScript源文件中的这一注释才会被认可。现在统一的在文件顶部添加//@ts-nocheck即可",
+        "introduction": "双问号操作符：如果值是null或undefined时取默认值, 其它情况就是值本身。暂时不理解过去只有在存在checkJs 时，JavaScript源文件中的这一注释才会被认可。现在统一的在文件顶部添加//@ts-nocheck即可TypeScript 中的 --declaration 标志允许我们从源 TypeScript 文件（如.ts 和.tsx 文件）生成.d.ts 文件（声明文件）。这些.d.ts 文件很重要，因为它们允许 TypeScript 对其他项目进行类型检查，而无需重新检查 / 构建原始源代码。出于相同的原因，使用项目引用时 需要 此设置。不幸的是，–declaration 不适用于 --allowJs 之类的设置，无法混合使用 TypeScript 和 JavaScript 输入文件。这是一个令人沮丧的限制，因为它意味着用户即使在迁移代码库时也无法使用 --declaration，即使使用 JSDoc 注释也是如此。TypeScript 3.7 对此做了更改，并允许将这两种功能混合使用！使用 allowJs 时，TypeScript 将尽可能理解 JavaScript 源代码，并将其以等效表示形式保存到.d.ts 文件中。",
         "moduleIntro": "typescript使用",
         "path": "/typescript/versionChangeLog"
+      },
+      {
+        "module": "typescript",
+        "title": "理解tsconfig",
+        "introduction": "用来让我们从源文件.ts和.tsx和.js文件中生成.d.ts文件，这样就允许其他项目进行类型检查示例: 1. comlink项目打包当Typescript严格模式设置为on时，它将使用strict族下的严格类型规则对项目中的所有文件进行代码验证。规则是：:::warning\n浏览器自带事件如何处理::::",
+        "moduleIntro": "typescript使用",
+        "path": "/typescript/tsconfig"
+      },
+      {
+        "module": "typescript",
+        "title": "使用技巧",
+        "introduction": "用来预判一些未来可能会出现的错误。比如以下的场景:在 switch 当中判断 type，TS 是可以收窄类型的 (discriminated union)：注意在 default 里面我们把被收窄为 never 的 val 赋值给一个显式声明为 never 的变量。如果一切逻辑正确，那么这里应该能够编译通过。但是假如后来有一天你的同事改了 All 的类型：:::success\n设置了never的值，就会抛出错误不能将Baz赋值给never，这样一来就可以囊括switch所有的情况。\n:::",
+        "moduleIntro": "typescript使用",
+        "path": "/typescript/useSkill"
       }
     ]
   },
@@ -982,6 +1003,19 @@
         "introduction": "打通了客户端日志，结合对客户端能力的扩展，做到了 C 端的全链路日志，客户端同学和 Web 同学都可以分析对方日志，提高了问题定位速度。无服务器的服务",
         "moduleIntro": "领先的概念",
         "path": "/idea/newIdea"
+      }
+    ]
+  },
+  {
+    "module": "stylistic",
+    "title": "代码风格",
+    "views": [
+      {
+        "module": "stylistic",
+        "title": "js和ts代码风格",
+        "introduction": "复杂的三元运算符可以采用嵌套的形式看得更清晰",
+        "moduleIntro": "代码风格",
+        "path": "/stylistic/javascript"
       }
     ]
   }
