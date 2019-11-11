@@ -6,10 +6,10 @@ let loadSkill = () => import(/* webpackChunkName: "typescript.skill" */'../skill
 let loadTsd = () => import(/* webpackChunkName: "typescript.tsd" */'../tsd/index.vue')
 let loadOperator = () => import(/* webpackChunkName: "typescript.operator" */'../operator/index.vue')
 let loadVersionChangeLog = () => import(/* webpackChunkName: "typescript.versionChangeLog" */'../versionChangeLog/index.vue')
-let loadTsconfig = () => import(/* webpackChunkName: "typescript.tsconfig" */'../tsconfig/index.vue')
+let loadTsconfig = () => import(/* webpackChunkName: "typescript.tsconfig" */'../tsconfig/index.vue')
+let loadUseSkill = () => import(/* webpackChunkName: "typescript.useSkill" */'../useSkill/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')%> */
-
 /* eslint-disable */
 export const routes = [
   {
@@ -97,7 +97,22 @@ export const routes = [
       title: '理解tsconfig',
       preload () {}
     }
-  },
+  },
+  {
+    path: '/typescript/useSkill',
+    name: 'TypescriptUseSkill',
+    component: loadUseSkill,
+    meta: {
+      module: 'typescript',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '使用技巧',
+      preload () {}
+    }
+  },
+
+
 
 
   /* @init<%
