@@ -2,7 +2,7 @@ import { isFunction } from 'components/tools/utils.js'
 import store from '../store/index.js'
 import NProgress from 'nprogress'
 //! VUE模块钩子
-import { entryBefore as VUEEntryBefore } from '../modules/VUE/routes/routerHooks.js'
+import { entryBefore as VUEEntryBefore } from '../modules/Vue/routes/routerHooks.js'
 //! CSS模块钩子
 import { entryBefore as CSSEntryBefore } from '../modules/CSS/routes/routerHooks.js'
 //! ES6模块钩子
@@ -49,7 +49,25 @@ import { entryBefore as animationEntryBefore } from '../modules/animation/routes
 //! idea模块钩子
 import { entryBefore as ideaEntryBefore } from '../modules/idea/routes/routerHooks.js'
 //! stylistic模块钩子
-import { entryBefore as stylisticEntryBefore } from '../modules/stylistic/routes/routerHooks.js'
+import { entryBefore as stylisticEntryBefore } from '../modules/stylistic/routes/routerHooks.js'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* @init<%
 //! ${TplModuleName}模块钩子
@@ -81,7 +99,25 @@ const hooksModel = {
   typescriptEntryBefore,
   animationEntryBefore,
   ideaEntryBefore,
-  stylisticEntryBefore,
+  stylisticEntryBefore,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   /* @init<%

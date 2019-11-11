@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import createStorePlugin from 'components/tools/storePlugin.js'
 import whiteList from './cacheWhiteList.js'
 //! vue知识总结
-import VUEStore from '../modules/VUE/store/store.js'
+import VUEStore from '../modules/Vue/store/store.js'
 //! css总结
 import CSSStore from '../modules/CSS/store/store.js'
 //! 常用ES6总结
@@ -50,7 +50,26 @@ import animationStore from '../modules/animation/store/store.js'
 //! 领先的概念
 import ideaStore from '../modules/idea/store/store.js'
 //! 代码风格
-import stylisticStore from '../modules/stylistic/store/store.js'
+import stylisticStore from '../modules/stylistic/store/store.js'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* @init<%
 //! ${TplModuleIntroduction}
@@ -221,7 +240,26 @@ export const store = new Vuex.Store({
     stylistic: {
       namespaced: true,
       ...stylisticStore
-    },
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     /* @init<%

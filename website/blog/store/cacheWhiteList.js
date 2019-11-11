@@ -1,6 +1,6 @@
 //? 缓存白名单
 //! VUE模块白名单
-import VUEWhite from '../modules/VUE/store/cacheWhiteList.js'
+import VUEWhite from '../modules/Vue/store/cacheWhiteList.js'
 //! CSS模块白名单
 import CSSWhite from '../modules/CSS/store/cacheWhiteList.js'
 //! ES6模块白名单
@@ -47,7 +47,27 @@ import animationWhite from '../modules/animation/store/cacheWhiteList.js'
 //! idea模块白名单
 import ideaWhite from '../modules/idea/store/cacheWhiteList.js'
 //! stylistic模块白名单
-import stylisticWhite from '../modules/stylistic/store/cacheWhiteList.js'
+import stylisticWhite from '../modules/stylistic/store/cacheWhiteList.js'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* @init<%
@@ -77,7 +97,27 @@ export const whiteList = [
   ...typescriptWhite,
   ...animationWhite,
   ...ideaWhite,
-  ...stylisticWhite,
+  ...stylisticWhite,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   /* @init<%

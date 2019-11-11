@@ -1,7 +1,7 @@
 //? vue知识总结模块路由
 
 //! TODO: 路由例子
-let loadPageExample = () => import(/* webpackChunkName: "VUE.pageTemplate" */'components/template/page/page.vue')
+let loadPageExample = () => import(/* webpackChunkName: "VUE.pageTemplate" */'./node_modules/components/template/page/page.vue')
 let loadSkill = () => import(/* webpackChunkName: "VUE.skill" */'../skill/index.vue')
 let loadPlugin = () => import(/* webpackChunkName: "VUE.plugin" */'../plugin/index.vue')
 let loadRender = () => import(/* webpackChunkName: "VUE.render" */'../render/index.vue')
