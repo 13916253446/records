@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routerHooks from './hooks.js'
 //! vue知识总结
-import VUERoutes from '../modules/VUE/routes/routes.js'
+import VUERoutes from '../modules/Vue/routes/routes.js'
 //! css总结
 import CSSRoutes from '../modules/CSS/routes/routes.js'
 //! 常用ES6总结
@@ -49,7 +49,23 @@ import animationRoutes from '../modules/animation/routes/routes.js'
 //! 领先的概念
 import ideaRoutes from '../modules/idea/routes/routes.js'
 //! 代码风格
-import stylisticRoutes from '../modules/stylistic/routes/routes.js'
+import stylisticRoutes from '../modules/stylistic/routes/routes.js'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* @init<%
@@ -110,7 +126,23 @@ const routes = [
   //! 领先的概念
   ...ideaRoutes,
   //! 代码风格
-  ...stylisticRoutes,
+  ...stylisticRoutes,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /* @init<%
   //! ${TplModuleIntroduction}
