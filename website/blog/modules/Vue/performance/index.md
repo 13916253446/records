@@ -332,6 +332,38 @@ function optimizeItem (item) {
 
 [vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller)
 
+</div>
+
+#### 7. 临时变量
+
+循环渲染Dom的时候, 对于一些重复用到的需要计算的变量, 可以利用`作用域插槽`来生成一个临时变量。
+
+```HTML
+// TempVar.vue
+<script>
+export default {
+  name: 'Var',
+  functional: true,
+  render: (h, context) => {
+    return context.scopedSlots.default && context.scopedSlots.default(context.props || {})
+  }
+}
+</script>
+
+// list.vue
+<template
+  v-for="(item, idx) in listData">
+  <temp-var
+    :value="{} || item.warehouseVO"
+    :key="idx">
+    <div  v-slot="{ value }"></div>
+  </temp-var>
+</template>
+```
+
+:::success
+利用函数式组件的特性, 没有上下文没有生命周期来优化这个临时变量组件。
+:::
 
 ### 参考:
 
