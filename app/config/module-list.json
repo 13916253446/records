@@ -76,7 +76,7 @@
       {
         "module": "VUE",
         "title": "vue性能优化",
-        "introduction": ":::tip\n因为所有绑定在this上面的属性，都会增加get,set方法，也就是说你读取this.base的时候，实际会走一遍get方法，由于堆栈的原由，就会耗费时间\n:::Defer Mixin:::tip\n这样可以定制局部属性，不用Vue添加get,set方法\n:::vue-virtual-scroller",
+        "introduction": ":::tip\n因为所有绑定在this上面的属性，都会增加get,set方法，也就是说你读取this.base的时候，实际会走一遍get方法，由于堆栈的原由，就会耗费时间\n:::Defer Mixin:::tip\n这样可以定制局部属性，不用Vue添加get,set方法\n:::vue-virtual-scroller循环渲染Dom的时候, 对于一些重复用到的需要计算的变量, 可以利用作用域插槽来生成一个临时变量。:::success\n利用函数式组件的特性, 没有上下文没有生命周期来优化这个临时变量组件。\n:::",
         "moduleIntro": "vue知识总结",
         "path": "/VUE/performance"
       },
@@ -417,6 +417,13 @@
         "introduction": "tree是一个能列出递归目录的命令，以图形显示驱动器或路径的文件夹结构，可以生成命令树。Windows和Linux都有，mac没有原生支持，需要安装tree。生成如下结构：生成如下结构：生成结构如下：",
         "moduleIntro": "项目管理工具",
         "path": "/Tools/treeCommand"
+      },
+      {
+        "module": "Tools",
+        "title": "内网穿透",
+        "introduction": "这是一个免费的内网穿透工具，只需要四步就可以让外网访问内部服务。:::warning\n有可能会报错Invalid Host Header\n可以通过运行: :::",
+        "moduleIntro": "项目管理工具",
+        "path": "/Tools/intranetPierce"
       }
     ]
   },
@@ -918,7 +925,7 @@
       {
         "module": "typescript",
         "title": "如何编写tsd文件",
-        "introduction": "虽然JavaScript不支持合并，但你可以为导入的对象打补丁以更新它们。全局拓展通过global来申明:::success\n最新的typescript(3.6+)好像不再支持global\n:::直接申明全局拓展可以拓展内部自定义模块以及外部模块比如Vue比如增加Vue的根实例上面增加一个$get的请求方法通过模块导入import或者require的方式使用的模块,可以有两种方式来申明文件。1、在相应的模块文件夹下建立同名的.d.ts文件来申明:::warning\n无论在任何位置的.ts以及.d.ts文件内没有使用export申明declare的类型都将是全局的\n:::2、通过module来申明",
+        "introduction": "虽然JavaScript不支持合并，但你可以为导入的对象打补丁以更新它们。直接申明全局拓展:::warning\n这里要注意当使用const或者let的话,只能通过直接使用变量名的方式来访问,不能通过window来访问。比如上面的例子不能通过window.maxNum来访问。当我们把代码改成var能直接通过变量名访问，也可以通过window来访问这个变量\n:::在模块内部申明全局变量在模块申明文件里面,可以通过global来申明全局变量:::warning\n只要文件内部使用import或者export关键字,那么这个文件就是一个模块申明文件了,也就是不能直接通过declare const maxs: 200来申明全局变量了。\n:::可以拓展内部自定义模块以及外部模块比如Vue比如增加Vue的根实例上面增加一个$get的请求方法通过模块导入import或者require的方式使用的模块,可以有两种方式来申明文件。1、在相应的模块文件夹下建立同名的.d.ts文件来申明:::warning\n无论在任何位置的.ts以及.d.ts文件内没有使用export申明declare的类型都将是全局的\n:::2、通过module来申明",
         "moduleIntro": "typescript使用",
         "path": "/typescript/tsd"
       },
