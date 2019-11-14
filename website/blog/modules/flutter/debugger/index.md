@@ -15,6 +15,10 @@ int num = 123456;
 print(num);
 ```
 
+:::success
+可以通过执行`flutter logs`命令实时的查看打印日志
+:::
+
 ### `devTools`
 
 vscode安装`dart`插件, 然后直接`F5`调试打开可视化界面。
