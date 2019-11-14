@@ -11,11 +11,10 @@ let loadCss = () => import(/* webpackChunkName: "Tools.css" */'../css/index.vue'
 let loadGitTheory = () => import(/* webpackChunkName: "Tools.gitTheory" */'../gitTheory/index.vue')
 let loadOftenGit = () => import(/* webpackChunkName: "Tools.oftenGit" */'../oftenGit/index.vue')
 let loadTreeCommand = () => import(/* webpackChunkName: "Tools.treeCommand" */'../treeCommand/index.vue')
-
+let loadIntranetPierce = () => import(/* webpackChunkName: "Tools.intranetPierce" */'../intranetPierce/index.vue')
 /* @init<%
 let load${TplModulePageUpper} = () => import(${TplAnnotationStart} webpackChunkName: "${TplModuleName}.${TplModulePage}" ${TplAnnotationEnd}'../${TplModulePage}/index.vue')
 %> */
-
 /* eslint-disable */
 export const routes = [
   {
@@ -156,6 +155,20 @@ export const routes = [
       preload () {}
     }
   },
+  {
+    path: '/Tools/intranetPierce',
+    name: 'ToolsIntranetPierce',
+    component: loadIntranetPierce,
+    meta: {
+      module: 'Tools',
+      loginAuth: false,
+      bgClass: '',
+      keepAlive: true,
+      title: '内网穿透',
+      preload () {}
+    }
+  },
+
 
 
 

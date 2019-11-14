@@ -5,19 +5,6 @@
 
 #### 全局拓展
 
-全局拓展通过`global`来申明
-
-```typescript
-// 任意一个.d.ts文件
-declare global {
-    const maxNum: 100
-}
-```
-
-:::success
-最新的`typescript`(3.6+)好像不再支持`global`
-:::
-
 直接申明全局拓展
 
 ```typescript
@@ -25,6 +12,30 @@ declare const maxNum: 100
 ```
 
 ![tsd](https://raw.githubusercontent.com/13916253446/assets/master/public/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-09-24%20%E4%B8%8B%E5%8D%888.oqgud17low8.25.57%20(1).png)
+
+:::warning
+这里要注意当使用`const`或者`let`的话,只能通过直接使用变量名的方式来访问,不能通过`window`来访问。比如上面的例子不能通过`window.maxNum`来访问。当我们把代码改成`var`<br>
+```typescript
+declare var maxNum: 100
+```
+能直接通过变量名访问，也可以通过`window`来访问这个变量
+:::
+
+在模块内部申明全局变量
+
+在模块申明文件里面,可以通过`global`来申明全局变量
+```typescript
+// module.d.ts
+import Vue from 'vue'
+
+declare global {
+    var $vue: Vue
+}
+```
+
+:::warning
+只要文件内部使用`import`或者`export`关键字,那么这个文件就是一个模块申明文件了,也就是不能直接通过`declare const maxs: 200`来申明全局变量了。
+:::
 
 
 #### 模块拓展
@@ -79,7 +90,6 @@ declare module '@/libs/util.native' {
     function NativeGoBack () => void
 }
 ```
-
 
 ## 参考
 
