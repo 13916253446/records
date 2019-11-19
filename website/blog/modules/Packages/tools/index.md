@@ -126,3 +126,7 @@
 兼容(IE9+), 内置惯性拖拽, svg拖拽
 
 - [interact.js](https://github.com/taye/interact.js)
+
+# 正则匹配路径, 路径转正则
+
+- [path-to-regexp](https://github.com/pillarjs/path-to-regexp)
