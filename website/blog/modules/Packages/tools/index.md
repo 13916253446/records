@@ -138,3 +138,8 @@
 # 可以内嵌在网页内的编辑器
 
 - [CodeMirror](https://github.com/codemirror/CodeMirror)
+
+# 监控webpack打包的静态资源大小变化
+
+- [packtracker](https://app.packtracker.io/)
+
