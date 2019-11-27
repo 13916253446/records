@@ -134,3 +134,7 @@
 # 网页上面画思维导图的连接线
 
 - [leader-line](https://anseki.github.io/leader-line/)
+
+# 可以内嵌在网页内的编辑器
+
+- [CodeMirror](https://github.com/codemirror/CodeMirror)
