@@ -51,6 +51,8 @@ import animationStore from '../modules/animation/store/store.js'
 import ideaStore from '../modules/idea/store/store.js'
 //! 代码风格
 import stylisticStore from '../modules/stylistic/store/store.js'
+//! 实用快捷键
+import quickKeyboardStore from '../modules/quickKeyboard/store/store.js'
 
 
 
@@ -240,6 +242,11 @@ export const store = new Vuex.Store({
     stylistic: {
       namespaced: true,
       ...stylisticStore
+    },
+    //! 实用快捷键
+    quickKeyboard: {
+      namespaced: true,
+      ...quickKeyboardStore
     },
 
 

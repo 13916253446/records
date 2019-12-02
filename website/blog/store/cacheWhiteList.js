@@ -48,6 +48,8 @@ import animationWhite from '../modules/animation/store/cacheWhiteList.js'
 import ideaWhite from '../modules/idea/store/cacheWhiteList.js'
 //! stylistic模块白名单
 import stylisticWhite from '../modules/stylistic/store/cacheWhiteList.js'
+//! quickKeyboard模块白名单
+import quickKeyboardWhite from '../modules/quickKeyboard/store/cacheWhiteList.js'
 
 
 
@@ -98,6 +100,7 @@ export const whiteList = [
   ...animationWhite,
   ...ideaWhite,
   ...stylisticWhite,
+  ...quickKeyboardWhite,
 
 
 

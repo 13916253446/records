@@ -50,6 +50,8 @@ import animationRoutes from '../modules/animation/routes/routes.js'
 import ideaRoutes from '../modules/idea/routes/routes.js'
 //! 代码风格
 import stylisticRoutes from '../modules/stylistic/routes/routes.js'
+//! 实用快捷键
+import quickKeyboardRoutes from '../modules/quickKeyboard/routes/routes.js'
 
 
 
@@ -127,6 +129,8 @@ const routes = [
   ...ideaRoutes,
   //! 代码风格
   ...stylisticRoutes,
+  //! 实用快捷键
+  ...quickKeyboardRoutes,
 
 
 

@@ -50,6 +50,8 @@ import { entryBefore as animationEntryBefore } from '../modules/animation/routes
 import { entryBefore as ideaEntryBefore } from '../modules/idea/routes/routerHooks.js'
 //! stylistic模块钩子
 import { entryBefore as stylisticEntryBefore } from '../modules/stylistic/routes/routerHooks.js'
+//! quickKeyboard模块钩子
+import { entryBefore as quickKeyboardEntryBefore } from '../modules/quickKeyboard/routes/routerHooks.js'
 
 
 
@@ -100,6 +102,7 @@ const hooksModel = {
   animationEntryBefore,
   ideaEntryBefore,
   stylisticEntryBefore,
+  quickKeyboardEntryBefore,
 
 
 
