@@ -365,6 +365,36 @@ export default {
 利用函数式组件的特性, 没有上下文没有生命周期来优化这个临时变量组件。
 :::
 
+### 8. 渲染不需要响应的数据
+
+```html
+<template>
+  <div>{{$options.customData.name}}</div>
+</template>
+export default {
+  customData: {
+    name: '崔海峰'
+  }
+}
+```
+
+:::success
+对于不会发生变化的数据可以绑定在实例的option上面, 而不是data或者computed上面, 这样数据就不会绑定getter和setter方法。
+:::
+
+### 9. 需要存储在内存上面的数据放在option上面
+
+```javascript
+export default {
+  created () {
+    this.$options.timer = setTimeout(this.tick, 100)
+  },
+  beforeDestroy () {
+    this.$options.timer && clearTimeout(this.$options.timer)
+  }
+}
+```
+
 ### 参考:
 
 - [9 performance secrets revealed](https://slides.com/akryum/vueconfus-2019#/)

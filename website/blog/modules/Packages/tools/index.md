@@ -146,3 +146,7 @@
 # 3D引擎
 
 - [zdog](https://github.com/metafizzy/zdog)
+
+# canvas
+
+- [fabricjs](http://fabricjs.com/)
