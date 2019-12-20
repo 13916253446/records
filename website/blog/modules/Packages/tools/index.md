@@ -93,6 +93,7 @@
 # 好用的图片上传
 
 - [filepond](https://github.com/pqina/filepond) 支持各种流行的框架
+- [dropzonejs](https://www.dropzonejs.com/#new-video-out-now) 带有进度
 
 # 视频播放器
 
@@ -151,3 +152,7 @@
 # canvas
 
 - [fabricjs](http://fabricjs.com/)
+
+# 图片裁剪
+
+- [cropperjs](https://fengyuanchen.github.io/cropperjs/)
